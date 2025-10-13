@@ -1,0 +1,36 @@
+--- Begin Symbol Table Dump ---
+
+-------------------------------------------------------------------------------------------------------------------------------
+| Identifier           | Kind       | Type             | Scope | Status | Offset | Location                                   |
+-------------------------------------------------------------------------------------------------------------------------------
+| standard             | NS         | N/A              | 0     | Global | -      | /home/claudio/HLA/tst/test4.hla:002:004   |
+| --------------------------------------------------------------------------------------------------------------------------- |
+| varu16               | VAR        | u16              | 0     | Global | -      | /home/claudio/HLA/tst/test4.hla:012:001   |
+| --------------------------------------------------------------------------------------------------------------------------- |
+| main                 | FUNC (fn)  | u8               | 0     | Global | -      | /home/claudio/HLA/tst/test4.hla:024:004   |
+| addr                 | VAR        | u16              | 2     | Local  | 17     | /home/claudio/HLA/tst/test4.hla:033:005   |
+| argc                 | VAR        | u8               | 2     | Local  | 0      | /home/claudio/HLA/tst/test4.hla:024:004   |
+| argv                 | VAR        | ^^u16            | 2     | Local  | 1      | /home/claudio/HLA/tst/test4.hla:024:004   |
+                                       puntatore ^ a 
+                                         puntatore ^ a 
+                                           u16
+| pString              | VAR        | ^u8              | 2     | Local  | 19     | /home/claudio/HLA/tst/test4.hla:035:005   |
+                                       puntatore ^ a 
+                                         u8
+| pf40                 | VAR        | ^f40             | 2     | Local  | 15     | /home/claudio/HLA/tst/test4.hla:032:005   |
+                                       puntatore ^ a 
+                                         f40
+| pu16                 | VAR        | ^u16             | 2     | Local  | 13     | /home/claudio/HLA/tst/test4.hla:031:005   |
+                                       puntatore ^ a 
+                                         u16
+| pu8                  | VAR        | ^u8              | 2     | Local  | 11     | /home/claudio/HLA/tst/test4.hla:030:005   |
+                                       puntatore ^ a 
+                                         u8
+| vf40                 | VAR        | f40              | 2     | Local  | 6      | /home/claudio/HLA/tst/test4.hla:028:005   |
+| vu16                 | VAR        | u16              | 2     | Local  | 4      | /home/claudio/HLA/tst/test4.hla:027:005   |
+| vu8                  | VAR        | u8               | 2     | Local  | 3      | /home/claudio/HLA/tst/test4.hla:026:005   |
+| --------------------------------------------------------------------------------------------------------------------------- |
+| standard.print       | FUNC (fn)  | u8               | 0     | Global | -      | /home/claudio/HLA/tst/test4.hla:004:008   |
+-------------------------------------------------------------------------------------------------------------------------------
+
+--- End Symbol Table Dump ---

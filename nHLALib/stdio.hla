@@ -1,0 +1,14 @@
+
+//	stdio 
+
+ns stdio {
+
+	sys putChar(byte:a) 
+	{
+		asm {
+			jsr kernel.chrout
+		} ;
+	} ;
+
+} ;
+

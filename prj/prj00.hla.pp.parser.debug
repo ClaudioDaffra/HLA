@@ -1,0 +1,251 @@
+--- Begin Parser Debug ---
+
+Parser execution log:
+
+  - Starting parser. Rule: <program> ::= <top_level_statement>*
+  - Entering parse_top_level_statement(). Rule: <top_level_statement> ::= <namespace> | <function> | <sys_function> | <declaration> | <const_declaration> | <asm_statement>
+  - Entering parse_namespace(). Rule: <namespace> ::= 'ns' T_IDENTIFIER '{' (<function> | <sys_function>)* '}' ';'
+  - Entering parse_sys_function().
+  -  -> Checking register 'a'. Used physical regs: [].
+  - No return type specified for sys function. Defaulting to 'u8'.
+  - Entering parse_statement(). Rule: <statement> ::= ... | <label_statement> | <jump_statement>
+  - Entering parse_asm_statement(). Rule: <asm_statement> ::= T_ASM_BLOCK ';'
+  - Matched T_ASM_BLOCK. Expecting ';'.
+  - Matched ';'. Creating ND_ASM node.
+  - Finished parsing sys function 'stdio.putChar'.
+  - Finished parsing namespace 'stdio'.
+  - Entering parse_top_level_statement(). Rule: <top_level_statement> ::= <namespace> | <function> | <sys_function> | <declaration> | <const_declaration> | <asm_statement>
+  - Entering parse_function(). Rule: <function> ::= 'fn' T_IDENTIFIER '(' <param_list> ')' '->' <type_specifier> '{' <block> '}' ';'
+  - Matched 'fn'. Expecting function name (T_IDENTIFIER).
+  - Final (mangled) function name is 'main'.
+  - Entered new scope for function 'main'.
+  - Cleared labels and jumps for new function scope.
+  - Special handling for 'main' function.
+  - Matched '()'. Injecting default parameters for 'main'.
+  -   - Injected 'argc: u8'.
+  -   - Injected 'argv: ^^u16'.
+  - Forcing return type to 'u8' for 'main'.
+  - Created symbol for function 'main'. Expecting '{'.
+  - Parsing <block>.
+  - Entering parse_statement(). Rule: <statement> ::= ... | <label_statement> | <jump_statement>
+  - Entering parse_expr_statement(). Rule: <expr_statement> ::= <expr> ';'
+  - Entering parse_expr(), delegating to parse_assign(). Rule: <expr> ::= <assign>
+  - Entering parse_assign(). Rule: <assign> ::= <logical_or_and> (':=' <assign>)?
+  - Entering parse_logical_or_and(). Rule: <logical_or_and> ::= <bitwise_or> (('&&' | '||') <bitwise_or>)*
+  - Entering parse_bitwise_or(). Rule: <bitwise_or> ::= <bitwise_xor> ('%|' <bitwise_xor>)*
+  - Entering parse_bitwise_xor(). Rule: <bitwise_xor> ::= <bitwise_and> ('%^' <bitwise_and>)*
+  - Entering parse_bitwise_and(). Rule: <bitwise_and> ::= <equality> ('%&' <equality>)*
+  - Entering parse_equality(). Rule: <equality> ::= <relational> (('?=' | '!=') <relational>)*
+  - Entering parse_relational(). Rule: <relational> ::= <shift> (('<' | '<=' | '>' | '>=') <shift>)*
+  - Entering parse_shift(). Rule: <shift> ::= <add_sub> (('<<' | '>>') <add_sub>)*
+  - Entering parse_add_sub(). Rule: <add_sub> ::= <mul_div_mod> (('+' | '-') <mul_div_mod>)*
+  - Entering parse_mul_div_mod(). Rule: <mul_div_mod> ::= <unary> (('*' | '/' | '%%') <unary>)*
+  - Entering parse_unary(). Rule: <unary> ::= ('++' | '--' | '+' | '-' | '!' | '@' | '^' | '%~' | '%-') <unary> | <postfix>
+  - No prefix unary operator found. Parsing <postfix>.
+  - Entering parse_postfix(). Rule: <postfix> ::= <term> ('++' | '--')*
+  - Entering parse_term(). Rule: <term> ::= T_INTEGER | T_REAL | T_STRING | <func_call> | T_IDENTIFIER | '(' <expr> ')'
+  - Identifier 'stdio.putChar' is a function call.
+  - Parsing argument list for 'stdio.putChar'.
+  - Parsing an argument expression.
+  - Entering parse_expr(), delegating to parse_assign(). Rule: <expr> ::= <assign>
+  - Entering parse_assign(). Rule: <assign> ::= <logical_or_and> (':=' <assign>)?
+  - Entering parse_logical_or_and(). Rule: <logical_or_and> ::= <bitwise_or> (('&&' | '||') <bitwise_or>)*
+  - Entering parse_bitwise_or(). Rule: <bitwise_or> ::= <bitwise_xor> ('%|' <bitwise_xor>)*
+  - Entering parse_bitwise_xor(). Rule: <bitwise_xor> ::= <bitwise_and> ('%^' <bitwise_and>)*
+  - Entering parse_bitwise_and(). Rule: <bitwise_and> ::= <equality> ('%&' <equality>)*
+  - Entering parse_equality(). Rule: <equality> ::= <relational> (('?=' | '!=') <relational>)*
+  - Entering parse_relational(). Rule: <relational> ::= <shift> (('<' | '<=' | '>' | '>=') <shift>)*
+  - Entering parse_shift(). Rule: <shift> ::= <add_sub> (('<<' | '>>') <add_sub>)*
+  - Entering parse_add_sub(). Rule: <add_sub> ::= <mul_div_mod> (('+' | '-') <mul_div_mod>)*
+  - Entering parse_mul_div_mod(). Rule: <mul_div_mod> ::= <unary> (('*' | '/' | '%%') <unary>)*
+  - Entering parse_unary(). Rule: <unary> ::= ('++' | '--' | '+' | '-' | '!' | '@' | '^' | '%~' | '%-') <unary> | <postfix>
+  - No prefix unary operator found. Parsing <postfix>.
+  - Entering parse_postfix(). Rule: <postfix> ::= <term> ('++' | '--')*
+  - Entering parse_term(). Rule: <term> ::= T_INTEGER | T_REAL | T_STRING | <func_call> | T_IDENTIFIER | '(' <expr> ')'
+  - Matched T_CHAR. Value: 'H'.
+  - Parsed initial <unary>, now looking for '*', '/' or '%%'.
+  - No more '*', '/' or '%%'. Exiting parse_mul_div_mod().
+  - Parsed initial <mul_div_mod>, now looking for '+' or '-'.
+  - No more '+' or '-'. Exiting parse_add_sub().
+  - Performing type checking for arguments of 'stdio.putChar'.
+  - Parsed initial <unary>, now looking for '*', '/' or '%%'.
+  - No more '*', '/' or '%%'. Exiting parse_mul_div_mod().
+  - Parsed initial <mul_div_mod>, now looking for '+' or '-'.
+  - No more '+' or '-'. Exiting parse_add_sub().
+  - Parsed expression. Expecting ';'.
+  - Matched ';'.
+  - Wrapping expression in ND_EXPR_STMT.
+  - Entering parse_statement(). Rule: <statement> ::= ... | <label_statement> | <jump_statement>
+  - Entering parse_expr_statement(). Rule: <expr_statement> ::= <expr> ';'
+  - Entering parse_expr(), delegating to parse_assign(). Rule: <expr> ::= <assign>
+  - Entering parse_assign(). Rule: <assign> ::= <logical_or_and> (':=' <assign>)?
+  - Entering parse_logical_or_and(). Rule: <logical_or_and> ::= <bitwise_or> (('&&' | '||') <bitwise_or>)*
+  - Entering parse_bitwise_or(). Rule: <bitwise_or> ::= <bitwise_xor> ('%|' <bitwise_xor>)*
+  - Entering parse_bitwise_xor(). Rule: <bitwise_xor> ::= <bitwise_and> ('%^' <bitwise_and>)*
+  - Entering parse_bitwise_and(). Rule: <bitwise_and> ::= <equality> ('%&' <equality>)*
+  - Entering parse_equality(). Rule: <equality> ::= <relational> (('?=' | '!=') <relational>)*
+  - Entering parse_relational(). Rule: <relational> ::= <shift> (('<' | '<=' | '>' | '>=') <shift>)*
+  - Entering parse_shift(). Rule: <shift> ::= <add_sub> (('<<' | '>>') <add_sub>)*
+  - Entering parse_add_sub(). Rule: <add_sub> ::= <mul_div_mod> (('+' | '-') <mul_div_mod>)*
+  - Entering parse_mul_div_mod(). Rule: <mul_div_mod> ::= <unary> (('*' | '/' | '%%') <unary>)*
+  - Entering parse_unary(). Rule: <unary> ::= ('++' | '--' | '+' | '-' | '!' | '@' | '^' | '%~' | '%-') <unary> | <postfix>
+  - No prefix unary operator found. Parsing <postfix>.
+  - Entering parse_postfix(). Rule: <postfix> ::= <term> ('++' | '--')*
+  - Entering parse_term(). Rule: <term> ::= T_INTEGER | T_REAL | T_STRING | <func_call> | T_IDENTIFIER | '(' <expr> ')'
+  - Identifier 'stdio.putChar' is a function call.
+  - Parsing argument list for 'stdio.putChar'.
+  - Parsing an argument expression.
+  - Entering parse_expr(), delegating to parse_assign(). Rule: <expr> ::= <assign>
+  - Entering parse_assign(). Rule: <assign> ::= <logical_or_and> (':=' <assign>)?
+  - Entering parse_logical_or_and(). Rule: <logical_or_and> ::= <bitwise_or> (('&&' | '||') <bitwise_or>)*
+  - Entering parse_bitwise_or(). Rule: <bitwise_or> ::= <bitwise_xor> ('%|' <bitwise_xor>)*
+  - Entering parse_bitwise_xor(). Rule: <bitwise_xor> ::= <bitwise_and> ('%^' <bitwise_and>)*
+  - Entering parse_bitwise_and(). Rule: <bitwise_and> ::= <equality> ('%&' <equality>)*
+  - Entering parse_equality(). Rule: <equality> ::= <relational> (('?=' | '!=') <relational>)*
+  - Entering parse_relational(). Rule: <relational> ::= <shift> (('<' | '<=' | '>' | '>=') <shift>)*
+  - Entering parse_shift(). Rule: <shift> ::= <add_sub> (('<<' | '>>') <add_sub>)*
+  - Entering parse_add_sub(). Rule: <add_sub> ::= <mul_div_mod> (('+' | '-') <mul_div_mod>)*
+  - Entering parse_mul_div_mod(). Rule: <mul_div_mod> ::= <unary> (('*' | '/' | '%%') <unary>)*
+  - Entering parse_unary(). Rule: <unary> ::= ('++' | '--' | '+' | '-' | '!' | '@' | '^' | '%~' | '%-') <unary> | <postfix>
+  - No prefix unary operator found. Parsing <postfix>.
+  - Entering parse_postfix(). Rule: <postfix> ::= <term> ('++' | '--')*
+  - Entering parse_term(). Rule: <term> ::= T_INTEGER | T_REAL | T_STRING | <func_call> | T_IDENTIFIER | '(' <expr> ')'
+  - Matched T_CHAR. Value: 'L'.
+  - Parsed initial <unary>, now looking for '*', '/' or '%%'.
+  - No more '*', '/' or '%%'. Exiting parse_mul_div_mod().
+  - Parsed initial <mul_div_mod>, now looking for '+' or '-'.
+  - No more '+' or '-'. Exiting parse_add_sub().
+  - Performing type checking for arguments of 'stdio.putChar'.
+  - Parsed initial <unary>, now looking for '*', '/' or '%%'.
+  - No more '*', '/' or '%%'. Exiting parse_mul_div_mod().
+  - Parsed initial <mul_div_mod>, now looking for '+' or '-'.
+  - No more '+' or '-'. Exiting parse_add_sub().
+  - Parsed expression. Expecting ';'.
+  - Matched ';'.
+  - Wrapping expression in ND_EXPR_STMT.
+  - Entering parse_statement(). Rule: <statement> ::= ... | <label_statement> | <jump_statement>
+  - Entering parse_expr_statement(). Rule: <expr_statement> ::= <expr> ';'
+  - Entering parse_expr(), delegating to parse_assign(). Rule: <expr> ::= <assign>
+  - Entering parse_assign(). Rule: <assign> ::= <logical_or_and> (':=' <assign>)?
+  - Entering parse_logical_or_and(). Rule: <logical_or_and> ::= <bitwise_or> (('&&' | '||') <bitwise_or>)*
+  - Entering parse_bitwise_or(). Rule: <bitwise_or> ::= <bitwise_xor> ('%|' <bitwise_xor>)*
+  - Entering parse_bitwise_xor(). Rule: <bitwise_xor> ::= <bitwise_and> ('%^' <bitwise_and>)*
+  - Entering parse_bitwise_and(). Rule: <bitwise_and> ::= <equality> ('%&' <equality>)*
+  - Entering parse_equality(). Rule: <equality> ::= <relational> (('?=' | '!=') <relational>)*
+  - Entering parse_relational(). Rule: <relational> ::= <shift> (('<' | '<=' | '>' | '>=') <shift>)*
+  - Entering parse_shift(). Rule: <shift> ::= <add_sub> (('<<' | '>>') <add_sub>)*
+  - Entering parse_add_sub(). Rule: <add_sub> ::= <mul_div_mod> (('+' | '-') <mul_div_mod>)*
+  - Entering parse_mul_div_mod(). Rule: <mul_div_mod> ::= <unary> (('*' | '/' | '%%') <unary>)*
+  - Entering parse_unary(). Rule: <unary> ::= ('++' | '--' | '+' | '-' | '!' | '@' | '^' | '%~' | '%-') <unary> | <postfix>
+  - No prefix unary operator found. Parsing <postfix>.
+  - Entering parse_postfix(). Rule: <postfix> ::= <term> ('++' | '--')*
+  - Entering parse_term(). Rule: <term> ::= T_INTEGER | T_REAL | T_STRING | <func_call> | T_IDENTIFIER | '(' <expr> ')'
+  - Identifier 'stdio.putChar' is a function call.
+  - Parsing argument list for 'stdio.putChar'.
+  - Parsing an argument expression.
+  - Entering parse_expr(), delegating to parse_assign(). Rule: <expr> ::= <assign>
+  - Entering parse_assign(). Rule: <assign> ::= <logical_or_and> (':=' <assign>)?
+  - Entering parse_logical_or_and(). Rule: <logical_or_and> ::= <bitwise_or> (('&&' | '||') <bitwise_or>)*
+  - Entering parse_bitwise_or(). Rule: <bitwise_or> ::= <bitwise_xor> ('%|' <bitwise_xor>)*
+  - Entering parse_bitwise_xor(). Rule: <bitwise_xor> ::= <bitwise_and> ('%^' <bitwise_and>)*
+  - Entering parse_bitwise_and(). Rule: <bitwise_and> ::= <equality> ('%&' <equality>)*
+  - Entering parse_equality(). Rule: <equality> ::= <relational> (('?=' | '!=') <relational>)*
+  - Entering parse_relational(). Rule: <relational> ::= <shift> (('<' | '<=' | '>' | '>=') <shift>)*
+  - Entering parse_shift(). Rule: <shift> ::= <add_sub> (('<<' | '>>') <add_sub>)*
+  - Entering parse_add_sub(). Rule: <add_sub> ::= <mul_div_mod> (('+' | '-') <mul_div_mod>)*
+  - Entering parse_mul_div_mod(). Rule: <mul_div_mod> ::= <unary> (('*' | '/' | '%%') <unary>)*
+  - Entering parse_unary(). Rule: <unary> ::= ('++' | '--' | '+' | '-' | '!' | '@' | '^' | '%~' | '%-') <unary> | <postfix>
+  - No prefix unary operator found. Parsing <postfix>.
+  - Entering parse_postfix(). Rule: <postfix> ::= <term> ('++' | '--')*
+  - Entering parse_term(). Rule: <term> ::= T_INTEGER | T_REAL | T_STRING | <func_call> | T_IDENTIFIER | '(' <expr> ')'
+  - Matched T_CHAR. Value: 'A'.
+  - Parsed initial <unary>, now looking for '*', '/' or '%%'.
+  - No more '*', '/' or '%%'. Exiting parse_mul_div_mod().
+  - Parsed initial <mul_div_mod>, now looking for '+' or '-'.
+  - No more '+' or '-'. Exiting parse_add_sub().
+  - Performing type checking for arguments of 'stdio.putChar'.
+  - Parsed initial <unary>, now looking for '*', '/' or '%%'.
+  - No more '*', '/' or '%%'. Exiting parse_mul_div_mod().
+  - Parsed initial <mul_div_mod>, now looking for '+' or '-'.
+  - No more '+' or '-'. Exiting parse_add_sub().
+  - Parsed expression. Expecting ';'.
+  - Matched ';'.
+  - Wrapping expression in ND_EXPR_STMT.
+  - Entering parse_statement(). Rule: <statement> ::= ... | <label_statement> | <jump_statement>
+  - Entering parse_return_statement(). Rule: <return_statement> ::= 'ret' <expr> ';'
+  - Entering parse_expr(), delegating to parse_assign(). Rule: <expr> ::= <assign>
+  - Entering parse_assign(). Rule: <assign> ::= <logical_or_and> (':=' <assign>)?
+  - Entering parse_logical_or_and(). Rule: <logical_or_and> ::= <bitwise_or> (('&&' | '||') <bitwise_or>)*
+  - Entering parse_bitwise_or(). Rule: <bitwise_or> ::= <bitwise_xor> ('%|' <bitwise_xor>)*
+  - Entering parse_bitwise_xor(). Rule: <bitwise_xor> ::= <bitwise_and> ('%^' <bitwise_and>)*
+  - Entering parse_bitwise_and(). Rule: <bitwise_and> ::= <equality> ('%&' <equality>)*
+  - Entering parse_equality(). Rule: <equality> ::= <relational> (('?=' | '!=') <relational>)*
+  - Entering parse_relational(). Rule: <relational> ::= <shift> (('<' | '<=' | '>' | '>=') <shift>)*
+  - Entering parse_shift(). Rule: <shift> ::= <add_sub> (('<<' | '>>') <add_sub>)*
+  - Entering parse_add_sub(). Rule: <add_sub> ::= <mul_div_mod> (('+' | '-') <mul_div_mod>)*
+  - Entering parse_mul_div_mod(). Rule: <mul_div_mod> ::= <unary> (('*' | '/' | '%%') <unary>)*
+  - Entering parse_unary(). Rule: <unary> ::= ('++' | '--' | '+' | '-' | '!' | '@' | '^' | '%~' | '%-') <unary> | <postfix>
+  - No prefix unary operator found. Parsing <postfix>.
+  - Entering parse_postfix(). Rule: <postfix> ::= <term> ('++' | '--')*
+  - Entering parse_term(). Rule: <term> ::= T_INTEGER | T_REAL | T_STRING | <func_call> | T_IDENTIFIER | '(' <expr> ')'
+  - Matched T_INTEGER with no suffix. Value: 0. Inferring type.
+  - Inferred type: u8.
+  - Parsed initial <unary>, now looking for '*', '/' or '%%'.
+  - No more '*', '/' or '%%'. Exiting parse_mul_div_mod().
+  - Parsed initial <mul_div_mod>, now looking for '+' or '-'.
+  - No more '+' or '-'. Exiting parse_add_sub().
+  - Created ND_RETURN node.
+  - Verifying all jumps have defined labels within the function.
+  - Finished parsing <block>. Expecting '}'.
+  - Checking for name conflicts with function 'main'.
+  - Calculating stack offsets for function 'main'.
+  -   - Symbol 'argc', size 1, offset 0
+  -   - Symbol 'argv', size 2, offset 1
+  - Total stack size for 'main': 3
+  - Matched '}' and left scope. Expecting ';'.
+  - Matched ';'. Function parsing complete.
+  - Successfully matched EOF. Parsing complete.
+
+Grammar implemented (with implicit casting):
+
+  <program>             ::= <top_level_statement>*
+  <top_level_statement> ::= <namespace> | <function> | <sys_function> | <declaration> | <const_declaration> | <asm_statement>
+  <namespace>           ::= 'ns' T_IDENTIFIER '{' (<function> | <sys_function>)* '}' ';'
+  <function>            ::= 'fn' T_IDENTIFIER '(' <param_list> ')' '->' <type_specifier> '{' <block> '}' ';'
+  <sys_function>        ::= 'sys' T_IDENTIFIER '(' <sys_param_list> ')' ('->' <type_specifier>)? '{' <block> '}' ';'
+  <param_list>          ::= (<param> (',' <param>)*)?
+  <param>               ::= T_IDENTIFIER ':' <type_specifier>
+  <sys_param_list>      ::= (<sys_param> (',' <sys_param>)*)?
+  <sys_param>           ::= <sys_type> ':' <sys_destination>
+  <sys_type>            ::= 'byte' | 'word' | 'real'
+  <sys_destination>     ::= 'a' | 'x' | 'y' | 'ay' | 'ax' | 'xy' | 'fac1' | 'fac2' | T_IDENTIFIER
+  <type_specifier>      ::= T_POINTER* T_IDENTIFIER
+  <block>               ::= <statement>*
+  <statement>           ::= <if_statement> | <declaration> | <const_declaration> | <asm_statement> | <expr_statement> | <return_statement> | <label_statement> | <jump_statement>
+  <return_statement>    ::= 'ret' <expr> ';'
+  <if_statement>        ::= 'if' '(' <expr> ')' '{' <block> '}' ('else' '{' <block> '}')? ';'
+  <declaration>         ::= T_IDENTIFIER ':' <type_specifier> ';'
+  <const_declaration>   ::= T_IDENTIFIER ':' <expr> ';'
+  <asm_statement>       ::= T_ASM_BLOCK ';'
+  <expr_statement>      ::= <expr> ';'
+  <expr>                ::= <assign>
+  <label_statement>     ::= T_IDENTIFIER ':' ';'
+  <jump_statement>      ::= 'jmp' T_IDENTIFIER ';'
+  <assign>              ::= <logical_or_and> (':=' <assign>)?
+  <logical_or_and>      ::= <bitwise_or> (('&&' | '||') <bitwise_or>)*
+  <bitwise_or>          ::= <bitwise_xor> ('%|' <bitwise_xor>)*
+  <bitwise_xor>         ::= <bitwise_and> ('%^' <bitwise_and>)*
+  <bitwise_and>         ::= <equality> ('%&' <equality>)*
+  <equality>            ::= <relational> (('?=' | '!=') <relational>)*
+  <relational>          ::= <shift> (('<' | '<=' | '>' | '>=') <shift>)*
+  <shift>               ::= <add_sub> (('<<' | '>>') <add_sub>)*
+  <add_sub>             ::= <mul_div_mod> (('+' | '-') <mul_div_mod>)*
+  <mul_div_mod>         ::= <unary> (('*' | '/' | '%%') <unary>)*
+  <unary>               ::= ('++' | '--' | '+' | '-' | '!' | '@' | '^' | '%~' | '%-') <unary> | <postfix>
+  <postfix>             ::= <term> ('++' | '--')*
+  <term>                ::= T_INTEGER | T_REAL | T_STRING | <func_call> | T_IDENTIFIER | '(' <expr> ')'
+  <func_call>           ::= (T_IDENTIFIER '::')? T_IDENTIFIER '(' <arg_list> ')'
+  <arg_list>            ::= (<expr> (',' <expr>)*)?
+
+
+--- End Parser Debug ---

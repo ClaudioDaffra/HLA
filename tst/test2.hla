@@ -1,0 +1,128 @@
+
+
+a 	: u16 ;
+pa 	: ^u16 ;
+	
+fn sub1 ( px:u8,py:u16,pr:f40 ) -> u8 
+{
+	p1 : u16 ;
+	p2 : ^u16 ;
+	
+	ret 1s16 ;
+} ;
+
+fn main ( )  
+{
+	m1 : s8 ;
+	m2 : u8 ;
+	pu8 : ^u8 ;
+	m3 : s8 ;
+	m4 : s16 ;
+	r1 : f40 ;
+	r2 : f40 ;
+	r3 : f40 ;
+	x  : f40 ;
+	y  : f40 ;
+	z  : f40 ;
+
+	m1 := sub1( 1,128u16,1024.768 );
+
+	pa := @a ;
+
+	^pa := 123u16 ;
+
+	asm {
+		lda a+0
+		ldy a+1
+		jsr std.print_u16_dec
+		lda #petscii.nl
+		jsr kernel.chrout
+	} ;
+/*	
+	m1 := -1;
+	m2 := 3 ;
+	m3 := m2 - m1 ; // 4
+
+	asm {
+		.fstack_word_get m3
+		jsr std.print_s8_dec
+		lda #petscii.nl
+		jsr kernel.chrout
+
+	} ;
+
+	//aaa := 123 ;
+	//rrr := 1.23 ;
+
+	x := 1024.768 ;
+	y := 3.2 ;
+
+    //z := -x / y  ;
+	
+    z := !0.0  ;
+	
+	asm {
+		.fstack_fac1_get z
+		jsr std.print_fac1
+		lda #petscii.nl
+		jsr kernel.chrout
+	} ;
+
+	// --------------------------------------------	-3
+	
+	m1 := -10/3 ;// OK s8 CONSTANT FOLDING
+	
+	asm {
+		.fstack_byte_get m1
+		jsr std.print_s8_dec
+		lda #petscii.nl
+		jsr kernel.chrout
+	} ;
+
+	// --------------------------------------------	-3
+	
+	m1 := -10 ;
+	m2 := 3 ;
+	m3 := m1/m2 ;
+	
+	asm {
+		.fstack_byte_get m3
+		jsr std.print_s8_dec
+		lda #petscii.nl
+		jsr kernel.chrout
+	} ;
+
+	// --------------------------------------------	0.6
+	asm {
+		lda #petscii.nl
+		jsr kernel.chrout
+	} ;
+
+
+	x := 1024.768 ;
+	y := 3.2 ;
+    z := 4.1 ; 
+    z := x %% y   ;
+	
+	asm {
+		.fstack_fac1_get z
+		jsr std.print_fac1
+		lda #petscii.nl
+		jsr kernel.chrout
+	} ;
+
+	// --------------------------------------------	-3
+
+    z := 1024.768 %% 3.2  ;
+	
+	asm {
+		.fstack_fac1_get z
+		jsr std.print_fac1
+		lda #petscii.nl
+		jsr kernel.chrout
+	} ;
+*/	
+	ret 0 ;
+} ;
+
+	 

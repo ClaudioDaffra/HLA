@@ -1,0 +1,118 @@
+
+
+a 	: u8 ;
+pa 	: ^u8 ;
+b 	: u16 ;
+pb 	: ^u16 ;
+r 	: f40 ;
+pr 	: ^f40 ;
+
+a2 	: u8 ;
+b2 	: u16 ;
+r2 	: f40 ;
+
+
+fn main ( )  
+{
+	l1 : u8 ;
+	pl1 : ^u8 ;
+	l12 : u8 ;
+	
+	lw1 : u16 ;
+	plw1 : ^u16 ;
+	lw12 : u16 ;
+	
+	lr1 : f40 ;
+	plr1 : ^f40 ;
+	lr12 : f40 ;
+
+	pa := @a ;
+	^pa := 123u8 ;
+
+	a2 := ^pa ;
+
+	asm {
+		lda a2
+		jsr std.print_u8_dec
+	} ;
+
+	asm {
+		.std_print_nl
+	} ;
+
+	pb := @b ;
+	^pb := 456u16 ;
+
+	b2 := ^pb ;
+	
+	asm {
+		lda b2+0
+		ldy b2+1
+		jsr std.print_u16_dec
+	} ;
+
+	asm {
+		.std_print_nl
+	} ;
+
+	pr := @r ;
+
+	^pr := 1024.768 ;
+	
+	r2 := ^pr ;
+
+	asm {
+		lda #<r2
+		ldy #>r2
+		jsr basic.load5_fac1 
+		jsr std.print_fac1
+	} ;
+
+	asm {
+		.std_print_nl
+	} ;
+	
+	pl1 := @l1 ;
+	
+	^pl1 := 98 ;
+	
+	l12 := ^pl1 ;
+	
+	asm {
+		.fstack_byte_get l12
+		jsr std.print_u8_dec
+	} ;	
+
+	asm {
+		.std_print_nl
+	} ;
+	
+	plw1 := @lw1 ;
+	
+	^plw1 := 987 ;
+	
+	lw12 := ^plw1 ;
+	
+	asm {
+		.fstack_word_get lw12
+		jsr std.print_u16_dec
+	} ;	
+
+	asm {
+		.std_print_nl
+	} ;
+	
+	plr1 := @lr1 ;
+	
+	^plr1 := 3.2 ;
+	
+	lr12 := ^plr1 ;
+	
+	asm {
+		.fstack_fac1_get lr12
+		jsr std.print_fac1
+	} ;		
+	ret 0 ;
+} ;
+
+	 

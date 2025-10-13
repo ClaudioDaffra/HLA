@@ -1,0 +1,58 @@
+--- Begin Lexer Debug ---
+File            | Row/Col    | Stream Pos   | Token Type           | Converted Value      | Suffix     | F40 Repr                  | Original Lexeme
+--------------------------------------------------------------------------------------------------------------------------------------------
+...ib/stdio.hla | 004/001    | 0018-0019    | T_KEYWORD            | ns                   | -          | -                         | ns
+...ib/stdio.hla | 004/004    | 0021-0025    | T_IDENTIFIER         | stdio                | -          | -                         | stdio
+...ib/stdio.hla | 004/010    | 0027-0027    | T_G0                 | {                    | -          | -                         | {
+...ib/stdio.hla | 006/005    | 0031-0033    | T_KEYWORD            | sys                  | -          | -                         | sys
+...ib/stdio.hla | 006/009    | 0035-0041    | T_IDENTIFIER         | putChar              | -          | -                         | putChar
+...ib/stdio.hla | 006/016    | 0042-0042    | T_P0                 | (                    | -          | -                         | (
+...ib/stdio.hla | 006/017    | 0043-0046    | T_IDENTIFIER         | byte                 | -          | -                         | byte
+...ib/stdio.hla | 006/021    | 0047-0047    | T_COLON              | :                    | -          | -                         | :
+...ib/stdio.hla | 006/022    | 0048-0048    | T_IDENTIFIER         | a                    | -          | -                         | a
+...ib/stdio.hla | 006/023    | 0049-0049    | T_P1                 | )                    | -          | -                         | )
+...ib/stdio.hla | 007/005    | 0052-0052    | T_G0                 | {                    | -          | -                         | {
+...ib/stdio.hla | 008/009    | 0056-0085    | T_ASM_BLOCK          | { ... }              | -          | -                         | asm
+{
+
+			jsr kernel.chrout
+		
+}
+...ib/stdio.hla | 010/011    | 0087-0087    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...ib/stdio.hla | 011/005    | 0090-0090    | T_G1                 | }                    | -          | -                         | }
+...ib/stdio.hla | 011/007    | 0092-0092    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...ib/stdio.hla | 013/001    | 0095-0095    | T_G1                 | }                    | -          | -                         | }
+...ib/stdio.hla | 013/003    | 0097-0097    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...rj/prj00.hla | 004/001    | 0102-0103    | T_KEYWORD            | fn                   | -          | -                         | fn
+...rj/prj00.hla | 004/004    | 0105-0108    | T_IDENTIFIER         | main                 | -          | -                         | main
+...rj/prj00.hla | 004/009    | 0110-0110    | T_P0                 | (                    | -          | -                         | (
+...rj/prj00.hla | 004/011    | 0112-0112    | T_P1                 | )                    | -          | -                         | )
+...rj/prj00.hla | 005/001    | 0114-0114    | T_G0                 | {                    | -          | -                         | {
+...rj/prj00.hla | 006/005    | 0117-0121    | T_IDENTIFIER         | stdio                | -          | -                         | stdio
+...rj/prj00.hla | 006/010    | 0122-0123    | T_SCOPE_RES          | ::                   | -          | -                         | ::
+...rj/prj00.hla | 006/012    | 0124-0130    | T_IDENTIFIER         | putChar              | -          | -                         | putChar
+...rj/prj00.hla | 006/019    | 0131-0131    | T_P0                 | (                    | -          | -                         | (
+...rj/prj00.hla | 006/020    | 0132-0134    | T_CHAR               | 'H'                  | -          | -                         | 'H'
+...rj/prj00.hla | 006/023    | 0135-0135    | T_P1                 | )                    | -          | -                         | )
+...rj/prj00.hla | 006/024    | 0136-0136    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...rj/prj00.hla | 007/005    | 0139-0143    | T_IDENTIFIER         | stdio                | -          | -                         | stdio
+...rj/prj00.hla | 007/010    | 0144-0145    | T_SCOPE_RES          | ::                   | -          | -                         | ::
+...rj/prj00.hla | 007/012    | 0146-0152    | T_IDENTIFIER         | putChar              | -          | -                         | putChar
+...rj/prj00.hla | 007/019    | 0153-0153    | T_P0                 | (                    | -          | -                         | (
+...rj/prj00.hla | 007/020    | 0154-0156    | T_CHAR               | 'L'                  | -          | -                         | 'L'
+...rj/prj00.hla | 007/023    | 0157-0157    | T_P1                 | )                    | -          | -                         | )
+...rj/prj00.hla | 007/024    | 0158-0158    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...rj/prj00.hla | 008/005    | 0161-0165    | T_IDENTIFIER         | stdio                | -          | -                         | stdio
+...rj/prj00.hla | 008/010    | 0166-0167    | T_SCOPE_RES          | ::                   | -          | -                         | ::
+...rj/prj00.hla | 008/012    | 0168-0174    | T_IDENTIFIER         | putChar              | -          | -                         | putChar
+...rj/prj00.hla | 008/019    | 0175-0175    | T_P0                 | (                    | -          | -                         | (
+...rj/prj00.hla | 008/020    | 0176-0178    | T_CHAR               | 'A'                  | -          | -                         | 'A'
+...rj/prj00.hla | 008/023    | 0179-0179    | T_P1                 | )                    | -          | -                         | )
+...rj/prj00.hla | 008/024    | 0180-0180    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...rj/prj00.hla | 009/005    | 0183-0185    | T_KEYWORD            | ret                  | -          | -                         | ret
+...rj/prj00.hla | 009/009    | 0187-0187    | T_INTEGER            | 0                    | -          | -                         | 0
+...rj/prj00.hla | 009/010    | 0188-0188    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...rj/prj00.hla | 010/001    | 0190-0190    | T_G1                 | }                    | -          | -                         | }
+...rj/prj00.hla | 010/003    | 0192-0192    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...rj/prj00.hla | 012/002    | 0196-0196    | T_EOF                | -                    | -          | -                         | -
+--- End Lexer Debug ---

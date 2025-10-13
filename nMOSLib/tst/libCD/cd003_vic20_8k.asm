@@ -1,0 +1,28 @@
+
+; .............. commodore vic20
+
+; .............. compile : sh casm.sh tst/libCD/cd003_vic20_8k
+
+.include "../../lib/libCD.asm"
+
+PROGRAM TARGET_VIC20_8K, PROGRAM_ADDRESS_VIC20_8K, 2025
+
+.include "../../lib/libCD_vic20_8k.asm"
+
+
+main .proc
+
+	lda	#TARGET
+	sta	SCREEN
+	lda #color.green
+	sta COLOR
+
+	lda	#TARGET
+	sta	SCREEN+SCREEN_SIZE
+	lda #color.red
+	sta COLOR+SCREEN_SIZE
+	
+	rts
+	
+.endproc
+

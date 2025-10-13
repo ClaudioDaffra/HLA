@@ -1,0 +1,217 @@
+--- Begin Lexer Debug ---
+File            | Row/Col    | Stream Pos   | Token Type           | Converted Value      | Suffix     | F40 Repr                  | Original Lexeme
+--------------------------------------------------------------------------------------------------------------------------------------------
+...st/test4.hla | 002/001    | 0001-0002    | T_KEYWORD            | ns                   | -          | -                         | ns
+...st/test4.hla | 002/004    | 0004-0011    | T_IDENTIFIER         | standard             | -          | -                         | standard
+...st/test4.hla | 002/013    | 0013-0013    | T_G0                 | {                    | -          | -                         | {
+...st/test4.hla | 004/005    | 0017-0018    | T_KEYWORD            | fn                   | -          | -                         | fn
+...st/test4.hla | 004/008    | 0020-0024    | T_IDENTIFIER         | print                | -          | -                         | print
+...st/test4.hla | 004/014    | 0026-0026    | T_P0                 | (                    | -          | -                         | (
+...st/test4.hla | 004/017    | 0029-0029    | T_P1                 | )                    | -          | -                         | )
+...st/test4.hla | 004/019    | 0031-0032    | T_RETURN             | ->                   | -          | -                         | ->
+...st/test4.hla | 004/022    | 0034-0035    | T_IDENTIFIER         | u8                   | -          | -                         | u8
+...st/test4.hla | 005/005    | 0038-0038    | T_G0                 | {                    | -          | -                         | {
+...st/test4.hla | 006/009    | 0042-0044    | T_KEYWORD            | ret                  | -          | -                         | ret
+...st/test4.hla | 006/013    | 0046-0046    | T_INTEGER            | 0                    | -          | -                         | 0
+...st/test4.hla | 006/015    | 0048-0048    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 007/005    | 0051-0051    | T_G1                 | }                    | -          | -                         | }
+...st/test4.hla | 007/007    | 0053-0053    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 009/001    | 0056-0056    | T_G1                 | }                    | -          | -                         | }
+...st/test4.hla | 009/003    | 0058-0058    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 012/001    | 0062-0067    | T_IDENTIFIER         | varu16               | -          | -                         | varu16
+...st/test4.hla | 012/008    | 0069-0069    | T_COLON              | :                    | -          | -                         | :
+...st/test4.hla | 012/010    | 0071-0073    | T_IDENTIFIER         | u16                  | -          | -                         | u16
+...st/test4.hla | 012/014    | 0075-0075    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 024/001    | 0167-0168    | T_KEYWORD            | fn                   | -          | -                         | fn
+...st/test4.hla | 024/004    | 0170-0173    | T_IDENTIFIER         | main                 | -          | -                         | main
+...st/test4.hla | 024/009    | 0175-0175    | T_P0                 | (                    | -          | -                         | (
+...st/test4.hla | 024/011    | 0177-0177    | T_P1                 | )                    | -          | -                         | )
+...st/test4.hla | 025/001    | 0179-0179    | T_G0                 | {                    | -          | -                         | {
+...st/test4.hla | 026/005    | 0182-0184    | T_IDENTIFIER         | vu8                  | -          | -                         | vu8
+...st/test4.hla | 026/011    | 0188-0188    | T_COLON              | :                    | -          | -                         | :
+...st/test4.hla | 026/013    | 0190-0191    | T_IDENTIFIER         | u8                   | -          | -                         | u8
+...st/test4.hla | 026/016    | 0193-0193    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 027/005    | 0196-0199    | T_IDENTIFIER         | vu16                 | -          | -                         | vu16
+...st/test4.hla | 027/011    | 0202-0202    | T_COLON              | :                    | -          | -                         | :
+...st/test4.hla | 027/013    | 0204-0206    | T_IDENTIFIER         | u16                  | -          | -                         | u16
+...st/test4.hla | 027/017    | 0208-0208    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 028/005    | 0211-0214    | T_IDENTIFIER         | vf40                 | -          | -                         | vf40
+...st/test4.hla | 028/011    | 0217-0217    | T_COLON              | :                    | -          | -                         | :
+...st/test4.hla | 028/013    | 0219-0221    | T_IDENTIFIER         | f40                  | -          | -                         | f40
+...st/test4.hla | 028/017    | 0223-0223    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 030/005    | 0227-0229    | T_IDENTIFIER         | pu8                  | -          | -                         | pu8
+...st/test4.hla | 030/011    | 0233-0233    | T_COLON              | :                    | -          | -                         | :
+...st/test4.hla | 030/013    | 0235-0235    | T_POINTER            | ^                    | -          | -                         | ^
+...st/test4.hla | 030/014    | 0236-0237    | T_IDENTIFIER         | u8                   | -          | -                         | u8
+...st/test4.hla | 030/017    | 0239-0239    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 031/005    | 0242-0245    | T_IDENTIFIER         | pu16                 | -          | -                         | pu16
+...st/test4.hla | 031/011    | 0248-0248    | T_COLON              | :                    | -          | -                         | :
+...st/test4.hla | 031/013    | 0250-0250    | T_POINTER            | ^                    | -          | -                         | ^
+...st/test4.hla | 031/014    | 0251-0253    | T_IDENTIFIER         | u16                  | -          | -                         | u16
+...st/test4.hla | 031/018    | 0255-0255    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 032/005    | 0258-0261    | T_IDENTIFIER         | pf40                 | -          | -                         | pf40
+...st/test4.hla | 032/011    | 0264-0264    | T_COLON              | :                    | -          | -                         | :
+...st/test4.hla | 032/013    | 0266-0266    | T_POINTER            | ^                    | -          | -                         | ^
+...st/test4.hla | 032/014    | 0267-0269    | T_IDENTIFIER         | f40                  | -          | -                         | f40
+...st/test4.hla | 032/018    | 0271-0271    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 033/005    | 0274-0277    | T_IDENTIFIER         | addr                 | -          | -                         | addr
+...st/test4.hla | 033/011    | 0280-0280    | T_COLON              | :                    | -          | -                         | :
+...st/test4.hla | 033/013    | 0282-0284    | T_IDENTIFIER         | u16                  | -          | -                         | u16
+...st/test4.hla | 033/017    | 0286-0286    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 035/005    | 0290-0296    | T_IDENTIFIER         | pString              | -          | -                         | pString
+...st/test4.hla | 035/015    | 0300-0300    | T_COLON              | :                    | -          | -                         | :
+...st/test4.hla | 035/017    | 0302-0302    | T_POINTER            | ^                    | -          | -                         | ^
+...st/test4.hla | 035/018    | 0303-0304    | T_IDENTIFIER         | u8                   | -          | -                         | u8
+...st/test4.hla | 035/021    | 0306-0306    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 038/005    | 0311-0317    | T_IDENTIFIER         | pString              | -          | -                         | pString
+...st/test4.hla | 038/013    | 0319-0320    | T_ASSIGN             | :=                   | -          | -                         | :=
+...st/test4.hla | 038/016    | 0322-0337    | T_STRING             | "claudio daffra"     | -          | -                         | "claudio daffra"
+...st/test4.hla | 038/033    | 0339-0339    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 041/005    | 0393-0416    | T_ASM_BLOCK          | { ... }              | -          | -                         | asm
+{
+
+		.std_print_nl
+	
+}
+...st/test4.hla | 043/007    | 0418-0418    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 045/005    | 0422-0424    | T_IDENTIFIER         | pu8                  | -          | -                         | pu8
+...st/test4.hla | 045/009    | 0426-0427    | T_ASSIGN             | :=                   | -          | -                         | :=
+...st/test4.hla | 045/012    | 0429-0429    | T_ADDRESS            | @                    | -          | -                         | @
+...st/test4.hla | 045/013    | 0430-0432    | T_IDENTIFIER         | vu8                  | -          | -                         | vu8
+...st/test4.hla | 045/016    | 0433-0433    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 047/005    | 0437-0491    | T_ASM_BLOCK          | { ... }              | -          | -                         | asm
+{
+
+		.fstack_word_get pu8
+		jsr std.print_u16_dec
+	
+}
+...st/test4.hla | 050/007    | 0493-0493    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 052/005    | 0547-0570    | T_ASM_BLOCK          | { ... }              | -          | -                         | asm
+{
+
+		.std_print_nl
+	
+}
+...st/test4.hla | 054/007    | 0572-0572    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 056/005    | 0576-0579    | T_IDENTIFIER         | pu16                 | -          | -                         | pu16
+...st/test4.hla | 056/010    | 0581-0582    | T_ASSIGN             | :=                   | -          | -                         | :=
+...st/test4.hla | 056/013    | 0584-0584    | T_ADDRESS            | @                    | -          | -                         | @
+...st/test4.hla | 056/014    | 0585-0588    | T_IDENTIFIER         | vu16                 | -          | -                         | vu16
+...st/test4.hla | 056/018    | 0589-0589    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 058/005    | 0593-0648    | T_ASM_BLOCK          | { ... }              | -          | -                         | asm
+{
+
+		.fstack_word_get pu16
+		jsr std.print_u16_dec
+	
+}
+...st/test4.hla | 061/007    | 0650-0650    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 063/005    | 0704-0727    | T_ASM_BLOCK          | { ... }              | -          | -                         | asm
+{
+
+		.std_print_nl
+	
+}
+...st/test4.hla | 065/007    | 0729-0729    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 067/005    | 0733-0736    | T_IDENTIFIER         | pf40                 | -          | -                         | pf40
+...st/test4.hla | 067/010    | 0738-0739    | T_ASSIGN             | :=                   | -          | -                         | :=
+...st/test4.hla | 067/013    | 0741-0741    | T_ADDRESS            | @                    | -          | -                         | @
+...st/test4.hla | 067/014    | 0742-0745    | T_IDENTIFIER         | vf40                 | -          | -                         | vf40
+...st/test4.hla | 067/018    | 0746-0746    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 069/005    | 0750-0805    | T_ASM_BLOCK          | { ... }              | -          | -                         | asm
+{
+
+		.fstack_word_get pf40
+		jsr std.print_u16_dec
+	
+}
+...st/test4.hla | 072/007    | 0807-0807    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 076/005    | 0858-0881    | T_ASM_BLOCK          | { ... }              | -          | -                         | asm
+{
+
+		.std_print_nl
+	
+}
+...st/test4.hla | 078/007    | 0883-0883    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 080/005    | 0887-0889    | T_IDENTIFIER         | pu8                  | -          | -                         | pu8
+...st/test4.hla | 080/009    | 0891-0892    | T_ASSIGN             | :=                   | -          | -                         | :=
+...st/test4.hla | 080/012    | 0894-0896    | T_IDENTIFIER         | pu8                  | -          | -                         | pu8
+...st/test4.hla | 080/015    | 0897-0897    | T_PLUS               | +                    | -          | -                         | +
+...st/test4.hla | 080/016    | 0898-0898    | T_INTEGER            | 1                    | -          | -                         | 1
+...st/test4.hla | 080/017    | 0899-0899    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 082/005    | 0903-0957    | T_ASM_BLOCK          | { ... }              | -          | -                         | asm
+{
+
+		.fstack_word_get pu8
+		jsr std.print_u16_dec
+	
+}
+...st/test4.hla | 085/007    | 0959-0959    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 089/005    | 1010-1033    | T_ASM_BLOCK          | { ... }              | -          | -                         | asm
+{
+
+		.std_print_nl
+	
+}
+...st/test4.hla | 091/007    | 1035-1035    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 093/005    | 1039-1042    | T_IDENTIFIER         | pu16                 | -          | -                         | pu16
+...st/test4.hla | 093/010    | 1044-1045    | T_ASSIGN             | :=                   | -          | -                         | :=
+...st/test4.hla | 093/013    | 1047-1050    | T_IDENTIFIER         | pu16                 | -          | -                         | pu16
+...st/test4.hla | 093/017    | 1051-1051    | T_PLUS               | +                    | -          | -                         | +
+...st/test4.hla | 093/018    | 1052-1052    | T_INTEGER            | 1                    | -          | -                         | 1
+...st/test4.hla | 093/019    | 1053-1053    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 095/005    | 1057-1112    | T_ASM_BLOCK          | { ... }              | -          | -                         | asm
+{
+
+		.fstack_word_get pu16
+		jsr std.print_u16_dec
+	
+}
+...st/test4.hla | 098/007    | 1114-1114    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 102/005    | 1165-1188    | T_ASM_BLOCK          | { ... }              | -          | -                         | asm
+{
+
+		.std_print_nl
+	
+}
+...st/test4.hla | 104/007    | 1190-1190    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 106/005    | 1194-1197    | T_IDENTIFIER         | pf40                 | -          | -                         | pf40
+...st/test4.hla | 106/010    | 1199-1200    | T_ASSIGN             | :=                   | -          | -                         | :=
+...st/test4.hla | 106/013    | 1202-1205    | T_IDENTIFIER         | pf40                 | -          | -                         | pf40
+...st/test4.hla | 106/017    | 1206-1206    | T_PLUS               | +                    | -          | -                         | +
+...st/test4.hla | 106/018    | 1207-1207    | T_INTEGER            | 1                    | -          | -                         | 1
+...st/test4.hla | 106/019    | 1208-1208    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 108/005    | 1212-1267    | T_ASM_BLOCK          | { ... }              | -          | -                         | asm
+{
+
+		.fstack_word_get pf40
+		jsr std.print_u16_dec
+	
+}
+...st/test4.hla | 111/007    | 1269-1269    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 115/005    | 1320-1326    | T_IDENTIFIER         | pString              | -          | -                         | pString
+...st/test4.hla | 115/013    | 1328-1329    | T_ASSIGN             | :=                   | -          | -                         | :=
+...st/test4.hla | 115/016    | 1331-1346    | T_STRING             | "claudio daffra"     | -          | -                         | "claudio daffra"
+...st/test4.hla | 115/033    | 1348-1348    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 116/005    | 1351-1408    | T_ASM_BLOCK          | { ... }              | -          | -                         | asm
+{
+
+		.fstack_word_get pString
+		jsr std.print_string
+	
+}
+...st/test4.hla | 119/007    | 1410-1410    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 123/005    | 1440-1447    | T_IDENTIFIER         | standard             | -          | -                         | standard
+...st/test4.hla | 123/013    | 1448-1449    | T_SCOPE_RES          | ::                   | -          | -                         | ::
+...st/test4.hla | 123/015    | 1450-1454    | T_IDENTIFIER         | print                | -          | -                         | print
+...st/test4.hla | 123/020    | 1455-1455    | T_P0                 | (                    | -          | -                         | (
+...st/test4.hla | 123/021    | 1456-1456    | T_P1                 | )                    | -          | -                         | )
+...st/test4.hla | 123/023    | 1458-1458    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 127/005    | 1488-1490    | T_KEYWORD            | ret                  | -          | -                         | ret
+...st/test4.hla | 127/009    | 1492-1492    | T_INTEGER            | 0                    | -          | -                         | 0
+...st/test4.hla | 127/011    | 1494-1494    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 128/001    | 1496-1496    | T_G1                 | }                    | -          | -                         | }
+...st/test4.hla | 128/003    | 1498-1498    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test4.hla | 130/002    | 1502-1502    | T_EOF                | -                    | -          | -                         | -
+--- End Lexer Debug ---

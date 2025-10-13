@@ -1,0 +1,44 @@
+# Compilatore C++ (MSVC)
+CXX = cl
+
+# Flag di compilazione
+# /std:c++latest -> usa C++23 (o la versione più recente supportata)
+# /W4           -> livello di avvisi alto (equivalente a -Wall di GCC)
+# /EHsc         -> gestione eccezioni standard
+# /Z7           -> info di debug
+CXXFLAGS = /std:c++latest /W4 /EHsc /Z7 /fsanitize=address 
+
+# Nome dell'eseguibile finale
+TARGET = hla.exe
+
+# Elenco sorgenti
+SOURCES = \
+    f40_converter.cpp \
+    compiler.cpp \
+    error.cpp \
+    streamer.cpp \
+    lexer.cpp \
+    parser.cpp \
+    symbolTable.cpp \
+    ast.cpp \
+    genCode.cpp \
+    optimizer.cpp \
+    main.cpp
+
+# Per nmake: genera l’elenco degli oggetti sostituendo .cpp con .obj
+OBJECTS = $(SOURCES:.cpp=.obj)
+
+# Regola predefinita
+all: $(TARGET)
+
+# Link dell'eseguibile
+$(TARGET): $(OBJECTS)
+	$(CXX) $(CXXFLAGS) $(OBJECTS) /Fe:$(TARGET)
+
+# Compilazione singolo file .cpp in .obj
+.cpp.obj:
+	$(CXX) $(CXXFLAGS) /c $< /Fo$@
+
+# Pulizia
+clean:
+	del /Q $(OBJECTS) $(TARGET)

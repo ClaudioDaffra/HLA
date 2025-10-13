@@ -1,0 +1,8 @@
+
+#define VAR1 123
+#define VAR2 $c000 + 0x1.8p1
+#define VAR3 VAR1 + VAR2 + 0xc456
+#define BIN1 0b00010000
+int x=/*multi line comment*/123;
+#define BIN2 %00010000
+

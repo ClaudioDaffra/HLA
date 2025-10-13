@@ -1,0 +1,29 @@
+--- Begin Symbol Table Dump ---
+
+-------------------------------------------------------------------------------------------------------------------------------
+| Identifier           | Kind       | Type             | Scope | Status | Offset | Location                                   |
+-------------------------------------------------------------------------------------------------------------------------------
+| aaa                  | VAR        | u16              | 0     | Global | -      | /home/claudio/HLA/tst/test.hla:002:005    |
+| --------------------------------------------------------------------------------------------------------------------------- |
+| main                 | FUNC (fn)  | u8               | 0     | Global | -      | /home/claudio/HLA/tst/test.hla:010:008    |
+| argc                 | VAR        | u8               | 2     | Local  | 0      | /home/claudio/HLA/tst/test.hla:010:008    |
+| argv                 | VAR        | ^^u16            | 2     | Local  | 1      | /home/claudio/HLA/tst/test.hla:010:008    |
+                                       puntatore ^ a 
+                                         puntatore ^ a 
+                                           u16
+| m1                   | VAR        | u16              | 2     | Local  | 3      | /home/claudio/HLA/tst/test.hla:012:009    |
+| m2                   | VAR        | u16              | 2     | Local  | 5      | /home/claudio/HLA/tst/test.hla:013:009    |
+| vs16                 | VAR        | s16              | 2     | Local  | 7      | /home/claudio/HLA/tst/test.hla:014:009    |
+| --------------------------------------------------------------------------------------------------------------------------- |
+| sub1                 | FUNC (fn)  | ^u8              | 0     | Global | -      | /home/claudio/HLA/tst/test.hla:004:008    |
+                                       puntatore ^ a 
+                                         u8
+| p1                   | VAR        | u16              | 1     | Local  | 3      | /home/claudio/HLA/tst/test.hla:006:009    |
+| p2                   | VAR        | ^u16             | 1     | Local  | 5      | /home/claudio/HLA/tst/test.hla:007:009    |
+                                       puntatore ^ a 
+                                         u16
+| x                    | VAR        | u8               | 1     | Local  | 0      | /home/claudio/HLA/tst/test.hla:004:015    |
+| y                    | VAR        | u16              | 1     | Local  | 1      | /home/claudio/HLA/tst/test.hla:004:020    |
+-------------------------------------------------------------------------------------------------------------------------------
+
+--- End Symbol Table Dump ---

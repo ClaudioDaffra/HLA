@@ -1,0 +1,210 @@
+--- Begin Lexer Debug ---
+File            | Row/Col    | Stream Pos   | Token Type           | Converted Value      | Suffix     | F40 Repr                  | Original Lexeme
+--------------------------------------------------------------------------------------------------------------------------------------------
+...tst/test.hla | 002/005    | 0002-0004    | T_IDENTIFIER         | aaa                  | -          | -                         | aaa
+...tst/test.hla | 002/009    | 0006-0006    | T_COLON              | :                    | -          | -                         | :
+...tst/test.hla | 002/011    | 0008-0010    | T_IDENTIFIER         | u16                  | -          | -                         | u16
+...tst/test.hla | 002/015    | 0012-0012    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...tst/test.hla | 004/005    | 0016-0017    | T_KEYWORD            | fn                   | -          | -                         | fn
+...tst/test.hla | 004/008    | 0019-0022    | T_IDENTIFIER         | sub1                 | -          | -                         | sub1
+...tst/test.hla | 004/013    | 0024-0024    | T_P0                 | (                    | -          | -                         | (
+...tst/test.hla | 004/015    | 0026-0026    | T_IDENTIFIER         | x                    | -          | -                         | x
+...tst/test.hla | 004/016    | 0027-0027    | T_COLON              | :                    | -          | -                         | :
+...tst/test.hla | 004/017    | 0028-0029    | T_IDENTIFIER         | u8                   | -          | -                         | u8
+...tst/test.hla | 004/019    | 0030-0030    | T_COMMA              | ,                    | -          | -                         | ,
+...tst/test.hla | 004/020    | 0031-0031    | T_IDENTIFIER         | y                    | -          | -                         | y
+...tst/test.hla | 004/021    | 0032-0032    | T_COLON              | :                    | -          | -                         | :
+...tst/test.hla | 004/022    | 0033-0035    | T_IDENTIFIER         | u16                  | -          | -                         | u16
+...tst/test.hla | 004/026    | 0037-0037    | T_P1                 | )                    | -          | -                         | )
+...tst/test.hla | 004/028    | 0039-0040    | T_RETURN             | ->                   | -          | -                         | ->
+...tst/test.hla | 004/031    | 0042-0042    | T_POINTER            | ^                    | -          | -                         | ^
+...tst/test.hla | 004/032    | 0043-0044    | T_IDENTIFIER         | u8                   | -          | -                         | u8
+...tst/test.hla | 005/005    | 0047-0047    | T_G0                 | {                    | -          | -                         | {
+...tst/test.hla | 006/009    | 0051-0052    | T_IDENTIFIER         | p1                   | -          | -                         | p1
+...tst/test.hla | 006/012    | 0054-0054    | T_COLON              | :                    | -          | -                         | :
+...tst/test.hla | 006/014    | 0056-0058    | T_IDENTIFIER         | u16                  | -          | -                         | u16
+...tst/test.hla | 006/018    | 0060-0060    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...tst/test.hla | 007/009    | 0064-0065    | T_IDENTIFIER         | p2                   | -          | -                         | p2
+...tst/test.hla | 007/012    | 0067-0067    | T_COLON              | :                    | -          | -                         | :
+...tst/test.hla | 007/014    | 0069-0069    | T_POINTER            | ^                    | -          | -                         | ^
+...tst/test.hla | 007/015    | 0070-0072    | T_IDENTIFIER         | u16                  | -          | -                         | u16
+...tst/test.hla | 007/019    | 0074-0074    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...tst/test.hla | 008/005    | 0077-0077    | T_G1                 | }                    | -          | -                         | }
+...tst/test.hla | 008/007    | 0079-0079    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...tst/test.hla | 010/005    | 0083-0084    | T_KEYWORD            | fn                   | -          | -                         | fn
+...tst/test.hla | 010/008    | 0086-0089    | T_IDENTIFIER         | main                 | -          | -                         | main
+...tst/test.hla | 010/013    | 0091-0091    | T_P0                 | (                    | -          | -                         | (
+...tst/test.hla | 010/015    | 0093-0093    | T_P1                 | )                    | -          | -                         | )
+...tst/test.hla | 011/005    | 0096-0096    | T_G0                 | {                    | -          | -                         | {
+...tst/test.hla | 012/009    | 0100-0101    | T_IDENTIFIER         | m1                   | -          | -                         | m1
+...tst/test.hla | 012/012    | 0103-0103    | T_COLON              | :                    | -          | -                         | :
+...tst/test.hla | 012/014    | 0105-0107    | T_IDENTIFIER         | u16                  | -          | -                         | u16
+...tst/test.hla | 012/018    | 0109-0109    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...tst/test.hla | 013/009    | 0113-0114    | T_IDENTIFIER         | m2                   | -          | -                         | m2
+...tst/test.hla | 013/012    | 0116-0116    | T_COLON              | :                    | -          | -                         | :
+...tst/test.hla | 013/014    | 0118-0120    | T_IDENTIFIER         | u16                  | -          | -                         | u16
+...tst/test.hla | 013/018    | 0122-0122    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...tst/test.hla | 014/009    | 0126-0129    | T_IDENTIFIER         | vs16                 | -          | -                         | vs16
+...tst/test.hla | 014/014    | 0131-0131    | T_COLON              | :                    | -          | -                         | :
+...tst/test.hla | 014/016    | 0133-0135    | T_IDENTIFIER         | s16                  | -          | -                         | s16
+...tst/test.hla | 014/020    | 0137-0137    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...tst/test.hla | 016/009    | 0142-0143    | T_IDENTIFIER         | m1                   | -          | -                         | m1
+...tst/test.hla | 016/012    | 0145-0146    | T_ASSIGN             | :=                   | -          | -                         | :=
+...tst/test.hla | 016/015    | 0148-0148    | T_INTEGER            | 1                    | -          | -                         | 1
+...tst/test.hla | 016/017    | 0150-0150    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...tst/test.hla | 018/009    | 0155-0157    | T_IDENTIFIER         | aaa                  | -          | -                         | aaa
+...tst/test.hla | 018/013    | 0159-0160    | T_ASSIGN             | :=                   | -          | -                         | :=
+...tst/test.hla | 018/016    | 0162-0162    | T_INTEGER            | 0                    | -          | -                         | 0
+...tst/test.hla | 018/018    | 0164-0164    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...tst/test.hla | 020/009    | 0176-0179    | T_IDENTIFIER         | vs16                 | -          | -                         | vs16
+...tst/test.hla | 020/014    | 0181-0182    | T_ASSIGN             | :=                   | -          | -                         | :=
+...tst/test.hla | 020/017    | 0184-0184    | T_MINUS              | -                    | -          | -                         | -
+...tst/test.hla | 020/018    | 0185-0185    | T_P0                 | (                    | -          | -                         | (
+...tst/test.hla | 020/019    | 0186-0186    | T_P0                 | (                    | -          | -                         | (
+...tst/test.hla | 020/020    | 0187-0187    | T_P0                 | (                    | -          | -                         | (
+...tst/test.hla | 020/021    | 0188-0188    | T_P0                 | (                    | -          | -                         | (
+...tst/test.hla | 020/022    | 0189-0192    | T_INTEGER            | 1234                 | -          | -                         | 1234
+...tst/test.hla | 020/026    | 0193-0193    | T_PLUS               | +                    | -          | -                         | +
+...tst/test.hla | 020/027    | 0194-0198    | T_INTEGER            | 45                   | u16        | -                         | 45u16
+...tst/test.hla | 020/032    | 0199-0199    | T_MUL                | *                    | -          | -                         | *
+...tst/test.hla | 020/033    | 0200-0204    | T_INTEGER            | 67                   | u16        | -                         | 67u16
+...tst/test.hla | 020/038    | 0205-0205    | T_P1                 | )                    | -          | -                         | )
+...tst/test.hla | 020/039    | 0206-0206    | T_DIV                | /                    | -          | -                         | /
+...tst/test.hla | 020/040    | 0207-0208    | T_INTEGER            | 34                   | -          | -                         | 34
+...tst/test.hla | 020/042    | 0209-0209    | T_MINUS              | -                    | -          | -                         | -
+...tst/test.hla | 020/043    | 0210-0210    | T_NOT                | !                    | -          | -                         | !
+...tst/test.hla | 020/044    | 0211-0211    | T_INTEGER            | 5                    | -          | -                         | 5
+...tst/test.hla | 020/045    | 0212-0212    | T_P1                 | )                    | -          | -                         | )
+...tst/test.hla | 020/046    | 0213-0213    | T_P1                 | )                    | -          | -                         | )
+...tst/test.hla | 020/047    | 0214-0215    | T_MOD                | %%                   | -          | -                         | %%
+...tst/test.hla | 020/049    | 0216-0216    | T_INTEGER            | 3                    | -          | -                         | 3
+...tst/test.hla | 020/050    | 0217-0217    | T_MINUS              | -                    | -          | -                         | -
+...tst/test.hla | 020/051    | 0218-0220    | T_IDENTIFIER         | aaa                  | -          | -                         | aaa
+...tst/test.hla | 020/054    | 0221-0221    | T_P1                 | )                    | -          | -                         | )
+...tst/test.hla | 020/055    | 0222-0222    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...tst/test.hla | 022/009    | 0227-0328    | T_ASM_BLOCK          | { ... }              | -          | -                         | asm
+{
+
+		    .fstack_word_get vs16
+			jsr std.print_s16_dec
+			lda #petscii.nl
+			jsr kernel.chrout
+		
+}
+...tst/test.hla | 027/010    | 0329-0329    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...tst/test.hla | 029/009    | 0344-0347    | T_IDENTIFIER         | vs16                 | -          | -                         | vs16
+...tst/test.hla | 029/014    | 0349-0350    | T_ASSIGN             | :=                   | -          | -                         | :=
+...tst/test.hla | 029/017    | 0352-0352    | T_MINUS              | -                    | -          | -                         | -
+...tst/test.hla | 029/018    | 0353-0353    | T_P0                 | (                    | -          | -                         | (
+...tst/test.hla | 029/019    | 0354-0354    | T_P0                 | (                    | -          | -                         | (
+...tst/test.hla | 029/020    | 0355-0355    | T_P0                 | (                    | -          | -                         | (
+...tst/test.hla | 029/021    | 0356-0360    | T_INTEGER            | 89                   | u16        | -                         | 89u16
+...tst/test.hla | 029/026    | 0361-0361    | T_MUL                | *                    | -          | -                         | *
+...tst/test.hla | 029/027    | 0362-0366    | T_INTEGER            | 32                   | u16        | -                         | 32u16
+...tst/test.hla | 029/032    | 0367-0367    | T_PLUS               | +                    | -          | -                         | +
+...tst/test.hla | 029/033    | 0368-0370    | T_INTEGER            | 456                  | -          | -                         | 456
+...tst/test.hla | 029/036    | 0371-0371    | T_DIV                | /                    | -          | -                         | /
+...tst/test.hla | 029/037    | 0372-0375    | T_INTEGER            | 3                    | u16        | -                         | 3u16
+...tst/test.hla | 029/041    | 0376-0376    | T_MINUS              | -                    | -          | -                         | -
+...tst/test.hla | 029/042    | 0377-0378    | T_INTEGER            | 12                   | -          | -                         | 12
+...tst/test.hla | 029/044    | 0379-0380    | T_MOD                | %%                   | -          | -                         | %%
+...tst/test.hla | 029/046    | 0381-0381    | T_INTEGER            | 5                    | -          | -                         | 5
+...tst/test.hla | 029/047    | 0382-0382    | T_P1                 | )                    | -          | -                         | )
+...tst/test.hla | 029/048    | 0383-0383    | T_P1                 | )                    | -          | -                         | )
+...tst/test.hla | 029/049    | 0384-0384    | T_DIV                | /                    | -          | -                         | /
+...tst/test.hla | 029/050    | 0385-0385    | T_INTEGER            | 2                    | -          | -                         | 2
+...tst/test.hla | 029/051    | 0386-0386    | T_P1                 | )                    | -          | -                         | )
+...tst/test.hla | 029/052    | 0387-0387    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...tst/test.hla | 031/009    | 0392-0493    | T_ASM_BLOCK          | { ... }              | -          | -                         | asm
+{
+
+		    .fstack_word_get vs16
+			jsr std.print_s16_dec
+			lda #petscii.nl
+			jsr kernel.chrout
+		
+}
+...tst/test.hla | 036/010    | 0494-0494    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...tst/test.hla | 038/009    | 0508-0511    | T_IDENTIFIER         | vs16                 | -          | -                         | vs16
+...tst/test.hla | 038/014    | 0513-0514    | T_ASSIGN             | :=                   | -          | -                         | :=
+...tst/test.hla | 038/017    | 0516-0516    | T_P0                 | (                    | -          | -                         | (
+...tst/test.hla | 038/018    | 0517-0517    | T_P0                 | (                    | -          | -                         | (
+...tst/test.hla | 038/019    | 0518-0518    | T_P0                 | (                    | -          | -                         | (
+...tst/test.hla | 038/020    | 0519-0519    | T_P0                 | (                    | -          | -                         | (
+...tst/test.hla | 038/021    | 0520-0523    | T_INTEGER            | 1024                 | -          | -                         | 1024
+...tst/test.hla | 038/025    | 0524-0524    | T_DIV                | /                    | -          | -                         | /
+...tst/test.hla | 038/026    | 0525-0528    | T_INTEGER            | 8                    | u16        | -                         | 8u16
+...tst/test.hla | 038/030    | 0529-0530    | T_MOD                | %%                   | -          | -                         | %%
+...tst/test.hla | 038/032    | 0531-0531    | T_INTEGER            | 3                    | -          | -                         | 3
+...tst/test.hla | 038/033    | 0532-0532    | T_PLUS               | +                    | -          | -                         | +
+...tst/test.hla | 038/034    | 0533-0534    | T_INTEGER            | 99                   | -          | -                         | 99
+...tst/test.hla | 038/036    | 0535-0535    | T_MUL                | *                    | -          | -                         | *
+...tst/test.hla | 038/037    | 0536-0539    | T_INTEGER            | 3                    | u16        | -                         | 3u16
+...tst/test.hla | 038/041    | 0540-0540    | T_P1                 | )                    | -          | -                         | )
+...tst/test.hla | 038/042    | 0541-0541    | T_MINUS              | -                    | -          | -                         | -
+...tst/test.hla | 038/043    | 0542-0544    | T_INTEGER            | 512                  | -          | -                         | 512
+...tst/test.hla | 038/046    | 0545-0545    | T_P1                 | )                    | -          | -                         | )
+...tst/test.hla | 038/047    | 0546-0546    | T_P1                 | )                    | -          | -                         | )
+...tst/test.hla | 038/048    | 0547-0547    | T_P1                 | )                    | -          | -                         | )
+...tst/test.hla | 038/049    | 0548-0548    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...tst/test.hla | 040/009    | 0553-0654    | T_ASM_BLOCK          | { ... }              | -          | -                         | asm
+{
+
+		    .fstack_word_get vs16
+			jsr std.print_s16_dec
+			lda #petscii.nl
+			jsr kernel.chrout
+		
+}
+...tst/test.hla | 045/010    | 0655-0655    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...tst/test.hla | 047/009    | 0669-0672    | T_IDENTIFIER         | vs16                 | -          | -                         | vs16
+...tst/test.hla | 047/014    | 0674-0675    | T_ASSIGN             | :=                   | -          | -                         | :=
+...tst/test.hla | 047/017    | 0677-0677    | T_P0                 | (                    | -          | -                         | (
+...tst/test.hla | 047/018    | 0678-0678    | T_P0                 | (                    | -          | -                         | (
+...tst/test.hla | 047/019    | 0679-0679    | T_P0                 | (                    | -          | -                         | (
+...tst/test.hla | 047/020    | 0680-0680    | T_P0                 | (                    | -          | -                         | (
+...tst/test.hla | 047/021    | 0681-0684    | T_INTEGER            | 1024                 | -          | -                         | 1024
+...tst/test.hla | 047/025    | 0685-0685    | T_DIV                | /                    | -          | -                         | /
+...tst/test.hla | 047/026    | 0686-0689    | T_INTEGER            | 8                    | u16        | -                         | 8u16
+...tst/test.hla | 047/030    | 0690-0691    | T_MOD                | %%                   | -          | -                         | %%
+...tst/test.hla | 047/032    | 0692-0695    | T_INTEGER            | 3                    | u16        | -                         | 3u16
+...tst/test.hla | 047/036    | 0696-0696    | T_PLUS               | +                    | -          | -                         | +
+...tst/test.hla | 047/037    | 0697-0701    | T_INTEGER            | 99                   | u16        | -                         | 99u16
+...tst/test.hla | 047/042    | 0702-0702    | T_MUL                | *                    | -          | -                         | *
+...tst/test.hla | 047/043    | 0703-0706    | T_INTEGER            | 3                    | u16        | -                         | 3u16
+...tst/test.hla | 047/047    | 0707-0707    | T_P1                 | )                    | -          | -                         | )
+...tst/test.hla | 047/048    | 0708-0708    | T_PLUS               | +                    | -          | -                         | +
+...tst/test.hla | 047/049    | 0709-0712    | T_INTEGER            | 1024                 | -          | -                         | 1024
+...tst/test.hla | 047/053    | 0713-0713    | T_P1                 | )                    | -          | -                         | )
+...tst/test.hla | 047/054    | 0714-0714    | T_P1                 | )                    | -          | -                         | )
+...tst/test.hla | 047/055    | 0715-0715    | T_P1                 | )                    | -          | -                         | )
+...tst/test.hla | 047/056    | 0716-0716    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...tst/test.hla | 049/009    | 0721-0822    | T_ASM_BLOCK          | { ... }              | -          | -                         | asm
+{
+
+		    .fstack_word_get vs16
+			jsr std.print_s16_dec
+			lda #petscii.nl
+			jsr kernel.chrout
+		
+}
+...tst/test.hla | 054/010    | 0823-0823    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...tst/test.hla | 056/009    | 0836-0838    | T_IDENTIFIER         | aaa                  | -          | -                         | aaa
+...tst/test.hla | 056/013    | 0840-0841    | T_ASSIGN             | :=                   | -          | -                         | :=
+...tst/test.hla | 056/016    | 0843-0845    | T_INTEGER            | 123                  | -          | -                         | 123
+...tst/test.hla | 056/019    | 0846-0846    | T_PLUS               | +                    | -          | -                         | +
+...tst/test.hla | 056/020    | 0847-0847    | T_INTEGER            | 2                    | -          | -                         | 2
+...tst/test.hla | 056/022    | 0849-0849    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...tst/test.hla | 058/009    | 0854-0927    | T_ASM_BLOCK          | { ... }              | -          | -                         | asm
+{
+
+			jsr std.print_s16_dec
+			lda #petscii.nl
+			jsr kernel.chrout
+		
+}
+...tst/test.hla | 062/010    | 0928-0928    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...tst/test.hla | 064/005    | 0932-0932    | T_G1                 | }                    | -          | -                         | }
+...tst/test.hla | 064/007    | 0934-0934    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...tst/test.hla | 066/002    | 0938-0938    | T_EOF                | -                    | -          | -                         | -
+--- End Lexer Debug ---

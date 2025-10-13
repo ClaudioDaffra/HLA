@@ -1,0 +1,66 @@
+
+	aaa : u16 ;
+		
+	fn sub1 ( x:u8,y:u16 ) -> ^u8 
+	{
+		p1 : u16 ;
+		p2 : ^u16 ;
+	} ;
+	
+	fn main ( )  
+	{
+		m1 : u16 ;
+		m2 : u16 ;
+		vs16 : s16 ;
+	
+		m1 := 1 ;
+
+		aaa := 0 ;
+
+		vs16 := -((((1234+45*67)/34-!5))%%3-aaa); // -1
+
+		asm {
+		    .fstack_word_get vs16
+			jsr std.print_s16_dec
+			lda #petscii.nl
+			jsr kernel.chrout
+		};
+
+		vs16 := -(((89u16*32+456/3-12%%5))/2); // -1499
+
+		asm {
+		    .fstack_word_get vs16
+			jsr std.print_s16_dec
+			lda #petscii.nl
+			jsr kernel.chrout
+		};
+
+		vs16 := ((((1024/8%%3+99*3)-512))); // -213
+
+		asm {
+		    .fstack_word_get vs16
+			jsr std.print_s16_dec
+			lda #petscii.nl
+			jsr kernel.chrout
+		};
+
+		vs16 := ((((1024/8%%3+99*3)+1024))); // 1323
+
+		asm {
+		    .fstack_word_get vs16
+			jsr std.print_s16_dec
+			lda #petscii.nl
+			jsr kernel.chrout
+		};
+
+		aaa := 123+2 ;	// 125
+		
+		asm {
+			jsr std.print_s16_dec
+			lda #petscii.nl
+			jsr kernel.chrout
+		};
+
+	} ;
+
+	 

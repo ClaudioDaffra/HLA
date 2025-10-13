@@ -1,0 +1,134 @@
+
+nMOSLib
+
+new Mos Lib
+
+i file sono source.asm
+in seguito sopo l'utilizzo del preprocessore vengono tradotti in source.tmp
+ed alla fine il programma filane sarà source.s
+che verrà compilato con 64tass
+
+nMOSLib/
+├── README.txt
+├── casm.bat
+├── casm.sh
+├── clean.sh
+├── doc
+│   └── develop.txt
+├── lib
+│   ├── c64
+│   │   ├── libBASIC_c64.asm
+│   │   └── libKERNEL_c64.asm
+│   ├── libCD.asm
+│   ├── libCD_c64.asm
+│   ├── libCD_vic20.asm
+│   ├── libMATH.asm
+│   ├── libSTDIO.asm
+│   └── vic20
+│       ├── libBASIC_vic20.asm
+│       └── libKERNEL_vic20.asm
+├── license.txt
+├── tst
+│   ├── libBASIC
+│   │   ├── basic000_c64.asm
+│   │   ├── basic000_vic20.asm
+│   │   ├── basic001_c64.asm
+│   │   └── basic001_vic20.asm
+│   ├── libCD
+│   │   ├── cd000_c64.asm
+│   │   ├── cd001_vic20.asm
+│   │   └── cd002_vic20_3k.asm
+│   ├── libKERNEL
+│   │   ├── kernel000_c64.asm
+│   │   ├── kernel001_vic20.asm
+│   │   └── kernel001_vic20_3K.asm
+│   ├── libMATH
+│   │   ├── math000_c64.asm
+│   │   ├── math000_vic20.asm
+│   │   ├── math001_c64.asm
+│   │   └── math001_vic20.asm
+│   └── libSTDIO
+│       ├── stdio000_c64.asm
+│       └── stdio000_vic20.asm
+├── vcasm.
+
+kernal 
+
+		chrout
+		
+basic
+
+		zero
+		
+		print_unsigned_integer
+		print_unsigned_char
+		print_fac1
+		conv_fac1_to_string
+		conv_u8_to_fac1
+		conv_s8_to_fac1
+		conv_s16_to_fac1
+		conv_fac1_to_DWord0
+		store5_fac1_xy
+		store_fac1_in_fac2_round
+		store_fac1_in_fac2
+		store_fac2_in_fac1
+		add_fac1
+		sub_fac1
+		mul_fac1
+		div_fac1
+		true
+		false
+		not_fac1
+		sgn_fac1_to_a
+		sgn_fac1_to_fac1
+
+math
+
+	Operazioni Logiche:
+
+		true: Restituisce il valore logico "vero" (1).
+		false: Restituisce il valore logico "falso" (0).
+		not_u8, not_s8, not_u8s8: Nega un byte (unsigned o signed).
+		not_u16, not_s16, not_u16s16: Nega una parola (unsigned o signed).
+		not_f40: Nega un numero in formato virgola mobile a 40 bit.
+		
+	Operazioni Aritmetiche (Byte):
+
+		mul_u8, mul_s8, mul_bytes: Moltiplica due byte (unsigned o signed).
+		mul_u8_into_u16: Moltiplica due byte unsigned restituendo un word.
+		div_s8: Divide un byte signed per un altro, restituendo quoziente e resto.
+		div_u8: Divide un byte unsigned per un altro, restituendo quoziente e resto.
+		mod_u8: Calcola il modulo (resto della divisione) tra due byte unsigned.
+		mod_s8: Calcola il modulo (resto della divisione) tra due byte signed.
+		
+	Operazioni Aritmetiche (Word):
+
+		add_u16, add_s16, add_u16s16: Somma due word (unsigned o signed).
+		mul_u16, mul_s16, mul_u16s16: Moltiplica due word (unsigned o signed) restituendo un double word (32 bit).
+		mul_u16s16_fast: Moltiplica due word unsigned in modo ottimizzato.
+		div_s16: Divide una parola signed per un'altra, restituendo quoziente e resto.
+		div_u16: Divide una parola unsigned per un'altra, restituendo quoziente e resto.
+		mod_u16: Calcola il modulo (resto della divisione) tra due word unsigned.
+		mod_s16: Calcola il modulo (resto della divisione) tra due word signed.
+		sub_u16, sub_s16, sub_u16s16: Sottrae due word (unsigned o signed).
+		neg_u16, neg_s16, neg_u16s16: Nega una parola (unsigned o signed).
+
+	Operazioni Aritmetiche (Virgola Mobile):
+
+		neg_f40: Nega un numero in formato virgola mobile a 40 bit.
+		add_f40: Somma due numeri in formato virgola mobile a 40 bit.
+		mul_f40: Moltiplica due numeri in formato virgola mobile a 40 bit.
+		div_f40, fac1_div_by_fac2, fac2_div_by_fac1: Divide due numeri in formato virgola mobile a 40 bit.
+		mod_f40: Calcola il modulo (resto della divisione) tra due numeri in formato virgola mobile a 40 bit.
+		sub_f40: Sottrae due numeri in formato virgola mobile a 40 bit.
+		swap_fac1_fac2: Scambia il contenuto dei registri fac1 e fac2 utilizzati per le operazioni in virgola mobile.
+		
+	Altre Subroutine:
+
+		math: Punto di ingresso per le subroutine matematiche.
+		internal_div_u8: Subroutine interna per la divisione di byte unsigned.
+		
+	Macro:
+
+		math_neg_u8: Macro per negare un byte unsigned.
+		math_neg_s8: Macro per negare un byte signed.

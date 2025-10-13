@@ -1,0 +1,42 @@
+--- Begin Symbol Table Dump ---
+
+-------------------------------------------------------------------------------------------------------------------------------
+| Identifier           | Kind       | Type             | Scope | Status | Offset | Location                                   |
+-------------------------------------------------------------------------------------------------------------------------------
+| a                    | VAR        | u16              | 0     | Global | -      | /home/claudio/HLA/tst/test2.hla:003:001   |
+| --------------------------------------------------------------------------------------------------------------------------- |
+| pa                   | VAR        | ^u16             | 0     | Global | -      | /home/claudio/HLA/tst/test2.hla:004:001   |
+                                       puntatore ^ a 
+                                         u16
+| --------------------------------------------------------------------------------------------------------------------------- |
+| main                 | FUNC (fn)  | u8               | 0     | Global | -      | /home/claudio/HLA/tst/test2.hla:014:004   |
+| argc                 | VAR        | u8               | 2     | Local  | 0      | /home/claudio/HLA/tst/test2.hla:014:004   |
+| argv                 | VAR        | ^^u16            | 2     | Local  | 1      | /home/claudio/HLA/tst/test2.hla:014:004   |
+                                       puntatore ^ a 
+                                         puntatore ^ a 
+                                           u16
+| m1                   | VAR        | s8               | 2     | Local  | 3      | /home/claudio/HLA/tst/test2.hla:016:005   |
+| m2                   | VAR        | u8               | 2     | Local  | 4      | /home/claudio/HLA/tst/test2.hla:017:005   |
+| m3                   | VAR        | s8               | 2     | Local  | 7      | /home/claudio/HLA/tst/test2.hla:019:005   |
+| m4                   | VAR        | s16              | 2     | Local  | 8      | /home/claudio/HLA/tst/test2.hla:020:005   |
+| pu8                  | VAR        | ^u8              | 2     | Local  | 5      | /home/claudio/HLA/tst/test2.hla:018:005   |
+                                       puntatore ^ a 
+                                         u8
+| r1                   | VAR        | f40              | 2     | Local  | 10     | /home/claudio/HLA/tst/test2.hla:021:005   |
+| r2                   | VAR        | f40              | 2     | Local  | 15     | /home/claudio/HLA/tst/test2.hla:022:005   |
+| r3                   | VAR        | f40              | 2     | Local  | 20     | /home/claudio/HLA/tst/test2.hla:023:005   |
+| x                    | VAR        | f40              | 2     | Local  | 25     | /home/claudio/HLA/tst/test2.hla:024:005   |
+| y                    | VAR        | f40              | 2     | Local  | 30     | /home/claudio/HLA/tst/test2.hla:025:005   |
+| z                    | VAR        | f40              | 2     | Local  | 35     | /home/claudio/HLA/tst/test2.hla:026:005   |
+| --------------------------------------------------------------------------------------------------------------------------- |
+| sub1                 | FUNC (fn)  | u8               | 0     | Global | -      | /home/claudio/HLA/tst/test2.hla:006:004   |
+| p1                   | VAR        | u16              | 1     | Local  | 8      | /home/claudio/HLA/tst/test2.hla:008:005   |
+| p2                   | VAR        | ^u16             | 1     | Local  | 10     | /home/claudio/HLA/tst/test2.hla:009:005   |
+                                       puntatore ^ a 
+                                         u16
+| pr                   | VAR        | f40              | 1     | Local  | 3      | /home/claudio/HLA/tst/test2.hla:006:024   |
+| px                   | VAR        | u8               | 1     | Local  | 0      | /home/claudio/HLA/tst/test2.hla:006:011   |
+| py                   | VAR        | u16              | 1     | Local  | 1      | /home/claudio/HLA/tst/test2.hla:006:017   |
+-------------------------------------------------------------------------------------------------------------------------------
+
+--- End Symbol Table Dump ---

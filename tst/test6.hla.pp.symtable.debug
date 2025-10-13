@@ -1,0 +1,35 @@
+--- Begin Symbol Table Dump ---
+
+-------------------------------------------------------------------------------------------------------------------------------
+| Identifier           | Kind       | Type             | Scope | Status | Offset | Location                                   |
+-------------------------------------------------------------------------------------------------------------------------------
+| standard             | NS         | N/A              | 0     | Global | -      | /home/claudio/HLA/tst/test6.hla:002:004   |
+| --------------------------------------------------------------------------------------------------------------------------- |
+| system               | NS         | N/A              | 0     | Global | -      | /home/claudio/HLA/tst/test6.hla:021:004   |
+| --------------------------------------------------------------------------------------------------------------------------- |
+| main                 | FUNC (fn)  | u8               | 0     | Global | -      | /home/claudio/HLA/tst/test6.hla:036:004   |
+| argc                 | VAR        | u8               | 2     | Local  | 0      | /home/claudio/HLA/tst/test6.hla:036:004   |
+| argv                 | VAR        | ^^u16            | 2     | Local  | 1      | /home/claudio/HLA/tst/test6.hla:036:004   |
+                                       puntatore ^ a 
+                                         puntatore ^ a 
+                                           u16
+| f1                   | VAR        | f40              | 2     | Local  | 3      | /home/claudio/HLA/tst/test6.hla:038:005   |
+| f2                   | VAR        | f40              | 2     | Local  | 8      | /home/claudio/HLA/tst/test6.hla:039:005   |
+| preal                | VAR        | ^f40             | 2     | Local  | 20     | /home/claudio/HLA/tst/test6.hla:045:005   |
+                                       puntatore ^ a 
+                                         f40
+| s161                 | VAR        | s16              | 2     | Local  | 16     | /home/claudio/HLA/tst/test6.hla:042:005   |
+| s81                  | VAR        | s8               | 2     | Local  | 22     | /home/claudio/HLA/tst/test6.hla:046:005   |
+| u161                 | VAR        | u16              | 2     | Local  | 14     | /home/claudio/HLA/tst/test6.hla:041:005   |
+| u81                  | VAR        | u8               | 2     | Local  | 13     | /home/claudio/HLA/tst/test6.hla:040:005   |
+| vbyte                | VAR        | u8               | 2     | Local  | 18     | /home/claudio/HLA/tst/test6.hla:043:005   |
+| vbyte2               | VAR        | u8               | 2     | Local  | 19     | /home/claudio/HLA/tst/test6.hla:044:005   |
+| --------------------------------------------------------------------------------------------------------------------------- |
+| standard.show        | FUNC (fn)  | u8               | 0     | Global | -      | /home/claudio/HLA/tst/test6.hla:004:009   |
+| b                    | VAR        | u8               | 1     | Local  | 0      | /home/claudio/HLA/tst/test6.hla:004:016   |
+| w                    | VAR        | u16              | 1     | Local  | 1      | /home/claudio/HLA/tst/test6.hla:004:021   |
+| --------------------------------------------------------------------------------------------------------------------------- |
+| system.poke          | FUNC (sys) | u8               | 0     | Global | -      | /home/claudio/HLA/tst/test6.hla:023:009   |
+-------------------------------------------------------------------------------------------------------------------------------
+
+--- End Symbol Table Dump ---

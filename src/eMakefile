@@ -1,0 +1,71 @@
+# Compilatore C++ di Emscripten
+CXX = em++
+
+# Flag di compilazione (per la creazione dei file oggetto .o)
+# -std=c++23: Abilita lo standard C++23
+# -Wall -pedantic -Wextra: Abilitano un set completo di warning per codice pulito
+# -O3: Livello massimo di ottimizzazione
+CXXFLAGS = -std=c++23 -Wall -pedantic -Wextra -O3
+
+# Flag per la fase di linking finale (quando si crea il file .js)
+# -s WASM=1: Genera un file .wasm separato per il codice
+# -s ENVIRONMENT=node: Specifica che il codice girerà in ambiente Node.js
+# -s FORCE_FILESYSTEM=1: Forza l'inclusione di tutto il supporto al filesystem, necessario per NODEFS
+# -s EXPORTED_RUNTIME_METHODS='["FS","callMain"]': Rende accessibili dall'esterno (dal nostro script run.js) l'oggetto FS e la funzione callMain
+LINKFLAGS = -s WASM=1 \
+            -s ENVIRONMENT=node \
+            -s FORCE_FILESYSTEM=1 \
+            -s EXPORTED_RUNTIME_METHODS='["FS","callMain"]' \
+            -lnodefs.js
+
+# Nome del file JavaScript di output generato da Emscripten
+TARGET = hla.js
+
+# Elenco di tutti i file sorgente .cpp del progetto
+SOURCES = \
+	f40_converter.cpp \
+	compiler.cpp \
+	error.cpp \
+	streamer.cpp \
+	lexer.cpp \
+	parser.cpp \
+	symbolTable.cpp \
+	ast.cpp \
+	genCode.cpp \
+	optimizer.cpp \
+	main.cpp
+
+# Deriva automaticamente i nomi dei file oggetto (.o) dai file sorgente
+OBJECTS = $(SOURCES:.cpp=.o)
+
+# Regola di default: eseguita quando si lancia 'make' senza specificare un target
+.PHONY: all
+all: $(TARGET)
+
+# Regola di linking: unisce tutti i file oggetto per creare l'output finale
+$(TARGET): $(OBJECTS)
+	@echo "--- Linking finale: creazione di $(TARGET) e $(TARGET:.js=.wasm) ---"
+	$(CXX) $(CXXFLAGS) $(OBJECTS) $(LINKFLAGS) -o $(TARGET)
+	@echo "--- Build completato con successo ---"
+
+# Regola di compilazione: come trasformare un singolo file .cpp in un .o
+%.o: %.cpp
+	@echo "Compilando $<..."
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+# Regola di pulizia: rimuove i file generati dalla compilazione
+.PHONY: clean
+clean:
+	@echo "--- Pulizia dei file generati... ---"
+	rm -f $(OBJECTS) $(TARGET) *.wasm
+
+# Regola di esecuzione: avvia il programma tramite il wrapper Node.js
+# NOTA: Assicurati di avere il file 'run.js' nella stessa cartella.
+# Puoi passare gli argomenti al programma modificando questa riga o da terminale.
+# Esempio da terminale: make run ARGS="-i file.in -o file.out"
+.PHONY: run
+run: $(TARGET)
+	@echo "--- Esecuzione del compilatore tramite Node.js wrapper ---"
+	node node_run_hla.js $(ARGS)
+
+

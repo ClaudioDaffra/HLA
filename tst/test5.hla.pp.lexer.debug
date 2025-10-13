@@ -1,0 +1,191 @@
+--- Begin Lexer Debug ---
+File            | Row/Col    | Stream Pos   | Token Type           | Converted Value      | Suffix     | F40 Repr                  | Original Lexeme
+--------------------------------------------------------------------------------------------------------------------------------------------
+...st/test5.hla | 009/001    | 0138-0140    | T_KEYWORD            | sys                  | -          | -                         | sys
+...st/test5.hla | 009/005    | 0142-0144    | T_IDENTIFIER         | uno                  | -          | -                         | uno
+...st/test5.hla | 009/008    | 0145-0145    | T_P0                 | (                    | -          | -                         | (
+...st/test5.hla | 009/011    | 0148-0151    | T_IDENTIFIER         | word                 | -          | -                         | word
+...st/test5.hla | 009/015    | 0152-0152    | T_COLON              | :                    | -          | -                         | :
+...st/test5.hla | 009/016    | 0153-0159    | T_IDENTIFIER         | zpWord0              | -          | -                         | zpWord0
+...st/test5.hla | 009/023    | 0160-0160    | T_COMMA              | ,                    | -          | -                         | ,
+...st/test5.hla | 009/024    | 0161-0164    | T_IDENTIFIER         | byte                 | -          | -                         | byte
+...st/test5.hla | 009/028    | 0165-0165    | T_COLON              | :                    | -          | -                         | :
+...st/test5.hla | 009/029    | 0166-0166    | T_IDENTIFIER         | a                    | -          | -                         | a
+...st/test5.hla | 009/031    | 0168-0168    | T_P1                 | )                    | -          | -                         | )
+...st/test5.hla | 010/001    | 0170-0170    | T_G0                 | {                    | -          | -                         | {
+...st/test5.hla | 011/005    | 0173-0189    | T_ASM_BLOCK          | { ... }              | -          | -                         | asm
+{
+
+		; body
+	
+}
+...st/test5.hla | 013/007    | 0191-0191    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test5.hla | 014/001    | 0193-0193    | T_G1                 | }                    | -          | -                         | }
+...st/test5.hla | 014/003    | 0195-0195    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test5.hla | 018/001    | 0226-0227    | T_KEYWORD            | fn                   | -          | -                         | fn
+...st/test5.hla | 018/004    | 0229-0231    | T_IDENTIFIER         | due                  | -          | -                         | due
+...st/test5.hla | 018/007    | 0232-0232    | T_P0                 | (                    | -          | -                         | (
+...st/test5.hla | 018/010    | 0235-0235    | T_IDENTIFIER         | x                    | -          | -                         | x
+...st/test5.hla | 018/011    | 0236-0236    | T_COLON              | :                    | -          | -                         | :
+...st/test5.hla | 018/012    | 0237-0239    | T_IDENTIFIER         | u16                  | -          | -                         | u16
+...st/test5.hla | 018/015    | 0240-0240    | T_COMMA              | ,                    | -          | -                         | ,
+...st/test5.hla | 018/016    | 0241-0241    | T_IDENTIFIER         | y                    | -          | -                         | y
+...st/test5.hla | 018/017    | 0242-0242    | T_COLON              | :                    | -          | -                         | :
+...st/test5.hla | 018/018    | 0243-0244    | T_IDENTIFIER         | u8                   | -          | -                         | u8
+...st/test5.hla | 018/021    | 0246-0246    | T_P1                 | )                    | -          | -                         | )
+...st/test5.hla | 018/023    | 0248-0249    | T_RETURN             | ->                   | -          | -                         | ->
+...st/test5.hla | 018/026    | 0251-0252    | T_IDENTIFIER         | u8                   | -          | -                         | u8
+...st/test5.hla | 019/001    | 0254-0254    | T_G0                 | {                    | -          | -                         | {
+...st/test5.hla | 021/005    | 0258-0260    | T_KEYWORD            | ret                  | -          | -                         | ret
+...st/test5.hla | 021/009    | 0262-0262    | T_INTEGER            | 0                    | -          | -                         | 0
+...st/test5.hla | 021/011    | 0264-0264    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test5.hla | 022/001    | 0266-0266    | T_G1                 | }                    | -          | -                         | }
+...st/test5.hla | 022/003    | 0268-0268    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test5.hla | 025/001    | 0311-0313    | T_KEYWORD            | sys                  | -          | -                         | sys
+...st/test5.hla | 025/005    | 0315-0321    | T_IDENTIFIER         | putchar              | -          | -                         | putchar
+...st/test5.hla | 025/012    | 0322-0322    | T_P0                 | (                    | -          | -                         | (
+...st/test5.hla | 025/013    | 0323-0323    | T_P1                 | )                    | -          | -                         | )
+...st/test5.hla | 026/001    | 0325-0325    | T_G0                 | {                    | -          | -                         | {
+...st/test5.hla | 027/005    | 0328-0355    | T_ASM_BLOCK          | { ... }              | -          | -                         | asm
+{
+
+		jsr kernel.chrout
+	
+}
+...st/test5.hla | 029/007    | 0357-0357    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test5.hla | 030/001    | 0359-0359    | T_G1                 | }                    | -          | -                         | }
+...st/test5.hla | 030/003    | 0361-0361    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test5.hla | 034/001    | 0430-1507    | T_ASM_BLOCK          | { ... }              | -          | -                         | asm
+{
+
+
+	sys_uno .proc	; (  a , y , x , zpWord0:u16 , fac1 , fac2 )
+
+		; 	save ret address
+		pla
+		sta ret_lo
+		pla
+		sta ret_hi
+
+		; param pop
+
+		; .....................
+
+		pla
+		sta $6e	;	110
+		pla
+		sta $6d	;	109
+		pla
+		sta $6c	;	108
+		pla
+		sta $6b	;	107
+		pla
+		sta $6a	;	106
+		pla
+		sta $69	;	105
+
+		; .....................
+
+		pla
+		sta $66
+		pla
+		sta $65
+		pla
+		sta $64
+		pla
+		sta $63
+		pla
+		sta $62
+		pla
+		sta $61
+
+		; .....................
+
+		pla
+		sta zpWord0+0
+		pla
+		sta zpWord0+1
+		pla
+
+		; .....................	param begin
+
+		pla
+		tax
+
+		pla
+		tay
+
+		pla
+
+		; .....................	param end
+
+		; ---------------- BEGIN
+
+		; body
+
+		; ---------------- END
+
+		; 	restore ret address
+		lda ret_hi
+		pha
+		lda ret_lo
+		pha
+
+		rts
+
+	ret_lo .byte 0
+	ret_hi .byte 0
+	.endproc
+
+	; ULTERIORE ESEMPIO : PASSAGGIO NON STANDARD HLA, CODIFICA MANUALE ATTENZIONE !!!
+
+	ln_uno .macro	; (  a:byte , zpWord0:word )
+
+		; ---------------- param
+
+		pla
+		sta zpWord0+0
+		pla
+		sta zpWord0+1
+		pla
+
+		; ---------------- BEGIN
+
+		;	body
+
+		; ---------------- END
+
+	.endmacro
+
+
+}
+...st/test5.hla | 134/003    | 1509-1509    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test5.hla | 136/001    | 1512-1513    | T_KEYWORD            | fn                   | -          | -                         | fn
+...st/test5.hla | 136/004    | 1515-1518    | T_IDENTIFIER         | main                 | -          | -                         | main
+...st/test5.hla | 136/009    | 1520-1520    | T_P0                 | (                    | -          | -                         | (
+...st/test5.hla | 136/011    | 1522-1522    | T_P1                 | )                    | -          | -                         | )
+...st/test5.hla | 137/001    | 1524-1524    | T_G0                 | {                    | -          | -                         | {
+...st/test5.hla | 139/005    | 1528-1609    | T_ASM_BLOCK          | { ... }              | -          | -                         | asm
+{
+
+
+		lda #1
+		pha
+
+		lda #<512
+		ldy #>512
+		pha
+		tya
+		pha
+
+		jsr sys_uno
+	
+}
+...st/test5.hla | 151/007    | 1611-1611    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test5.hla | 153/005    | 1615-1617    | T_KEYWORD            | ret                  | -          | -                         | ret
+...st/test5.hla | 153/009    | 1619-1619    | T_INTEGER            | 0                    | -          | -                         | 0
+...st/test5.hla | 153/011    | 1621-1621    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test5.hla | 154/001    | 1623-1623    | T_G1                 | }                    | -          | -                         | }
+...st/test5.hla | 154/003    | 1625-1625    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test5.hla | 156/002    | 1629-1629    | T_EOF                | -                    | -          | -                         | -
+--- End Lexer Debug ---

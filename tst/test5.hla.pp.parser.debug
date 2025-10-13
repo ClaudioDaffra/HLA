@@ -1,0 +1,160 @@
+--- Begin Parser Debug ---
+
+Parser execution log:
+
+  - Starting parser. Rule: <program> ::= <top_level_statement>*
+  - Entering parse_top_level_statement(). Rule: <top_level_statement> ::= <namespace> | <function> | <sys_function> | <declaration> | <const_declaration> | <asm_statement>
+  - Entering parse_sys_function().
+  -  -> Checking register 'a'. Used physical regs: [].
+  - No return type specified for sys function. Defaulting to 'u8'.
+  - Entering parse_statement(). Rule: <statement> ::= <declaration> | <const_declaration> | <asm_statement> | <expr_statement> | <return_statement>
+  - Entering parse_asm_statement(). Rule: <asm_statement> ::= T_ASM_BLOCK ';'
+  - Matched T_ASM_BLOCK. Expecting ';'.
+  - Matched ';'. Creating ND_ASM node.
+  - Finished parsing sys function 'uno'.
+  - Entering parse_top_level_statement(). Rule: <top_level_statement> ::= <namespace> | <function> | <sys_function> | <declaration> | <const_declaration> | <asm_statement>
+  - Entering parse_function(). Rule: <function> ::= 'fn' T_IDENTIFIER '(' <param_list> ')' '->' <type_specifier> '{' <block> '}' ';'
+  - Matched 'fn'. Expecting function name (T_IDENTIFIER).
+  - Final (mangled) function name is 'due'.
+  - Entered new scope for function 'due'.
+  - Matched function name 'due'. Expecting '('.
+  - Parsing <param_list>.
+  - Parsing a parameter. Rule: <param> ::= T_IDENTIFIER ':' <type_specifier>
+  - Entering parse_type_specifier(). Rule: <type_specifier> ::= T_POINTER* T_IDENTIFIER
+  - Expecting type identifier.
+  - Matched type identifier 'u16'.
+  - Parsed parameter 'x'.
+  - Parsing a parameter. Rule: <param> ::= T_IDENTIFIER ':' <type_specifier>
+  - Entering parse_type_specifier(). Rule: <type_specifier> ::= T_POINTER* T_IDENTIFIER
+  - Expecting type identifier.
+  - Matched type identifier 'u8'.
+  - Parsed parameter 'y'.
+  - Matched ')'. Expecting '->' for return type.
+  - Matched '->'. Expecting return type specifier.
+  - Entering parse_type_specifier(). Rule: <type_specifier> ::= T_POINTER* T_IDENTIFIER
+  - Expecting type identifier.
+  - Matched type identifier 'u8'.
+  - Created symbol for function 'due'. Expecting '{'.
+  - Parsing <block>.
+  - Entering parse_statement(). Rule: <statement> ::= <declaration> | <const_declaration> | <asm_statement> | <expr_statement> | <return_statement>
+  - Entering parse_return_statement(). Rule: <return_statement> ::= 'ret' <expr> ';'
+  - Entering parse_expr(), delegating to parse_assign(). Rule: <expr> ::= <assign>
+  - Entering parse_assign(). Rule: <assign> ::= <logical_or_and> (':=' <assign>)?
+  - Entering parse_logical_or_and(). Rule: <logical_or_and> ::= <equality> (('&&' | '||') <equality>)*
+  - Entering parse_equality(). Rule: <equality> ::= <relational> (('?=' | '!=') <relational>)*
+  - Entering parse_relational(). Rule: <relational> ::= <add_sub> (('<' | '<=' | '>' | '>=') <add_sub>)*
+  - Entering parse_add_sub(). Rule: <add_sub> ::= <mul_div_mod> (('+' | '-') <mul_div_mod>)*
+  - Entering parse_mul_div_mod(). Rule: <mul_div_mod> ::= <unary> (('*' | '/' | '%%') <unary>)*
+  - Entering parse_unary(). Rule: <unary> ::= ('++' | '--' | '+' | '-' | '!' | '@' | '^') <unary> | <postfix>
+  - No prefix unary operator found. Parsing <postfix>.
+  - Entering parse_postfix(). Rule: <postfix> ::= <term> ('++' | '--')*
+  - Entering parse_term(). Rule: <term> ::= T_INTEGER | T_REAL | T_STRING | <func_call> | T_IDENTIFIER | '(' <expr> ')'
+  - Matched T_INTEGER with no suffix. Value: 0. Inferring type.
+  - Inferred type: u8.
+  - Parsed initial <unary>, now looking for '*', '/' or '%%'.
+  - No more '*', '/' or '%%'. Exiting parse_mul_div_mod().
+  - Parsed initial <mul_div_mod>, now looking for '+' or '-'.
+  - No more '+' or '-'. Exiting parse_add_sub().
+  - Created ND_RETURN node.
+  - Finished parsing <block>. Expecting '}'.
+  - Checking for name conflicts with function 'due'.
+  - Calculating stack offsets for function 'due'.
+  -   - Symbol 'x', size 2, offset 0
+  -   - Symbol 'y', size 1, offset 2
+  - Total stack size for 'due': 3
+  - Matched '}' and left scope. Expecting ';'.
+  - Matched ';'. Function parsing complete.
+  - Entering parse_top_level_statement(). Rule: <top_level_statement> ::= <namespace> | <function> | <sys_function> | <declaration> | <const_declaration> | <asm_statement>
+  - Entering parse_sys_function().
+  - No return type specified for sys function. Defaulting to 'u8'.
+  - Entering parse_statement(). Rule: <statement> ::= <declaration> | <const_declaration> | <asm_statement> | <expr_statement> | <return_statement>
+  - Entering parse_asm_statement(). Rule: <asm_statement> ::= T_ASM_BLOCK ';'
+  - Matched T_ASM_BLOCK. Expecting ';'.
+  - Matched ';'. Creating ND_ASM node.
+  - Finished parsing sys function 'putchar'.
+  - Entering parse_top_level_statement(). Rule: <top_level_statement> ::= <namespace> | <function> | <sys_function> | <declaration> | <const_declaration> | <asm_statement>
+  - Entering parse_asm_statement(). Rule: <asm_statement> ::= T_ASM_BLOCK ';'
+  - Matched T_ASM_BLOCK. Expecting ';'.
+  - Matched ';'. Creating ND_ASM node.
+  - Entering parse_top_level_statement(). Rule: <top_level_statement> ::= <namespace> | <function> | <sys_function> | <declaration> | <const_declaration> | <asm_statement>
+  - Entering parse_function(). Rule: <function> ::= 'fn' T_IDENTIFIER '(' <param_list> ')' '->' <type_specifier> '{' <block> '}' ';'
+  - Matched 'fn'. Expecting function name (T_IDENTIFIER).
+  - Final (mangled) function name is 'main'.
+  - Entered new scope for function 'main'.
+  - Special handling for 'main' function.
+  - Matched '()'. Injecting default parameters for 'main'.
+  -   - Injected 'argc: u8'.
+  -   - Injected 'argv: ^^u16'.
+  - Forcing return type to 'u8' for 'main'.
+  - Created symbol for function 'main'. Expecting '{'.
+  - Parsing <block>.
+  - Entering parse_statement(). Rule: <statement> ::= <declaration> | <const_declaration> | <asm_statement> | <expr_statement> | <return_statement>
+  - Entering parse_asm_statement(). Rule: <asm_statement> ::= T_ASM_BLOCK ';'
+  - Matched T_ASM_BLOCK. Expecting ';'.
+  - Matched ';'. Creating ND_ASM node.
+  - Entering parse_statement(). Rule: <statement> ::= <declaration> | <const_declaration> | <asm_statement> | <expr_statement> | <return_statement>
+  - Entering parse_return_statement(). Rule: <return_statement> ::= 'ret' <expr> ';'
+  - Entering parse_expr(), delegating to parse_assign(). Rule: <expr> ::= <assign>
+  - Entering parse_assign(). Rule: <assign> ::= <logical_or_and> (':=' <assign>)?
+  - Entering parse_logical_or_and(). Rule: <logical_or_and> ::= <equality> (('&&' | '||') <equality>)*
+  - Entering parse_equality(). Rule: <equality> ::= <relational> (('?=' | '!=') <relational>)*
+  - Entering parse_relational(). Rule: <relational> ::= <add_sub> (('<' | '<=' | '>' | '>=') <add_sub>)*
+  - Entering parse_add_sub(). Rule: <add_sub> ::= <mul_div_mod> (('+' | '-') <mul_div_mod>)*
+  - Entering parse_mul_div_mod(). Rule: <mul_div_mod> ::= <unary> (('*' | '/' | '%%') <unary>)*
+  - Entering parse_unary(). Rule: <unary> ::= ('++' | '--' | '+' | '-' | '!' | '@' | '^') <unary> | <postfix>
+  - No prefix unary operator found. Parsing <postfix>.
+  - Entering parse_postfix(). Rule: <postfix> ::= <term> ('++' | '--')*
+  - Entering parse_term(). Rule: <term> ::= T_INTEGER | T_REAL | T_STRING | <func_call> | T_IDENTIFIER | '(' <expr> ')'
+  - Matched T_INTEGER with no suffix. Value: 0. Inferring type.
+  - Inferred type: u8.
+  - Parsed initial <unary>, now looking for '*', '/' or '%%'.
+  - No more '*', '/' or '%%'. Exiting parse_mul_div_mod().
+  - Parsed initial <mul_div_mod>, now looking for '+' or '-'.
+  - No more '+' or '-'. Exiting parse_add_sub().
+  - Created ND_RETURN node.
+  - Finished parsing <block>. Expecting '}'.
+  - Checking for name conflicts with function 'main'.
+  - Calculating stack offsets for function 'main'.
+  -   - Symbol 'argc', size 1, offset 0
+  -   - Symbol 'argv', size 2, offset 1
+  - Total stack size for 'main': 3
+  - Matched '}' and left scope. Expecting ';'.
+  - Matched ';'. Function parsing complete.
+  - Successfully matched EOF. Parsing complete.
+
+Grammar implemented (with implicit casting):
+
+  <program>             ::= <top_level_statement>*
+  <top_level_statement> ::= <namespace> | <function> | <sys_function> | <declaration> | <const_declaration> | <asm_statement>
+  <namespace>           ::= 'ns' T_IDENTIFIER '{' (<function> | <sys_function>)* '}' ';'
+  <function>            ::= 'fn' T_IDENTIFIER '(' <param_list> ')' '->' <type_specifier> '{' <block> '}' ';'
+  <sys_function>        ::= 'sys' T_IDENTIFIER '(' <sys_param_list> ')' ('->' <type_specifier>)? '{' <block> '}' ';'
+  <param_list>          ::= (<param> (',' <param>)*)?
+  <param>               ::= T_IDENTIFIER ':' <type_specifier>
+  <sys_param_list>      ::= (<sys_param> (',' <sys_param>)*)?
+  <sys_param>           ::= <sys_type> ':' <sys_destination>
+  <sys_type>            ::= 'byte' | 'word' | 'real'
+  <sys_destination>     ::= 'a' | 'x' | 'y' | 'ay' | 'ax' | 'xy' | 'fac1' | 'fac2' | T_IDENTIFIER
+  <type_specifier>      ::= T_POINTER* T_IDENTIFIER
+  <block>               ::= <statement>*
+  <statement>           ::= <declaration> | <const_declaration> | <asm_statement> | <expr_statement> | <return_statement>
+  <return_statement>    ::= 'ret' <expr> ';'
+  <declaration>         ::= T_IDENTIFIER ':' <type_specifier> ';'
+  <const_declaration>   ::= T_IDENTIFIER ':' <expr> ';'
+  <asm_statement>       ::= T_ASM_BLOCK ';'
+  <expr_statement>      ::= <expr> ';'
+  <expr>                ::= <assign>
+  <assign>              ::= <logical_or_and> (':=' <assign>)?
+  <logical_or_and>      ::= <equality> (('&&' | '||') <equality>)*
+  <equality>            ::= <relational> (('?=' | '!=') <relational>)*
+  <relational>          ::= <add_sub> (('<' | '<=' | '>' | '>=') <add_sub>)*
+  <add_sub>             ::= <mul_div_mod> (('+' | '-') <mul_div_mod>)*
+  <mul_div_mod>         ::= <unary> (('*' | '/' | '%%') <unary>)*
+  <unary>               ::= ('++' | '--' | '+' | '-' | '!' | '@' | '^') <unary> | <postfix>
+  <postfix>             ::= <term> ('++' | '--')*
+  <term>                ::= T_INTEGER | T_REAL | T_STRING | <func_call> | T_IDENTIFIER | '(' <expr> ')'
+  <func_call>           ::= (T_IDENTIFIER '::')? T_IDENTIFIER '(' <arg_list> ')'
+  <arg_list>            ::= (<expr> (',' <expr>)*)?
+
+
+--- End Parser Debug ---

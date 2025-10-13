@@ -1,0 +1,136 @@
+--- Begin Lexer Debug ---
+File            | Row/Col    | Stream Pos   | Token Type           | Converted Value      | Suffix     | F40 Repr                  | Original Lexeme
+--------------------------------------------------------------------------------------------------------------------------------------------
+...st/test7.hla | 004/001    | 0003-0005    | T_IDENTIFIER         | CG0                  | -          | -                         | CG0
+...st/test7.hla | 004/005    | 0007-0007    | T_COLON              | :                    | -          | -                         | :
+...st/test7.hla | 004/007    | 0009-0011    | T_REAL               |                      | -          | $00,$00,$00,$00,$00       | 0.0
+...st/test7.hla | 004/010    | 0012-0012    | T_PLUS               | +                    | -          | -                         | +
+...st/test7.hla | 004/011    | 0013-0015    | T_REAL               |                      | -          | $00,$00,$00,$00,$00       | 0.0
+...st/test7.hla | 004/015    | 0017-0017    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test7.hla | 006/001    | 0020-0022    | T_KEYWORD            | sys                  | -          | -                         | sys
+...st/test7.hla | 006/005    | 0024-0028    | T_IDENTIFIER         | prova                | -          | -                         | prova
+...st/test7.hla | 006/011    | 0030-0030    | T_P0                 | (                    | -          | -                         | (
+...st/test7.hla | 006/012    | 0031-0034    | T_IDENTIFIER         | real                 | -          | -                         | real
+...st/test7.hla | 006/016    | 0035-0035    | T_COLON              | :                    | -          | -                         | :
+...st/test7.hla | 006/017    | 0036-0039    | T_IDENTIFIER         | fac2                 | -          | -                         | fac2
+...st/test7.hla | 006/021    | 0040-0040    | T_COMMA              | ,                    | -          | -                         | ,
+...st/test7.hla | 006/022    | 0041-0044    | T_IDENTIFIER         | real                 | -          | -                         | real
+...st/test7.hla | 006/026    | 0045-0045    | T_COLON              | :                    | -          | -                         | :
+...st/test7.hla | 006/027    | 0046-0048    | T_IDENTIFIER         | r10                  | -          | -                         | r10
+...st/test7.hla | 006/030    | 0049-0049    | T_COMMA              | ,                    | -          | -                         | ,
+...st/test7.hla | 006/031    | 0050-0053    | T_IDENTIFIER         | byte                 | -          | -                         | byte
+...st/test7.hla | 006/035    | 0054-0054    | T_COLON              | :                    | -          | -                         | :
+...st/test7.hla | 006/036    | 0055-0056    | T_IDENTIFIER         | r9                   | -          | -                         | r9
+...st/test7.hla | 006/038    | 0057-0057    | T_COMMA              | ,                    | -          | -                         | ,
+...st/test7.hla | 006/039    | 0058-0061    | T_IDENTIFIER         | byte                 | -          | -                         | byte
+...st/test7.hla | 006/043    | 0062-0062    | T_COLON              | :                    | -          | -                         | :
+...st/test7.hla | 006/044    | 0063-0063    | T_IDENTIFIER         | x                    | -          | -                         | x
+...st/test7.hla | 006/045    | 0064-0064    | T_COMMA              | ,                    | -          | -                         | ,
+...st/test7.hla | 006/046    | 0065-0068    | T_IDENTIFIER         | word                 | -          | -                         | word
+...st/test7.hla | 006/050    | 0069-0069    | T_COLON              | :                    | -          | -                         | :
+...st/test7.hla | 006/051    | 0070-0071    | T_IDENTIFIER         | ay                   | -          | -                         | ay
+...st/test7.hla | 006/054    | 0073-0073    | T_P1                 | )                    | -          | -                         | )
+...st/test7.hla | 007/001    | 0075-0075    | T_G0                 | {                    | -          | -                         | {
+...st/test7.hla | 009/001    | 0097-0097    | T_G1                 | }                    | -          | -                         | }
+...st/test7.hla | 009/003    | 0099-0099    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test7.hla | 013/001    | 0104-0105    | T_KEYWORD            | fn                   | -          | -                         | fn
+...st/test7.hla | 013/004    | 0107-0110    | T_IDENTIFIER         | main                 | -          | -                         | main
+...st/test7.hla | 013/009    | 0112-0112    | T_P0                 | (                    | -          | -                         | (
+...st/test7.hla | 013/011    | 0114-0114    | T_P1                 | )                    | -          | -                         | )
+...st/test7.hla | 014/001    | 0116-0116    | T_G0                 | {                    | -          | -                         | {
+...st/test7.hla | 015/005    | 0122-0124    | T_IDENTIFIER         | au8                  | -          | -                         | au8
+...st/test7.hla | 015/013    | 0127-0127    | T_COLON              | :                    | -          | -                         | :
+...st/test7.hla | 015/017    | 0129-0130    | T_IDENTIFIER         | u8                   | -          | -                         | u8
+...st/test7.hla | 015/020    | 0132-0132    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test7.hla | 016/005    | 0135-0137    | T_IDENTIFIER         | bs8                  | -          | -                         | bs8
+...st/test7.hla | 016/013    | 0141-0141    | T_COLON              | :                    | -          | -                         | :
+...st/test7.hla | 016/017    | 0143-0144    | T_IDENTIFIER         | s8                   | -          | -                         | s8
+...st/test7.hla | 016/020    | 0146-0146    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test7.hla | 017/005    | 0152-0155    | T_IDENTIFIER         | au16                 | -          | -                         | au16
+...st/test7.hla | 017/013    | 0157-0157    | T_COLON              | :                    | -          | -                         | :
+...st/test7.hla | 017/017    | 0159-0161    | T_IDENTIFIER         | u16                  | -          | -                         | u16
+...st/test7.hla | 017/021    | 0163-0163    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test7.hla | 018/005    | 0166-0169    | T_IDENTIFIER         | bs16                 | -          | -                         | bs16
+...st/test7.hla | 018/013    | 0173-0173    | T_COLON              | :                    | -          | -                         | :
+...st/test7.hla | 018/017    | 0175-0177    | T_IDENTIFIER         | s16                  | -          | -                         | s16
+...st/test7.hla | 018/021    | 0179-0179    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test7.hla | 019/005    | 0182-0182    | T_IDENTIFIER         | f                    | -          | -                         | f
+...st/test7.hla | 019/013    | 0185-0185    | T_COLON              | :                    | -          | -                         | :
+...st/test7.hla | 019/017    | 0187-0188    | T_IDENTIFIER         | u8                   | -          | -                         | u8
+...st/test7.hla | 019/020    | 0190-0190    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test7.hla | 020/005    | 0193-0194    | T_IDENTIFIER         | fx                   | -          | -                         | fx
+...st/test7.hla | 020/013    | 0197-0197    | T_COLON              | :                    | -          | -                         | :
+...st/test7.hla | 020/017    | 0199-0201    | T_IDENTIFIER         | f40                  | -          | -                         | f40
+...st/test7.hla | 020/020    | 0202-0202    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test7.hla | 021/005    | 0205-0208    | T_IDENTIFIER         | CL34                 | -          | -                         | CL34
+...st/test7.hla | 021/013    | 0210-0210    | T_COLON              | :                    | -          | -                         | :
+...st/test7.hla | 021/017    | 0212-0213    | T_INTEGER            | 34                   | -          | -                         | 34
+...st/test7.hla | 021/020    | 0215-0215    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test7.hla | 022/005    | 0218-0220    | T_IDENTIFIER         | DFF                  | -          | -                         | DFF
+...st/test7.hla | 022/013    | 0223-0223    | T_COLON              | :                    | -          | -                         | :
+...st/test7.hla | 022/017    | 0225-0232    | T_STRING             | "daffra"             | -          | -                         | "daffra"
+...st/test7.hla | 022/025    | 0233-0233    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test7.hla | 023/005    | 0236-0237    | T_IDENTIFIER         | ps                   | -          | -                         | ps
+...st/test7.hla | 023/013    | 0240-0240    | T_COLON              | :                    | -          | -                         | :
+...st/test7.hla | 023/017    | 0242-0242    | T_POINTER            | ^                    | -          | -                         | ^
+...st/test7.hla | 023/018    | 0243-0244    | T_IDENTIFIER         | u8                   | -          | -                         | u8
+...st/test7.hla | 023/021    | 0246-0246    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test7.hla | 024/005    | 0249-0252    | T_IDENTIFIER         | LF40                 | -          | -                         | LF40
+...st/test7.hla | 024/013    | 0254-0254    | T_COLON              | :                    | -          | -                         | :
+...st/test7.hla | 024/017    | 0256-0258    | T_REAL               |                      | -          | $00,$00,$00,$00,$00       | 0.0
+...st/test7.hla | 024/021    | 0260-0260    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test7.hla | 139/001    | 1788-1839    | T_ASM_BLOCK          | { ... }              | -          | -                         | asm
+{
+
+	.std_print_nl
+	.std_print_nl
+	.std_print_nl
+
+}
+...st/test7.hla | 143/003    | 1841-1841    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test7.hla | 156/005    | 1997-1998    | T_IDENTIFIER         | fx                   | -          | -                         | fx
+...st/test7.hla | 156/007    | 1999-2000    | T_ASSIGN             | :=                   | -          | -                         | :=
+...st/test7.hla | 156/009    | 2001-2003    | T_IDENTIFIER         | CG0                  | -          | -                         | CG0
+...st/test7.hla | 156/012    | 2004-2004    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test7.hla | 157/005    | 2007-2007    | T_IDENTIFIER         | f                    | -          | -                         | f
+...st/test7.hla | 157/007    | 2009-2010    | T_ASSIGN             | :=                   | -          | -                         | :=
+...st/test7.hla | 157/010    | 2012-2012    | T_MINUS              | -                    | -          | -                         | -
+...st/test7.hla | 157/011    | 2013-2015    | T_REAL               |                      | -          | $00,$00,$00,$00,$00       | 0.0
+...st/test7.hla | 157/015    | 2017-2018    | T_AND                | &&                   | -          | -                         | &&
+...st/test7.hla | 157/018    | 2020-2021    | T_IDENTIFIER         | fx                   | -          | -                         | fx
+...st/test7.hla | 157/021    | 2023-2023    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test7.hla | 159/005    | 2027-2094    | T_ASM_BLOCK          | { ... }              | -          | -                         | asm
+{
+
+		.std_print_nl
+		.fstack_byte_get f
+		jsr std.print_u8_dec
+	
+}
+...st/test7.hla | 163/007    | 2096-2096    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test7.hla | 167/005    | 2153-2153    | T_IDENTIFIER         | f                    | -          | -                         | f
+...st/test7.hla | 167/007    | 2155-2156    | T_ASSIGN             | :=                   | -          | -                         | :=
+...st/test7.hla | 167/010    | 2158-2160    | T_REAL               | 1                    | -          | $81,$00,$00,$00,$00       | 1.0
+...st/test7.hla | 167/014    | 2162-2163    | T_AND                | &&                   | -          | -                         | &&
+...st/test7.hla | 167/017    | 2165-2168    | T_IDENTIFIER         | LF40                 | -          | -                         | LF40
+...st/test7.hla | 167/022    | 2170-2170    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test7.hla | 169/005    | 2174-2241    | T_ASM_BLOCK          | { ... }              | -          | -                         | asm
+{
+
+		.std_print_nl
+		.fstack_byte_get f
+		jsr std.print_u8_dec
+	
+}
+...st/test7.hla | 173/007    | 2243-2243    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test7.hla | 177/005    | 2301-2302    | T_IDENTIFIER         | ps                   | -          | -                         | ps
+...st/test7.hla | 177/008    | 2304-2305    | T_ASSIGN             | :=                   | -          | -                         | :=
+...st/test7.hla | 177/011    | 2307-2309    | T_IDENTIFIER         | DFF                  | -          | -                         | DFF
+...st/test7.hla | 177/015    | 2311-2311    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test7.hla | 179/005    | 2315-2317    | T_KEYWORD            | ret                  | -          | -                         | ret
+...st/test7.hla | 179/009    | 2319-2319    | T_INTEGER            | 0                    | -          | -                         | 0
+...st/test7.hla | 179/011    | 2321-2321    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test7.hla | 180/001    | 2323-2323    | T_G1                 | }                    | -          | -                         | }
+...st/test7.hla | 180/003    | 2325-2325    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test7.hla | 182/002    | 2329-2329    | T_EOF                | -                    | -          | -                         | -
+--- End Lexer Debug ---
