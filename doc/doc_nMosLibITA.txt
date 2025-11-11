@@ -1,0 +1,188 @@
+Documentazione di nMOSLib
+
+  Questa documentazione descrive le macro, le costanti e le subroutine fornite dalla libreria assembly nMOSLib
+  per i processori 6502/6510, con un focus specifico sulle piattaforme Commodore 64, VIC-20 e C128.
+
+  1. Libreria Principale (nMOSLib/lib/libCD.asm)
+
+  Questo file contiene definizioni e macro di uso generale, valide per tutte le piattaforme supportate.
+
+  Costanti di Piattaforma (`TARGET_*`)
+
+  Vengono definite delle costanti per identificare la piattaforma di destinazione durante la compilazione.
+
+   * TARGET_C64: 0
+   * TARGET_VIC20: 1
+   * TARGET_VIC20_3K: 2
+   * TARGET_VIC20_8K: 3
+   * TARGET_VIC20_16K: 4
+   * TARGET_VIC20_24K: 5
+   * TARGET_VIC20_32K: 6
+   * TARGET_C128: 7
+
+  Costanti di Memoria
+
+  Vengono definite le costanti per gli indirizzi di memoria specifici per ogni piattaforma (es.
+  PROGRAM_ADDRESS_C64, SCREEN_ADDRESS_C64, ecc.). Queste costanti vengono poi utilizzate nei file specifici
+  per ogni target.
+
+  Macro `PROGRAM`
+
+   * Scopo: Genera l'intestazione di un programma BASIC che esegue una routine in linguaggio macchina tramite
+     SYS.
+   * Sintassi: PROGRAM _TARGET, _BASIC_ADDRESS, _LINE
+   * Parametri:
+       * _TARGET: La piattaforma di destinazione (es. TARGET_C64).
+       * _BASIC_ADDRESS: L'indirizzo di inizio del programma BASIC.
+       * _LINE: Il numero di linea BASIC.
+   * Descrizione: Crea una linea BASIC (es. 2025 SYS 2061) che avvia il codice assembly. Inizializza lo stack
+     (fstack.init), imposta i flag del processore (clc, cld), chiama la routine main e infine termina con rts.
+
+  Macro di Caricamento
+
+   * load_mem_ay \1: Carica un indirizzo di memoria a 16 bit in A (low byte) e Y (high byte).
+   * load_imm_ay \1: Carica un valore immediato a 16 bit in A (low byte) e Y (high byte).
+   * load_address_ay \1: Alias per load_imm_ay.
+   * load_fac1 \1: Carica un numero in virgola mobile (5 byte) da un indirizzo di memoria nel FAC
+     (Floating-Point Accumulator #1).
+   * load_fac2 \1: Carica un numero in virgola mobile (5 byte) nel FAC #2.
+   * load_addr_zpWord0 \1: Carica un indirizzo nella locazione di zero page zpWord0.
+   * load_addr_zpWord1 \1: Carica un indirizzo nella locazione di zero page zpWord1.
+
+  Costanti PETSCII e Colori
+
+   * petscii.nl: 13 (New Line)
+   * petscii.clear_screen: 147
+   * color.black, color.white, ecc.: Costanti numeriche per i colori standard.
+
+  Locazioni Zero Page
+
+  Vengono definite etichette per le locazioni di zero page usate dalla libreria, come zpa, zpy, zpWord0,
+  zpDWord0, ecc. per un accesso più semplice e leggibile.
+
+  ---
+
+  2. Librerie Specifiche per Piattaforma
+
+  Questi file includono le routine del KERNAL e del BASIC specifiche per ogni computer.
+
+  `nMOSLib/lib/c64/` (Commodore 64)
+
+   * `libCD_c64.asm`:
+       * Definisce le costanti di memoria per il C64 (es. SCREEN = $0400).
+       * Include i file c64/libKERNEL_c64.asm, c64/libBASIC_c64.asm, e le librerie generali.
+   * `libKERNEL_c64.asm`:
+       * kernel.chrout ($F1CA -> $FFD2): Stampa il carattere contenuto nel registro A.
+   * `libBASIC_c64.asm`:
+       * basic.print_unsigned_integer ($BDCD): Stampa un intero senza segno. Input: X (low), A (high).
+       * basic.print_string ($AB1E): Stampa una stringa PETSCII terminata da zero. Input: A (low addr), Y (high
+         addr).
+       * basic.conv_fac1_to_string ($BDDD): Converte il valore nel FAC1 in una stringa ASCII a partire da $0100.
+       * basic.conv_u8_to_fac1 ($B3A2): Converte un byte (u8) in Y in un numero in virgola mobile nel FAC1.
+       * basic.conv_s16_to_fac1 ($B391): Converte un intero a 16 bit con segno in Y/A (lo/high) in un numero in
+         virgola mobile nel FAC1.
+       * basic.load5_fac1 ($BBA2): Carica 5 byte nel FAC1. Input: A/Y (indirizzo).
+       * basic.store5_fac1_xy ($BBD4): Salva 5 byte dal FAC1 in memoria. Input: X/Y (indirizzo).
+       * basic.add_fac1_kb ($B86A): Somma FAC1 e FAC2. FAC1 := FAC1 + FAC2.
+       * basic.mul_fac1_kb ($BA2B): Moltiplica FAC1 e FAC2. FAC1 := FAC1 * FAC2.
+       * basic.div_fac1_kb ($BB12): Divide FAC2 per FAC1. FAC1 := FAC2 / FAC1.
+       * basic.sub_fac1_kb ($B853): Sottrae FAC1 da FAC2. FAC1 := FAC2 - FAC1.
+       * basic.fac1_compare ($BC5B): Confronta FAC1 con un valore in memoria. Input: A/Y (indirizzo). Output
+         `A`: $00 (uguale), $01 (FAC1 > MEM), $FF (FAC1 < MEM).
+
+  `nMOSLib/lib/c128/` (Commodore 128)
+
+   * `libCD_c128.asm`:
+       * Definisce le costanti di memoria per il C128.
+       * Fornisce le macro c128_disable_rom e c128_enable_rom per gestire l'accesso alla RAM sotto la ROM.
+   * `libKERNEL_c128.asm`:
+       * kernel.chrout ($FFD2): Stampa il carattere in A.
+   * `libBASIC_c128.asm`:
+       * Le routine sono simili a quelle del C64 ma con indirizzi diversi (es. _print_unsigned_integer a $8E32).
+         Le routine sono wrappate per disabilitare/abilitare la ROM del BASIC.
+
+  `nMOSLib/lib/vic20/` (VIC-20)
+
+   * `libCD_vic20.asm`, `libCD_vic20_3k.asm`, ecc.:
+       * Definiscono le costanti di memoria per il VIC-20 e le sue varie espansioni di memoria.
+   * `libKERNEL_vic20.asm`:
+       * kernel.chrout ($E109 -> $FFD2): Stampa il carattere in A.
+   * `libBASIC_vic20.asm`:
+       * Le routine sono simili a quelle del C64 ma con indirizzi diversi (es. _print_unsigned_integer a $DDCD).
+
+  ---
+
+  3. Librerie di Uso Generale
+
+  `nMOSLib/lib/libFSTACK.asm` (Stack Veloce)
+
+  Questa libreria implementa uno stack software per la gestione delle variabili locali e dei parametri delle
+  funzioni.
+
+   * fstack.init: Inizializza i puntatori dello stack (sp e bp).
+   * fstack.alloc: Alloca un numero di byte sullo stack per le variabili locali. Input: A (dimensione).
+   * fstack.lea_bp: Calcola l'indirizzo effettivo di una variabile locale sullo stack. Input: A (offset).
+     Output: A/Y (indirizzo).
+   * fstack.push.byte, fstack.push.word, fstack.push.real: Esegue il push di un byte, una word o un numero reale
+     sullo stack.
+   * fstack.pop.byte, fstack.pop.word, fstack.pop.real: Esegue il pop di un byte, una word o un numero reale
+     dallo stack.
+   * Macro: Vengono fornite anche delle macro per semplificare l'uso dello stack, come fstack_push_byte_fast
+     (che usa pha), fstack_pop_byte_fast (che usa pla), e macro per salvare/ripristinare i puntatori dello stack
+     (fstack_push_sp_bp, fstack_pop_sp_bp).
+
+  `nMOSLib/lib/libMATH.asm` (Libreria Matematica)
+
+  Contiene routine per operazioni aritmetiche, logiche e di comparazione su diversi tipi di dati.
+
+   * Operazioni Aritmetiche:
+       * math.add_u16s16: Somma due word a 16 bit. ay := ay + zpWord0.
+       * math.sub_u16s16: Sottrae due word a 16 bit. ay := ay - zpWord0.
+       * math.mul_u8: Moltiplica due byte (8 bit) senza segno. Input: A, Y. Output: A/Y (word a 16 bit).
+       * math.mul_u16s16: Moltiplica due word (16 bit) senza segno. Input: A/Y, zpWord0. Output: zpDWord1 (dword
+         a 32 bit).
+       * math.div_u8: Divide due byte (8 bit) senza segno. Input: A (numeratore), Y (denominatore). Output: A
+         (quoziente), Y (resto).
+       * math.div_u16: Divide due word (16 bit) senza segno. Input: zpWord0 (dividendo), A/Y (divisore). Output:
+         A/Y (risultato), zpWord1 (resto).
+       * math.add_f40, math.sub_f40, math.mul_f40, math.div_f40: Operazioni su numeri in virgola mobile (usano
+         le routine del BASIC ROM).
+       * math.mod_f40: Calcola il modulo tra due numeri in virgola mobile.
+   * Operazioni Logiche e di Comparazione:
+       * math.not_u8s8, math.not_u16s16: Operatore NOT logico.
+       * math.u8_cmp_eq, math.u16_cmp_lt, math.s16_cmp_ge, ecc.: Un set completo di routine di comparazione (==,
+         !=, <, <=, >, >=) per interi a 8 e 16 bit, con e senza segno.
+       * math.f40_cmp_eq, math.f40_cmp_lt, ecc.: Comparazioni per numeri in virgola mobile.
+   * Operazioni Bitwise:
+       * shl_u8, shr_u8, shl_u16, shr_u16: Operazioni di shift a sinistra e a destra.
+
+  `nMOSLib/lib/libMEM.asm` (Gestione Memoria)
+
+  Routine per leggere e scrivere dalla memoria.
+
+   * mem.copy.short: Copia un piccolo blocco di memoria. Input: A (dimensione), zpWord0 (sorgente), zpWord1
+     (destinazione).
+   * mem.load.byte, mem.load.word, mem.load.real: Caricano un byte, una word o un numero reale da un indirizzo
+     di memoria. Input: A/Y (indirizzo).
+   * mem.store.byte, mem.store.word, mem.store.real: Scrivono un byte, una word o un numero reale a un indirizzo
+     di memoria.
+   * Versioni `_ptr`: Le routine come mem.load.byte_ptr leggono prima un indirizzo da zpWord0 e poi caricano il
+     dato da quell'indirizzo (indirizzamento indiretto).
+   * Macro: Vengono fornite macro come load_byte, store_word per semplificare le chiamate.
+
+  `nMOSLib/lib/libSTDIO.asm` (Input/Output Standard)
+
+  Routine per la stampa di dati formattati.
+
+   * std.print_uword: Stampa un intero senza segno. Input: A/Y.
+   * std.print_fac1: Stampa un numero in virgola mobile.
+   * std.print_u8_dec, std.print_s8_dec: Stampano un byte (8 bit) in formato decimale, con e senza segno.
+   * std.print_u16_dec, std.print_s16_dec: Stampano una word (16 bit) in formato decimale, con e senza segno.
+   * std.print_string: Stampa una stringa terminata da zero. Input: A/Y (indirizzo).
+   * Macro: std_print_nl per stampare un a capo.
+
+  ---
+
+  Questa documentazione dovrebbe fornire una buona panoramica delle funzionalità offerte dalla libreria
+  nMOSLib.
+  
