@@ -65,6 +65,9 @@ enum class NodeKind {
   ND_SHIFT_RIGHT,        // >>
   ND_LABEL,              // mylabel: ;
   ND_JUMP,               // jmp mylabel;
+  ND_LOOP,               // loop statement
+  ND_BREAK,              // break;
+  ND_CONTINUE,           // continue;
 };
 
 // Struttura per i parametri di una funzione 'sys'
@@ -94,7 +97,14 @@ public:
 
   // Block o Program
   // Per ND_IF: body=blocco then
+  // Per ND_LOOP: body=blocco loop
   std::unique_ptr<Node> body;
+
+  // Usato per ND_LOOP (for init)
+  std::unique_ptr<Node> init;
+
+  // Usato per ND_LOOP
+  bool is_post_check = false;
 
   // Usato se kind è ND_INTEGER_CONSTANT
   uint64_t val;

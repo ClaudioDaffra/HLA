@@ -115,7 +115,7 @@ This symbol is reserved for hexadecimal numbers.
     u8,s8,u16,s16,f40    ;
     ^ pointer            ;
     
-    x    :    u8         ;
+    x     :     u8       ;
     px    :    ^u8       ;
 ```
 
@@ -222,7 +222,7 @@ It is possible to use registers: a, x, y, ay, ax, xy, which must be declared at 
 
 Keywords: **byte**, **word**, **real**
 
-Since syscalls are raw, suffixes must also be specified if missing.
+Since syscalls are raw, suffixes must also be specified if missing. ( no recursive )
 
 ```
     sys test (byte:a,word:xy,real:fac1,real:r10,byte:r9 )  
@@ -301,9 +301,9 @@ In the **prj/** folder you can place sources and compile them with batch files f
 ```
 - statements: loop / break / continue / for ... next
 - structures, unions
+- Bit Field
 - arrays `[]`
 - operators ` . ^+ ^-`
-- keywords: `FOR`, `IF`...
 - `memory.alloc` (malloc), `memory.dealloc` (free)
 - improve asm {}
 - explicit cast  

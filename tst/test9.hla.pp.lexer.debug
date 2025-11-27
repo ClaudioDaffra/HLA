@@ -1,0 +1,109 @@
+--- Begin Lexer Debug ---
+File            | Row/Col    | Stream Pos   | Token Type           | Converted Value      | Suffix     | F40 Repr                  | Original Lexeme
+--------------------------------------------------------------------------------------------------------------------------------------------
+...st/test9.hla | 004/001    | 0003-0005    | T_IDENTIFIER         | CG0                  | -          | -                         | CG0
+...st/test9.hla | 004/005    | 0007-0007    | T_COLON              | :                    | -          | -                         | :
+...st/test9.hla | 004/007    | 0009-0011    | T_REAL               |                      | -          | $00,$00,$00,$00,$00       | 0.0
+...st/test9.hla | 004/010    | 0012-0012    | T_PLUS               | +                    | -          | -                         | +
+...st/test9.hla | 004/011    | 0013-0015    | T_REAL               |                      | -          | $00,$00,$00,$00,$00       | 0.0
+...st/test9.hla | 004/015    | 0017-0017    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test9.hla | 006/001    | 0020-0022    | T_KEYWORD            | sys                  | -          | -                         | sys
+...st/test9.hla | 006/005    | 0024-0028    | T_IDENTIFIER         | prova                | -          | -                         | prova
+...st/test9.hla | 006/011    | 0030-0030    | T_P0                 | (                    | -          | -                         | (
+...st/test9.hla | 006/012    | 0031-0034    | T_IDENTIFIER         | real                 | -          | -                         | real
+...st/test9.hla | 006/016    | 0035-0035    | T_COLON              | :                    | -          | -                         | :
+...st/test9.hla | 006/017    | 0036-0039    | T_IDENTIFIER         | fac2                 | -          | -                         | fac2
+...st/test9.hla | 006/021    | 0040-0040    | T_COMMA              | ,                    | -          | -                         | ,
+...st/test9.hla | 006/022    | 0041-0044    | T_IDENTIFIER         | real                 | -          | -                         | real
+...st/test9.hla | 006/026    | 0045-0045    | T_COLON              | :                    | -          | -                         | :
+...st/test9.hla | 006/027    | 0046-0048    | T_IDENTIFIER         | r10                  | -          | -                         | r10
+...st/test9.hla | 006/030    | 0049-0049    | T_COMMA              | ,                    | -          | -                         | ,
+...st/test9.hla | 006/031    | 0050-0053    | T_IDENTIFIER         | byte                 | -          | -                         | byte
+...st/test9.hla | 006/035    | 0054-0054    | T_COLON              | :                    | -          | -                         | :
+...st/test9.hla | 006/036    | 0055-0062    | T_IDENTIFIER         | hla_reg9             | -          | -                         | hla_reg9
+...st/test9.hla | 006/044    | 0063-0063    | T_COMMA              | ,                    | -          | -                         | ,
+...st/test9.hla | 006/045    | 0064-0067    | T_IDENTIFIER         | byte                 | -          | -                         | byte
+...st/test9.hla | 006/049    | 0068-0068    | T_COLON              | :                    | -          | -                         | :
+...st/test9.hla | 006/050    | 0069-0069    | T_IDENTIFIER         | x                    | -          | -                         | x
+...st/test9.hla | 006/051    | 0070-0070    | T_COMMA              | ,                    | -          | -                         | ,
+...st/test9.hla | 006/052    | 0071-0074    | T_IDENTIFIER         | word                 | -          | -                         | word
+...st/test9.hla | 006/056    | 0075-0075    | T_COLON              | :                    | -          | -                         | :
+...st/test9.hla | 006/057    | 0076-0077    | T_IDENTIFIER         | ay                   | -          | -                         | ay
+...st/test9.hla | 006/060    | 0079-0079    | T_P1                 | )                    | -          | -                         | )
+...st/test9.hla | 007/001    | 0081-0081    | T_G0                 | {                    | -          | -                         | {
+...st/test9.hla | 009/001    | 0103-0103    | T_G1                 | }                    | -          | -                         | }
+...st/test9.hla | 009/003    | 0105-0105    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test9.hla | 013/001    | 0110-0111    | T_KEYWORD            | fn                   | -          | -                         | fn
+...st/test9.hla | 013/004    | 0113-0116    | T_IDENTIFIER         | main                 | -          | -                         | main
+...st/test9.hla | 013/009    | 0118-0118    | T_P0                 | (                    | -          | -                         | (
+...st/test9.hla | 013/011    | 0120-0120    | T_P1                 | )                    | -          | -                         | )
+...st/test9.hla | 014/001    | 0122-0122    | T_G0                 | {                    | -          | -                         | {
+...st/test9.hla | 015/005    | 0128-0130    | T_IDENTIFIER         | au8                  | -          | -                         | au8
+...st/test9.hla | 015/013    | 0133-0133    | T_COLON              | :                    | -          | -                         | :
+...st/test9.hla | 015/017    | 0135-0136    | T_IDENTIFIER         | u8                   | -          | -                         | u8
+...st/test9.hla | 015/020    | 0138-0138    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test9.hla | 016/005    | 0141-0143    | T_IDENTIFIER         | bs8                  | -          | -                         | bs8
+...st/test9.hla | 016/013    | 0147-0147    | T_COLON              | :                    | -          | -                         | :
+...st/test9.hla | 016/017    | 0149-0150    | T_IDENTIFIER         | s8                   | -          | -                         | s8
+...st/test9.hla | 016/020    | 0152-0152    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test9.hla | 017/005    | 0158-0161    | T_IDENTIFIER         | au16                 | -          | -                         | au16
+...st/test9.hla | 017/013    | 0163-0163    | T_COLON              | :                    | -          | -                         | :
+...st/test9.hla | 017/017    | 0165-0167    | T_IDENTIFIER         | u16                  | -          | -                         | u16
+...st/test9.hla | 017/021    | 0169-0169    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test9.hla | 018/005    | 0172-0175    | T_IDENTIFIER         | bs16                 | -          | -                         | bs16
+...st/test9.hla | 018/013    | 0179-0179    | T_COLON              | :                    | -          | -                         | :
+...st/test9.hla | 018/017    | 0181-0183    | T_IDENTIFIER         | s16                  | -          | -                         | s16
+...st/test9.hla | 018/021    | 0185-0185    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test9.hla | 019/005    | 0188-0188    | T_IDENTIFIER         | f                    | -          | -                         | f
+...st/test9.hla | 019/013    | 0191-0191    | T_COLON              | :                    | -          | -                         | :
+...st/test9.hla | 019/017    | 0193-0194    | T_IDENTIFIER         | u8                   | -          | -                         | u8
+...st/test9.hla | 019/020    | 0196-0196    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test9.hla | 020/005    | 0199-0200    | T_IDENTIFIER         | fx                   | -          | -                         | fx
+...st/test9.hla | 020/013    | 0203-0203    | T_COLON              | :                    | -          | -                         | :
+...st/test9.hla | 020/017    | 0205-0207    | T_IDENTIFIER         | f40                  | -          | -                         | f40
+...st/test9.hla | 020/020    | 0208-0208    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test9.hla | 021/005    | 0211-0214    | T_IDENTIFIER         | CL34                 | -          | -                         | CL34
+...st/test9.hla | 021/013    | 0216-0216    | T_COLON              | :                    | -          | -                         | :
+...st/test9.hla | 021/017    | 0218-0219    | T_INTEGER            | 34                   | -          | -                         | 34
+...st/test9.hla | 021/020    | 0221-0221    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test9.hla | 022/005    | 0224-0226    | T_IDENTIFIER         | DFF                  | -          | -                         | DFF
+...st/test9.hla | 022/013    | 0229-0229    | T_COLON              | :                    | -          | -                         | :
+...st/test9.hla | 022/017    | 0231-0238    | T_STRING             | "daffra"             | -          | -                         | "daffra"
+...st/test9.hla | 022/025    | 0239-0239    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test9.hla | 023/005    | 0242-0243    | T_IDENTIFIER         | ps                   | -          | -                         | ps
+...st/test9.hla | 023/013    | 0246-0246    | T_COLON              | :                    | -          | -                         | :
+...st/test9.hla | 023/017    | 0248-0248    | T_POINTER            | ^                    | -          | -                         | ^
+...st/test9.hla | 023/018    | 0249-0250    | T_IDENTIFIER         | u8                   | -          | -                         | u8
+...st/test9.hla | 023/021    | 0252-0252    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test9.hla | 024/005    | 0255-0258    | T_IDENTIFIER         | LF40                 | -          | -                         | LF40
+...st/test9.hla | 024/013    | 0260-0260    | T_COLON              | :                    | -          | -                         | :
+...st/test9.hla | 024/017    | 0262-0264    | T_REAL               |                      | -          | $00,$00,$00,$00,$00       | 0.0
+...st/test9.hla | 024/021    | 0266-0266    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test9.hla | 029/005    | 0282-0284    | T_IDENTIFIER         | au8                  | -          | -                         | au8
+...st/test9.hla | 029/009    | 0286-0287    | T_ASSIGN             | :=                   | -          | -                         | :=
+...st/test9.hla | 029/012    | 0289-0289    | T_INTEGER            | 0                    | -          | -                         | 0
+...st/test9.hla | 029/014    | 0291-0291    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test9.hla | 065/005    | 0573-0574    | T_KEYWORD            | if                   | -          | -                         | if
+...st/test9.hla | 065/008    | 0576-0576    | T_P0                 | (                    | -          | -                         | (
+...st/test9.hla | 065/010    | 0578-0580    | T_IDENTIFIER         | au8                  | -          | -                         | au8
+...st/test9.hla | 065/014    | 0582-0583    | T_LESS_EQUAL_THAN    | <=                   | -          | -                         | <=
+...st/test9.hla | 065/017    | 0585-0585    | T_INTEGER            | 5                    | -          | -                         | 5
+...st/test9.hla | 065/019    | 0587-0587    | T_P1                 | )                    | -          | -                         | )
+...st/test9.hla | 066/005    | 0590-0590    | T_G0                 | {                    | -          | -                         | {
+...st/test9.hla | 067/009    | 0594-0627    | T_ASM_BLOCK          | { ... }              | -          | -                         | asm
+{
+
+			lda #'#'
+			jsr $ffd2
+		
+}
+...st/test9.hla | 070/010    | 0628-0628    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test9.hla | 071/005    | 0631-0631    | T_G1                 | }                    | -          | -                         | }
+...st/test9.hla | 071/007    | 0633-0633    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test9.hla | 073/005    | 0637-0639    | T_KEYWORD            | ret                  | -          | -                         | ret
+...st/test9.hla | 073/009    | 0641-0641    | T_INTEGER            | 0                    | -          | -                         | 0
+...st/test9.hla | 073/011    | 0643-0643    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test9.hla | 074/001    | 0645-0645    | T_G1                 | }                    | -          | -                         | }
+...st/test9.hla | 074/003    | 0647-0647    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...st/test9.hla | 076/002    | 0651-0651    | T_EOF                | -                    | -          | -                         | -
+--- End Lexer Debug ---

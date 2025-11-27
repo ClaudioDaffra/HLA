@@ -1,0 +1,29 @@
+fn main ( )  
+{
+    i : u8;
+    i := 0;
+    
+    // Test infinite loop with break
+    loop {
+        i++;
+        if (i > 5) {
+            break;
+        };
+    };
+    
+    // Test loop with continue
+    i := 0;
+    loop (i < 10) {
+        i++;
+        if (i < 5) {
+            continue;
+        };
+        // This part runs only if i >= 5
+        asm {
+            lda #'.'
+            jsr $ffd2
+        };
+    };
+    
+    ret 0;
+};

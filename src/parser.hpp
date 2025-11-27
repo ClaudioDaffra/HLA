@@ -66,6 +66,9 @@ private:
 	std::unique_ptr < Node > parse_label_statement();
 	std::unique_ptr < Node > parse_jump_statement();
 	std::unique_ptr < Node > parse_if_statement();
+	std::unique_ptr < Node > parse_loop_statement();
+	std::unique_ptr < Node > parse_break_statement();
+	std::unique_ptr < Node > parse_continue_statement();
 	std::unique_ptr < Node > parse_declaration();
 	std::unique_ptr < Node > parse_const_declaration();
 	std::shared_ptr < Type > parse_type_specifier();

@@ -1,0 +1,76 @@
+--- Begin Lexer Debug ---
+File            | Row/Col    | Stream Pos   | Token Type           | Converted Value      | Suffix     | F40 Repr                  | Original Lexeme
+--------------------------------------------------------------------------------------------------------------------------------------------
+...oop_full.hla | 001/001    | 0000-0001    | T_KEYWORD            | fn                   | -          | -                         | fn
+...oop_full.hla | 001/004    | 0003-0006    | T_IDENTIFIER         | main                 | -          | -                         | main
+...oop_full.hla | 001/009    | 0008-0008    | T_P0                 | (                    | -          | -                         | (
+...oop_full.hla | 001/011    | 0010-0010    | T_P1                 | )                    | -          | -                         | )
+...oop_full.hla | 002/001    | 0012-0012    | T_G0                 | {                    | -          | -                         | {
+...oop_full.hla | 003/005    | 0018-0018    | T_IDENTIFIER         | i                    | -          | -                         | i
+...oop_full.hla | 003/007    | 0020-0020    | T_COLON              | :                    | -          | -                         | :
+...oop_full.hla | 003/009    | 0022-0023    | T_IDENTIFIER         | u8                   | -          | -                         | u8
+...oop_full.hla | 003/011    | 0024-0024    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...oop_full.hla | 004/005    | 0030-0030    | T_IDENTIFIER         | i                    | -          | -                         | i
+...oop_full.hla | 004/007    | 0032-0033    | T_ASSIGN             | :=                   | -          | -                         | :=
+...oop_full.hla | 004/010    | 0035-0035    | T_INTEGER            | 0                    | -          | -                         | 0
+...oop_full.hla | 004/011    | 0036-0036    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...oop_full.hla | 007/005    | 0078-0081    | T_KEYWORD            | loop                 | -          | -                         | loop
+...oop_full.hla | 007/010    | 0083-0083    | T_G0                 | {                    | -          | -                         | {
+...oop_full.hla | 008/009    | 0093-0093    | T_IDENTIFIER         | i                    | -          | -                         | i
+...oop_full.hla | 008/010    | 0094-0095    | T_INCREMENT          | ++                   | -          | -                         | ++
+...oop_full.hla | 008/012    | 0096-0096    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...oop_full.hla | 009/009    | 0106-0107    | T_KEYWORD            | if                   | -          | -                         | if
+...oop_full.hla | 009/012    | 0109-0109    | T_P0                 | (                    | -          | -                         | (
+...oop_full.hla | 009/013    | 0110-0110    | T_IDENTIFIER         | i                    | -          | -                         | i
+...oop_full.hla | 009/015    | 0112-0112    | T_GREATER_THAN       | >                    | -          | -                         | >
+...oop_full.hla | 009/017    | 0114-0114    | T_INTEGER            | 5                    | -          | -                         | 5
+...oop_full.hla | 009/018    | 0115-0115    | T_P1                 | )                    | -          | -                         | )
+...oop_full.hla | 009/020    | 0117-0117    | T_G0                 | {                    | -          | -                         | {
+...oop_full.hla | 010/013    | 0131-0135    | T_KEYWORD            | break                | -          | -                         | break
+...oop_full.hla | 010/018    | 0136-0136    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...oop_full.hla | 011/009    | 0146-0146    | T_G1                 | }                    | -          | -                         | }
+...oop_full.hla | 011/010    | 0147-0147    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...oop_full.hla | 012/005    | 0153-0153    | T_G1                 | }                    | -          | -                         | }
+...oop_full.hla | 012/006    | 0154-0154    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...oop_full.hla | 015/005    | 0190-0190    | T_IDENTIFIER         | i                    | -          | -                         | i
+...oop_full.hla | 015/007    | 0192-0193    | T_ASSIGN             | :=                   | -          | -                         | :=
+...oop_full.hla | 015/010    | 0195-0195    | T_INTEGER            | 0                    | -          | -                         | 0
+...oop_full.hla | 015/011    | 0196-0196    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...oop_full.hla | 016/005    | 0202-0205    | T_KEYWORD            | loop                 | -          | -                         | loop
+...oop_full.hla | 016/010    | 0207-0207    | T_P0                 | (                    | -          | -                         | (
+...oop_full.hla | 016/011    | 0208-0208    | T_IDENTIFIER         | i                    | -          | -                         | i
+...oop_full.hla | 016/013    | 0210-0210    | T_LESS_THAN          | <                    | -          | -                         | <
+...oop_full.hla | 016/015    | 0212-0213    | T_INTEGER            | 10                   | -          | -                         | 10
+...oop_full.hla | 016/017    | 0214-0214    | T_P1                 | )                    | -          | -                         | )
+...oop_full.hla | 016/019    | 0216-0216    | T_G0                 | {                    | -          | -                         | {
+...oop_full.hla | 017/009    | 0226-0226    | T_IDENTIFIER         | i                    | -          | -                         | i
+...oop_full.hla | 017/010    | 0227-0228    | T_INCREMENT          | ++                   | -          | -                         | ++
+...oop_full.hla | 017/012    | 0229-0229    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...oop_full.hla | 018/009    | 0239-0240    | T_KEYWORD            | if                   | -          | -                         | if
+...oop_full.hla | 018/012    | 0242-0242    | T_P0                 | (                    | -          | -                         | (
+...oop_full.hla | 018/013    | 0243-0243    | T_IDENTIFIER         | i                    | -          | -                         | i
+...oop_full.hla | 018/015    | 0245-0245    | T_LESS_THAN          | <                    | -          | -                         | <
+...oop_full.hla | 018/017    | 0247-0247    | T_INTEGER            | 5                    | -          | -                         | 5
+...oop_full.hla | 018/018    | 0248-0248    | T_P1                 | )                    | -          | -                         | )
+...oop_full.hla | 018/020    | 0250-0250    | T_G0                 | {                    | -          | -                         | {
+...oop_full.hla | 019/013    | 0264-0271    | T_KEYWORD            | continue             | -          | -                         | continue
+...oop_full.hla | 019/021    | 0272-0272    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...oop_full.hla | 020/009    | 0282-0282    | T_G1                 | }                    | -          | -                         | }
+...oop_full.hla | 020/010    | 0283-0283    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...oop_full.hla | 022/009    | 0328-0385    | T_ASM_BLOCK          | { ... }              | -          | -                         | asm
+{
+
+            lda #'.'
+            jsr $ffd2
+        
+}
+...oop_full.hla | 025/010    | 0386-0386    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...oop_full.hla | 026/005    | 0392-0392    | T_G1                 | }                    | -          | -                         | }
+...oop_full.hla | 026/006    | 0393-0393    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...oop_full.hla | 028/005    | 0400-0402    | T_KEYWORD            | ret                  | -          | -                         | ret
+...oop_full.hla | 028/009    | 0404-0404    | T_INTEGER            | 0                    | -          | -                         | 0
+...oop_full.hla | 028/010    | 0405-0405    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...oop_full.hla | 029/001    | 0407-0407    | T_G1                 | }                    | -          | -                         | }
+...oop_full.hla | 029/002    | 0408-0408    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...oop_full.hla | 029/004    | 0410-0410    | T_EOF                | -                    | -          | -                         | -
+--- End Lexer Debug ---

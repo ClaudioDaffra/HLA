@@ -582,6 +582,18 @@ std::unique_ptr<Node> Parser::parse_statement()
 		return parse_if_statement();
 	}
 
+	if (match_keyword("loop")) {
+		return parse_loop_statement();
+	}
+
+	if (match_keyword("break")) {
+		return parse_break_statement();
+	}
+
+	if (match_keyword("continue")) {
+		return parse_continue_statement();
+	}
+
 	if (match_keyword("jmp")) {
 		return parse_jump_statement();
 	}
@@ -705,6 +717,149 @@ std::unique_ptr<Node> Parser::parse_jump_statement()
 	m_dump_log.push_back("Registered jump to label '" + target_name + "' for later verification.");
 
 	return node;
+}
+
+//
+// Analizza un'istruzione 'break'.
+// BNF: <break_statement> ::= "break" ";"
+//
+std::unique_ptr<Node> Parser::parse_break_statement()
+{
+	m_dump_log.push_back("Entering parse_break_statement().");
+	expect(eToken::T_SEMICOLON);
+	auto node = std::make_unique<Node>();
+	node->kind = NodeKind::ND_BREAK;
+	return node;
+}
+
+//
+// Analizza un'istruzione 'continue'.
+// BNF: <continue_statement> ::= "continue" ";"
+//
+std::unique_ptr<Node> Parser::parse_continue_statement()
+{
+	m_dump_log.push_back("Entering parse_continue_statement().");
+	expect(eToken::T_SEMICOLON);
+	auto node = std::make_unique<Node>();
+	node->kind = NodeKind::ND_CONTINUE;
+	return node;
+}
+
+//
+// Analizza un'istruzione 'loop'.
+// BNF: <loop_statement> ::= "loop" <header_options> <body_block> <footer_options> ";"
+//
+std::unique_ptr<Node> Parser::parse_loop_statement()
+{
+	m_dump_log.push_back("Entering parse_loop_statement().");
+
+	auto loop_node = std::make_unique<Node>();
+	loop_node->kind = NodeKind::ND_LOOP;
+
+	// --- Header Options ---
+	if (match(eToken::T_P0)) { // '('
+		m_dump_log.push_back("Parsing loop header.");
+
+		if (match(eToken::T_P1)) { // ')' -> Empty header (infinite loop or do-while)
+			m_dump_log.push_back("Empty loop header found.");
+		} 
+		else {
+			// Check for declaration: id : type
+			if (peek().type == eToken::T_IDENTIFIER && peek_next().type == eToken::T_COLON) {
+				m_dump_log.push_back("Parsing loop init (declaration).");
+				loop_node->init = parse_declaration(); // Consumes ';'
+				
+				m_dump_log.push_back("Parsing loop condition.");
+				loop_node->lhs = parse_expr();
+				expect(eToken::T_SEMICOLON);
+
+				m_dump_log.push_back("Parsing loop step.");
+				loop_node->rhs = parse_expr(); // Step is stored in rhs
+			}
+			else if (peek().type == eToken::T_SEMICOLON) {
+				// Empty init: ; cond ; step
+				consume(); // ';'
+				m_dump_log.push_back("Empty loop init.");
+				
+				m_dump_log.push_back("Parsing loop condition.");
+				loop_node->lhs = parse_expr();
+				expect(eToken::T_SEMICOLON);
+
+				m_dump_log.push_back("Parsing loop step.");
+				loop_node->rhs = parse_expr();
+			}
+			else {
+				// Expr... could be init (for) or condition (while)
+				auto expr = parse_expr();
+				
+				if (match(eToken::T_SEMICOLON)) {
+					// It was init: expr ; cond ; step
+					m_dump_log.push_back("Parsed loop init (expression).");
+					
+					// Wrap expression in a statement if needed, or just keep as init node
+					// But init needs to be executed. CodeGen expects init node.
+					// ND_EXPR_STMT wrapper might be useful if CodeGen expects a statement, 
+					// but here we can just assign the expr to init.
+					// However, CodeGen says: generate_node(node->init.get(), out);
+					// generate_node handles ND_ASSIGN etc.
+					loop_node->init = std::move(expr);
+
+					m_dump_log.push_back("Parsing loop condition.");
+					loop_node->lhs = parse_expr();
+					expect(eToken::T_SEMICOLON);
+
+					m_dump_log.push_back("Parsing loop step.");
+					loop_node->rhs = parse_expr();
+				}
+				else {
+					// It was condition: while(expr)
+					// No init, no step.
+					loop_node->lhs = std::move(expr);
+				}
+			}
+			expect(eToken::T_P1); // ')'
+		}
+	}
+
+	// --- Body Block ---
+	m_dump_log.push_back("Parsing loop body.");
+	expect(eToken::T_G0); // '{'
+	
+	Node body_head;
+	Node* current_stmt = &body_head;
+	while (peek().type != eToken::T_G1 && peek().type != eToken::T_EOF) {
+		try {
+			current_stmt->next = parse_statement();
+			if (current_stmt->next) {
+				current_stmt = current_stmt->next.get();
+			}
+		} catch (const ParseError&) {
+			m_in_panic_mode = true;
+			while(peek().type != eToken::T_EOF && peek().type != eToken::T_SEMICOLON) consume();
+			if (match(eToken::T_SEMICOLON)) m_in_panic_mode = false;
+		}
+	}
+	loop_node->body = std::move(body_head.next);
+	expect(eToken::T_G1); // '}'
+
+	// --- Footer Options ---
+	if (match(eToken::T_P0)) { // '(' -> Post-check (do-while)
+		m_dump_log.push_back("Parsing loop footer (post-check).");
+		
+		if (loop_node->lhs || loop_node->init || loop_node->rhs) {
+			const Token& tok = (*m_tokens)[m_current_pos - 1];
+			ErrorHandler::get().push_error(Sender::Parser, ErrorType::Error, Action::Parsing, ErrorMessage::UnexpectedToken, tok.row, tok.col, "Loop cannot have both header (init/pre-check) and footer (post-check).");
+			throw ParseError{};
+		}
+
+		loop_node->lhs = parse_expr(); // Condition is stored in lhs
+		loop_node->is_post_check = true;
+		
+		expect(eToken::T_P1); // ')'
+	}
+
+	expect(eToken::T_SEMICOLON);
+	return loop_node;
 }
 
 

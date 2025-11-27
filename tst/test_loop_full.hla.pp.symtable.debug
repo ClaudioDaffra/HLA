@@ -1,0 +1,15 @@
+--- Begin Symbol Table Dump ---
+
+-------------------------------------------------------------------------------------------------------------------------------
+| Identifier           | Kind       | Type             | Scope | Status | Offset | Location                                   |
+-------------------------------------------------------------------------------------------------------------------------------
+| main                 | FUNC (fn)  | u8               | 0     | Global | -      | ...udio/HLA/tst/test_loop_full.hla:001:004 |
+| argc                 | VAR        | u8               | 1     | Local  | 0      | ...udio/HLA/tst/test_loop_full.hla:001:004 |
+| argv                 | VAR        | ^^u16            | 1     | Local  | 1      | ...udio/HLA/tst/test_loop_full.hla:001:004 |
+                                       puntatore ^ a 
+                                         puntatore ^ a 
+                                           u16
+| i                    | VAR        | u8               | 1     | Local  | 3      | ...udio/HLA/tst/test_loop_full.hla:003:005 |
+-------------------------------------------------------------------------------------------------------------------------------
+
+--- End Symbol Table Dump ---

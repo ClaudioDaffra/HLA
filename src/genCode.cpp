@@ -536,21 +536,21 @@ void CodeGenerator::generate_inc_dec(Node* node, std::ofstream& out)
 	if (operand->type->kind == TypeKind::TYPE_POINTER) {
 		int size = operand->type->base ? operand->type->base->size : 1;
 		if (is_inc) {
-			out << "    inc_ptr_ay " << size << "\n";
+			out << "    .inc_ptr_ay " << size << "\n";
 		} else {
-			out << "    dec_ptr_ay " << size << "\n";
+			out << "    .dec_ptr_ay " << size << "\n";
 		}
 	} else if (operand->type->size == SIZEOF_BYTE) {
 		if (is_inc) {
-			out << "    inc_byte_a\n";
+			out << "    .inc_byte_a\n";
 		} else {
-			out << "    dec_byte_a\n";
+			out << "    .dec_byte_a\n";
 		}
 	} else { // Word
 		if (is_inc) {
-			out << "    inc_word_ay\n";
+			out << "    .inc_word_ay\n";
 		} else {
-			out << "    dec_word_ay\n";
+			out << "    .dec_word_ay\n";
 		}
 	}
 	out << "\n";
@@ -661,13 +661,15 @@ void CodeGenerator::generate_if_statement(Node* node, std::ofstream& out)
 	generate_node(condition, out);
 
 	// 2. Determina quale istruzione di salto usare
-	if (is_relational_op(condition->kind)) {
+	if (is_relational_op(condition->kind)) { 
 		// Caso 1: Operatore relazionale. Il risultato è 0 (falso) o 1 (vero) in A.
 		// BEQ salta se A è 0 (flag Z impostato), che significa che la condizione è falsa.
 		out << "\t; relational condition\n";
 		if (node->rhs) { // if-else
+			out << "    cmp #0 " << "\n";
 			out << "    beq " << else_label << "\n\n";
 		} else { // if-then
+			out << "    cmp #0 " << "\n";
 			out << "    beq " << endif_label << "\n\n";
 		}
 	} else {
@@ -680,8 +682,10 @@ void CodeGenerator::generate_if_statement(Node* node, std::ofstream& out)
 		// Dopo math.not_*, A è 1 se l'originale era 0 (falso).
 		// Quindi, BNE salta se la condizione originale era falsa.
 		if (node->rhs) { // if-else
+			out << "    cmp #0 " << "\n";
 			out << "    bne " << else_label << "\n\n";
 		} else { // if-then
+			out << "    cmp #0 " << "\n";
 			out << "    bne " << endif_label << "\n\n";
 		}
 	}
@@ -705,6 +709,136 @@ void CodeGenerator::generate_if_statement(Node* node, std::ofstream& out)
 	// 5. Genera l'etichetta finale endif
 	out << endif_label << ":\n";
 	out << "\t; end if {"<< if_label_gen << "}\n\n";
+}
+
+void CodeGenerator::generate_loop_statement(Node* node, std::ofstream& out)
+{
+	// 1. Generazione ID univoci (Incrementale)
+	int label_id = m_loop_label_counter++;
+	
+	// Creiamo le stringhe delle etichette
+	std::string start_label = std::format("loop_start_{:03}", label_id);
+	std::string step_label  = std::format("loop_step_{:03}", label_id); 
+	std::string end_label   = std::format("loop_end_{:03}", label_id);
+
+	out << "\t; loop construction {" << label_id << "}\n";
+
+	// 2. PUSH nello Stack (Gestione Scope/Nesting)
+	m_loop_stack.push_back({start_label, step_label, end_label});
+
+	// --- Init (solo per For) ---
+	if (node->init) {
+		out << "\t; loop init\n";
+		generate_node(node->init.get(), out);
+	}
+
+	// --- Start Label ---
+	out << start_label << ":\n";
+
+	// --- Pre-Check Condition ---
+	if (!node->is_post_check && node->lhs) {
+		Node* condition = node->lhs.get();
+		
+		// --- OTTIMIZZAZIONE: Constant Folding ---
+		if (condition->kind == NodeKind::ND_INTEGER_CONSTANT) {
+			if (condition->val == 0) {
+				out << "\t; OPTIMIZATION: Loop condition is constant 0 (false). Skipping body.\n";
+				out << "\t jmp " << end_label << "\n\n";
+			}
+			// Se è val != 0 (es. while(1)), non generiamo codice di controllo.
+		} 
+		else {
+			out << "\t; loop pre-condition check\n";
+			generate_node(condition, out);
+
+			if (is_relational_op(condition->kind)) {
+				// Relational: A=0 (False), A=1 (True). BEQ salta se False.
+				out << "    cmp #0 " << "\n";				
+				out << "    beq " << end_label << "\n";
+			} else {
+				// Expression: Usiamo math.not per invertire logica
+				std::string suffix = get_type_suffix(condition->type);
+				out << "    jsr math.not_" << suffix << "\n";
+				// BNE salta se A!=0 (quindi originale Falso).
+				out << "    cmp #0 " << "\n";	
+				out << "    bne " << end_label << "\n";
+			}
+			out << "\n";
+		}
+	}
+
+	// --- Body ---
+	out << "\t; loop body\n";
+	for (Node* stmt = node->body.get(); stmt; stmt = stmt->next.get()) {
+		generate_node(stmt, out);
+	}
+
+	// --- Step Label ---
+	// Qui atterra il 'continue'
+	out << step_label << ":\n";
+
+	// --- Step Expression (solo per For) ---
+	if (node->rhs) {
+		out << "\t; loop step\n";
+		generate_node(node->rhs.get(), out);
+	}
+
+	// --- Post-Check Condition / Loop Back ---
+	if (node->is_post_check && node->lhs) {
+		// do-while logic
+		Node* condition = node->lhs.get();
+		out << "\t; loop post-condition check\n";
+		generate_node(condition, out);
+
+		// Qui la logica è inversa: Saltiamo a start se è VERO.
+		if (is_relational_op(condition->kind)) {
+			// A=1 (True). BNE salta a start se True (Z=0).
+			out << "    cmp #0\n"; 
+			out << "    bne " << start_label << "\n";
+		} else {
+			// Expression generica. Se A!=0 (True), ripeti.
+			out << "    cmp #0\n"; 
+			out << "    bne " << start_label << "\n";
+		}
+	} 
+	else {
+		// Salto incondizionato (per while, for, loop infinito)
+		out << "    jmp " << start_label << "\n";
+	}
+
+	// --- End Label ---
+	// Qui atterra il 'break'
+	out << end_label << ":\n";
+	out << "\t; end loop {" << label_id << "}\n\n";
+
+	// 3. POP dallo Stack
+	m_loop_stack.pop_back();
+}
+
+void CodeGenerator::generate_break_statement(Node* node, std::ofstream& out)
+{
+	if (m_loop_stack.empty()) {
+		ErrorHandler::get().push_error(Sender::Emitter, ErrorType::Error, Action::Coding, ErrorMessage::UnexpectedToken, 0, 0, "'break' statement not inside a loop.");
+		return;
+	}
+
+	const auto& current_loop = m_loop_stack.back();
+	
+	out << "\t; break\n";
+	out << "    jmp " << current_loop.end_label << "\n\n";
+}
+
+void CodeGenerator::generate_continue_statement(Node* node, std::ofstream& out)
+{
+	if (m_loop_stack.empty()) {
+		ErrorHandler::get().push_error(Sender::Emitter, ErrorType::Error, Action::Coding, ErrorMessage::UnexpectedToken, 0, 0, "'continue' statement not inside a loop.");
+		return;
+	}
+
+	const auto& current_loop = m_loop_stack.back();
+
+	out << "\t; continue\n";
+	out << "    jmp " << current_loop.step_label << "\n\n";
 }
 
 
@@ -1040,6 +1174,18 @@ void CodeGenerator::generate_node(Node* node, std::ofstream& out)
 
 		case NodeKind::ND_IF:
 			generate_if_statement(node, out);
+			break;
+
+		case NodeKind::ND_LOOP:
+			generate_loop_statement(node, out);
+			break;
+
+		case NodeKind::ND_BREAK:
+			generate_break_statement(node, out);
+			break;
+
+		case NodeKind::ND_CONTINUE:
+			generate_continue_statement(node, out);
 			break;
 
 		case NodeKind::ND_LABEL:

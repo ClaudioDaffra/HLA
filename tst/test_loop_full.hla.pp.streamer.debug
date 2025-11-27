@@ -1,0 +1,414 @@
+--- Begin Debug Stream ---
+[File           ][Row/Col  ][Lvl][Hex Val  ] : Char
+------------------------------------------------------
+[...oop_full.hla][0001/0001][00] 0x66      : f
+[...oop_full.hla][0001/0002][00] 0x6E      : n
+[...oop_full.hla][0001/0003][00] 0x20      :  
+[...oop_full.hla][0001/0004][00] 0x6D      : m
+[...oop_full.hla][0001/0005][00] 0x61      : a
+[...oop_full.hla][0001/0006][00] 0x69      : i
+[...oop_full.hla][0001/0007][00] 0x6E      : n
+[...oop_full.hla][0001/0008][00] 0x20      :  
+[...oop_full.hla][0001/0009][00] 0x28      : (
+[...oop_full.hla][0001/0010][00] 0x20      :  
+[...oop_full.hla][0001/0011][00] 0x29      : )
+[...oop_full.hla][0001/0012][00] 0xA       : \n
+[...oop_full.hla][0002/0001][00] 0x7B      : {
+[...oop_full.hla][0002/0002][00] 0xA       : \n
+[...oop_full.hla][0003/0001][00] 0x20      :  
+[...oop_full.hla][0003/0002][00] 0x20      :  
+[...oop_full.hla][0003/0003][00] 0x20      :  
+[...oop_full.hla][0003/0004][00] 0x20      :  
+[...oop_full.hla][0003/0005][00] 0x69      : i
+[...oop_full.hla][0003/0006][00] 0x20      :  
+[...oop_full.hla][0003/0007][00] 0x3A      : :
+[...oop_full.hla][0003/0008][00] 0x20      :  
+[...oop_full.hla][0003/0009][00] 0x75      : u
+[...oop_full.hla][0003/0010][00] 0x38      : 8
+[...oop_full.hla][0003/0011][00] 0x3B      : ;
+[...oop_full.hla][0003/0012][00] 0xA       : \n
+[...oop_full.hla][0004/0001][00] 0x20      :  
+[...oop_full.hla][0004/0002][00] 0x20      :  
+[...oop_full.hla][0004/0003][00] 0x20      :  
+[...oop_full.hla][0004/0004][00] 0x20      :  
+[...oop_full.hla][0004/0005][00] 0x69      : i
+[...oop_full.hla][0004/0006][00] 0x20      :  
+[...oop_full.hla][0004/0007][00] 0x3A      : :
+[...oop_full.hla][0004/0008][00] 0x3D      : =
+[...oop_full.hla][0004/0009][00] 0x20      :  
+[...oop_full.hla][0004/0010][00] 0x30      : 0
+[...oop_full.hla][0004/0011][00] 0x3B      : ;
+[...oop_full.hla][0004/0012][00] 0xA       : \n
+[...oop_full.hla][0005/0001][00] 0xA       : \n
+[...oop_full.hla][0006/0001][00] 0x2F      : /
+[...oop_full.hla][0006/0002][00] 0x2F      : /
+[...oop_full.hla][0006/0003][00] 0x20      :  
+[...oop_full.hla][0006/0004][00] 0x54      : T
+[...oop_full.hla][0006/0005][00] 0x65      : e
+[...oop_full.hla][0006/0006][00] 0x73      : s
+[...oop_full.hla][0006/0007][00] 0x74      : t
+[...oop_full.hla][0006/0008][00] 0x20      :  
+[...oop_full.hla][0006/0009][00] 0x69      : i
+[...oop_full.hla][0006/0010][00] 0x6E      : n
+[...oop_full.hla][0006/0011][00] 0x66      : f
+[...oop_full.hla][0006/0012][00] 0x69      : i
+[...oop_full.hla][0006/0013][00] 0x6E      : n
+[...oop_full.hla][0006/0014][00] 0x69      : i
+[...oop_full.hla][0006/0015][00] 0x74      : t
+[...oop_full.hla][0006/0016][00] 0x65      : e
+[...oop_full.hla][0006/0017][00] 0x20      :  
+[...oop_full.hla][0006/0018][00] 0x6C      : l
+[...oop_full.hla][0006/0019][00] 0x6F      : o
+[...oop_full.hla][0006/0020][00] 0x6F      : o
+[...oop_full.hla][0006/0021][00] 0x70      : p
+[...oop_full.hla][0006/0022][00] 0x20      :  
+[...oop_full.hla][0006/0023][00] 0x77      : w
+[...oop_full.hla][0006/0024][00] 0x69      : i
+[...oop_full.hla][0006/0025][00] 0x74      : t
+[...oop_full.hla][0006/0026][00] 0x68      : h
+[...oop_full.hla][0006/0027][00] 0x20      :  
+[...oop_full.hla][0006/0028][00] 0x62      : b
+[...oop_full.hla][0006/0029][00] 0x72      : r
+[...oop_full.hla][0006/0030][00] 0x65      : e
+[...oop_full.hla][0006/0031][00] 0x61      : a
+[...oop_full.hla][0006/0032][00] 0x6B      : k
+[...oop_full.hla][0006/0033][00] 0xA       : \n
+[...oop_full.hla][0007/0001][00] 0xA       : \n
+[...oop_full.hla][0008/0001][00] 0xA       : \n
+[...oop_full.hla][0007/0001][00] 0x20      :  
+[...oop_full.hla][0007/0002][00] 0x20      :  
+[...oop_full.hla][0007/0003][00] 0x20      :  
+[...oop_full.hla][0007/0004][00] 0x20      :  
+[...oop_full.hla][0007/0005][00] 0x6C      : l
+[...oop_full.hla][0007/0006][00] 0x6F      : o
+[...oop_full.hla][0007/0007][00] 0x6F      : o
+[...oop_full.hla][0007/0008][00] 0x70      : p
+[...oop_full.hla][0007/0009][00] 0x20      :  
+[...oop_full.hla][0007/0010][00] 0x7B      : {
+[...oop_full.hla][0007/0011][00] 0xA       : \n
+[...oop_full.hla][0008/0001][00] 0x20      :  
+[...oop_full.hla][0008/0002][00] 0x20      :  
+[...oop_full.hla][0008/0003][00] 0x20      :  
+[...oop_full.hla][0008/0004][00] 0x20      :  
+[...oop_full.hla][0008/0005][00] 0x20      :  
+[...oop_full.hla][0008/0006][00] 0x20      :  
+[...oop_full.hla][0008/0007][00] 0x20      :  
+[...oop_full.hla][0008/0008][00] 0x20      :  
+[...oop_full.hla][0008/0009][00] 0x69      : i
+[...oop_full.hla][0008/0010][00] 0x2B      : +
+[...oop_full.hla][0008/0011][00] 0x2B      : +
+[...oop_full.hla][0008/0012][00] 0x3B      : ;
+[...oop_full.hla][0008/0013][00] 0xA       : \n
+[...oop_full.hla][0009/0001][00] 0x20      :  
+[...oop_full.hla][0009/0002][00] 0x20      :  
+[...oop_full.hla][0009/0003][00] 0x20      :  
+[...oop_full.hla][0009/0004][00] 0x20      :  
+[...oop_full.hla][0009/0005][00] 0x20      :  
+[...oop_full.hla][0009/0006][00] 0x20      :  
+[...oop_full.hla][0009/0007][00] 0x20      :  
+[...oop_full.hla][0009/0008][00] 0x20      :  
+[...oop_full.hla][0009/0009][00] 0x69      : i
+[...oop_full.hla][0009/0010][00] 0x66      : f
+[...oop_full.hla][0009/0011][00] 0x20      :  
+[...oop_full.hla][0009/0012][00] 0x28      : (
+[...oop_full.hla][0009/0013][00] 0x69      : i
+[...oop_full.hla][0009/0014][00] 0x20      :  
+[...oop_full.hla][0009/0015][00] 0x3E      : >
+[...oop_full.hla][0009/0016][00] 0x20      :  
+[...oop_full.hla][0009/0017][00] 0x35      : 5
+[...oop_full.hla][0009/0018][00] 0x29      : )
+[...oop_full.hla][0009/0019][00] 0x20      :  
+[...oop_full.hla][0009/0020][00] 0x7B      : {
+[...oop_full.hla][0009/0021][00] 0xA       : \n
+[...oop_full.hla][0010/0001][00] 0x20      :  
+[...oop_full.hla][0010/0002][00] 0x20      :  
+[...oop_full.hla][0010/0003][00] 0x20      :  
+[...oop_full.hla][0010/0004][00] 0x20      :  
+[...oop_full.hla][0010/0005][00] 0x20      :  
+[...oop_full.hla][0010/0006][00] 0x20      :  
+[...oop_full.hla][0010/0007][00] 0x20      :  
+[...oop_full.hla][0010/0008][00] 0x20      :  
+[...oop_full.hla][0010/0009][00] 0x20      :  
+[...oop_full.hla][0010/0010][00] 0x20      :  
+[...oop_full.hla][0010/0011][00] 0x20      :  
+[...oop_full.hla][0010/0012][00] 0x20      :  
+[...oop_full.hla][0010/0013][00] 0x62      : b
+[...oop_full.hla][0010/0014][00] 0x72      : r
+[...oop_full.hla][0010/0015][00] 0x65      : e
+[...oop_full.hla][0010/0016][00] 0x61      : a
+[...oop_full.hla][0010/0017][00] 0x6B      : k
+[...oop_full.hla][0010/0018][00] 0x3B      : ;
+[...oop_full.hla][0010/0019][00] 0xA       : \n
+[...oop_full.hla][0011/0001][00] 0x20      :  
+[...oop_full.hla][0011/0002][00] 0x20      :  
+[...oop_full.hla][0011/0003][00] 0x20      :  
+[...oop_full.hla][0011/0004][00] 0x20      :  
+[...oop_full.hla][0011/0005][00] 0x20      :  
+[...oop_full.hla][0011/0006][00] 0x20      :  
+[...oop_full.hla][0011/0007][00] 0x20      :  
+[...oop_full.hla][0011/0008][00] 0x20      :  
+[...oop_full.hla][0011/0009][00] 0x7D      : }
+[...oop_full.hla][0011/0010][00] 0x3B      : ;
+[...oop_full.hla][0011/0011][00] 0xA       : \n
+[...oop_full.hla][0012/0001][00] 0x20      :  
+[...oop_full.hla][0012/0002][00] 0x20      :  
+[...oop_full.hla][0012/0003][00] 0x20      :  
+[...oop_full.hla][0012/0004][00] 0x20      :  
+[...oop_full.hla][0012/0005][00] 0x7D      : }
+[...oop_full.hla][0012/0006][00] 0x3B      : ;
+[...oop_full.hla][0012/0007][00] 0xA       : \n
+[...oop_full.hla][0013/0001][00] 0xA       : \n
+[...oop_full.hla][0014/0001][00] 0x2F      : /
+[...oop_full.hla][0014/0002][00] 0x2F      : /
+[...oop_full.hla][0014/0003][00] 0x20      :  
+[...oop_full.hla][0014/0004][00] 0x54      : T
+[...oop_full.hla][0014/0005][00] 0x65      : e
+[...oop_full.hla][0014/0006][00] 0x73      : s
+[...oop_full.hla][0014/0007][00] 0x74      : t
+[...oop_full.hla][0014/0008][00] 0x20      :  
+[...oop_full.hla][0014/0009][00] 0x6C      : l
+[...oop_full.hla][0014/0010][00] 0x6F      : o
+[...oop_full.hla][0014/0011][00] 0x6F      : o
+[...oop_full.hla][0014/0012][00] 0x70      : p
+[...oop_full.hla][0014/0013][00] 0x20      :  
+[...oop_full.hla][0014/0014][00] 0x77      : w
+[...oop_full.hla][0014/0015][00] 0x69      : i
+[...oop_full.hla][0014/0016][00] 0x74      : t
+[...oop_full.hla][0014/0017][00] 0x68      : h
+[...oop_full.hla][0014/0018][00] 0x20      :  
+[...oop_full.hla][0014/0019][00] 0x63      : c
+[...oop_full.hla][0014/0020][00] 0x6F      : o
+[...oop_full.hla][0014/0021][00] 0x6E      : n
+[...oop_full.hla][0014/0022][00] 0x74      : t
+[...oop_full.hla][0014/0023][00] 0x69      : i
+[...oop_full.hla][0014/0024][00] 0x6E      : n
+[...oop_full.hla][0014/0025][00] 0x75      : u
+[...oop_full.hla][0014/0026][00] 0x65      : e
+[...oop_full.hla][0014/0027][00] 0xA       : \n
+[...oop_full.hla][0015/0001][00] 0xA       : \n
+[...oop_full.hla][0016/0001][00] 0xA       : \n
+[...oop_full.hla][0015/0001][00] 0x20      :  
+[...oop_full.hla][0015/0002][00] 0x20      :  
+[...oop_full.hla][0015/0003][00] 0x20      :  
+[...oop_full.hla][0015/0004][00] 0x20      :  
+[...oop_full.hla][0015/0005][00] 0x69      : i
+[...oop_full.hla][0015/0006][00] 0x20      :  
+[...oop_full.hla][0015/0007][00] 0x3A      : :
+[...oop_full.hla][0015/0008][00] 0x3D      : =
+[...oop_full.hla][0015/0009][00] 0x20      :  
+[...oop_full.hla][0015/0010][00] 0x30      : 0
+[...oop_full.hla][0015/0011][00] 0x3B      : ;
+[...oop_full.hla][0015/0012][00] 0xA       : \n
+[...oop_full.hla][0016/0001][00] 0x20      :  
+[...oop_full.hla][0016/0002][00] 0x20      :  
+[...oop_full.hla][0016/0003][00] 0x20      :  
+[...oop_full.hla][0016/0004][00] 0x20      :  
+[...oop_full.hla][0016/0005][00] 0x6C      : l
+[...oop_full.hla][0016/0006][00] 0x6F      : o
+[...oop_full.hla][0016/0007][00] 0x6F      : o
+[...oop_full.hla][0016/0008][00] 0x70      : p
+[...oop_full.hla][0016/0009][00] 0x20      :  
+[...oop_full.hla][0016/0010][00] 0x28      : (
+[...oop_full.hla][0016/0011][00] 0x69      : i
+[...oop_full.hla][0016/0012][00] 0x20      :  
+[...oop_full.hla][0016/0013][00] 0x3C      : <
+[...oop_full.hla][0016/0014][00] 0x20      :  
+[...oop_full.hla][0016/0015][00] 0x31      : 1
+[...oop_full.hla][0016/0016][00] 0x30      : 0
+[...oop_full.hla][0016/0017][00] 0x29      : )
+[...oop_full.hla][0016/0018][00] 0x20      :  
+[...oop_full.hla][0016/0019][00] 0x7B      : {
+[...oop_full.hla][0016/0020][00] 0xA       : \n
+[...oop_full.hla][0017/0001][00] 0x20      :  
+[...oop_full.hla][0017/0002][00] 0x20      :  
+[...oop_full.hla][0017/0003][00] 0x20      :  
+[...oop_full.hla][0017/0004][00] 0x20      :  
+[...oop_full.hla][0017/0005][00] 0x20      :  
+[...oop_full.hla][0017/0006][00] 0x20      :  
+[...oop_full.hla][0017/0007][00] 0x20      :  
+[...oop_full.hla][0017/0008][00] 0x20      :  
+[...oop_full.hla][0017/0009][00] 0x69      : i
+[...oop_full.hla][0017/0010][00] 0x2B      : +
+[...oop_full.hla][0017/0011][00] 0x2B      : +
+[...oop_full.hla][0017/0012][00] 0x3B      : ;
+[...oop_full.hla][0017/0013][00] 0xA       : \n
+[...oop_full.hla][0018/0001][00] 0x20      :  
+[...oop_full.hla][0018/0002][00] 0x20      :  
+[...oop_full.hla][0018/0003][00] 0x20      :  
+[...oop_full.hla][0018/0004][00] 0x20      :  
+[...oop_full.hla][0018/0005][00] 0x20      :  
+[...oop_full.hla][0018/0006][00] 0x20      :  
+[...oop_full.hla][0018/0007][00] 0x20      :  
+[...oop_full.hla][0018/0008][00] 0x20      :  
+[...oop_full.hla][0018/0009][00] 0x69      : i
+[...oop_full.hla][0018/0010][00] 0x66      : f
+[...oop_full.hla][0018/0011][00] 0x20      :  
+[...oop_full.hla][0018/0012][00] 0x28      : (
+[...oop_full.hla][0018/0013][00] 0x69      : i
+[...oop_full.hla][0018/0014][00] 0x20      :  
+[...oop_full.hla][0018/0015][00] 0x3C      : <
+[...oop_full.hla][0018/0016][00] 0x20      :  
+[...oop_full.hla][0018/0017][00] 0x35      : 5
+[...oop_full.hla][0018/0018][00] 0x29      : )
+[...oop_full.hla][0018/0019][00] 0x20      :  
+[...oop_full.hla][0018/0020][00] 0x7B      : {
+[...oop_full.hla][0018/0021][00] 0xA       : \n
+[...oop_full.hla][0019/0001][00] 0x20      :  
+[...oop_full.hla][0019/0002][00] 0x20      :  
+[...oop_full.hla][0019/0003][00] 0x20      :  
+[...oop_full.hla][0019/0004][00] 0x20      :  
+[...oop_full.hla][0019/0005][00] 0x20      :  
+[...oop_full.hla][0019/0006][00] 0x20      :  
+[...oop_full.hla][0019/0007][00] 0x20      :  
+[...oop_full.hla][0019/0008][00] 0x20      :  
+[...oop_full.hla][0019/0009][00] 0x20      :  
+[...oop_full.hla][0019/0010][00] 0x20      :  
+[...oop_full.hla][0019/0011][00] 0x20      :  
+[...oop_full.hla][0019/0012][00] 0x20      :  
+[...oop_full.hla][0019/0013][00] 0x63      : c
+[...oop_full.hla][0019/0014][00] 0x6F      : o
+[...oop_full.hla][0019/0015][00] 0x6E      : n
+[...oop_full.hla][0019/0016][00] 0x74      : t
+[...oop_full.hla][0019/0017][00] 0x69      : i
+[...oop_full.hla][0019/0018][00] 0x6E      : n
+[...oop_full.hla][0019/0019][00] 0x75      : u
+[...oop_full.hla][0019/0020][00] 0x65      : e
+[...oop_full.hla][0019/0021][00] 0x3B      : ;
+[...oop_full.hla][0019/0022][00] 0xA       : \n
+[...oop_full.hla][0020/0001][00] 0x20      :  
+[...oop_full.hla][0020/0002][00] 0x20      :  
+[...oop_full.hla][0020/0003][00] 0x20      :  
+[...oop_full.hla][0020/0004][00] 0x20      :  
+[...oop_full.hla][0020/0005][00] 0x20      :  
+[...oop_full.hla][0020/0006][00] 0x20      :  
+[...oop_full.hla][0020/0007][00] 0x20      :  
+[...oop_full.hla][0020/0008][00] 0x20      :  
+[...oop_full.hla][0020/0009][00] 0x7D      : }
+[...oop_full.hla][0020/0010][00] 0x3B      : ;
+[...oop_full.hla][0020/0011][00] 0xA       : \n
+[...oop_full.hla][0021/0001][00] 0x2F      : /
+[...oop_full.hla][0021/0002][00] 0x2F      : /
+[...oop_full.hla][0021/0003][00] 0x20      :  
+[...oop_full.hla][0021/0004][00] 0x54      : T
+[...oop_full.hla][0021/0005][00] 0x68      : h
+[...oop_full.hla][0021/0006][00] 0x69      : i
+[...oop_full.hla][0021/0007][00] 0x73      : s
+[...oop_full.hla][0021/0008][00] 0x20      :  
+[...oop_full.hla][0021/0009][00] 0x70      : p
+[...oop_full.hla][0021/0010][00] 0x61      : a
+[...oop_full.hla][0021/0011][00] 0x72      : r
+[...oop_full.hla][0021/0012][00] 0x74      : t
+[...oop_full.hla][0021/0013][00] 0x20      :  
+[...oop_full.hla][0021/0014][00] 0x72      : r
+[...oop_full.hla][0021/0015][00] 0x75      : u
+[...oop_full.hla][0021/0016][00] 0x6E      : n
+[...oop_full.hla][0021/0017][00] 0x73      : s
+[...oop_full.hla][0021/0018][00] 0x20      :  
+[...oop_full.hla][0021/0019][00] 0x6F      : o
+[...oop_full.hla][0021/0020][00] 0x6E      : n
+[...oop_full.hla][0021/0021][00] 0x6C      : l
+[...oop_full.hla][0021/0022][00] 0x79      : y
+[...oop_full.hla][0021/0023][00] 0x20      :  
+[...oop_full.hla][0021/0024][00] 0x69      : i
+[...oop_full.hla][0021/0025][00] 0x66      : f
+[...oop_full.hla][0021/0026][00] 0x20      :  
+[...oop_full.hla][0021/0027][00] 0x69      : i
+[...oop_full.hla][0021/0028][00] 0x20      :  
+[...oop_full.hla][0021/0029][00] 0x3E      : >
+[...oop_full.hla][0021/0030][00] 0x3D      : =
+[...oop_full.hla][0021/0031][00] 0x20      :  
+[...oop_full.hla][0021/0032][00] 0x35      : 5
+[...oop_full.hla][0021/0033][00] 0xA       : \n
+[...oop_full.hla][0022/0001][00] 0xA       : \n
+[...oop_full.hla][0023/0001][00] 0xA       : \n
+[...oop_full.hla][0022/0001][00] 0x20      :  
+[...oop_full.hla][0022/0002][00] 0x20      :  
+[...oop_full.hla][0022/0003][00] 0x20      :  
+[...oop_full.hla][0022/0004][00] 0x20      :  
+[...oop_full.hla][0022/0005][00] 0x20      :  
+[...oop_full.hla][0022/0006][00] 0x20      :  
+[...oop_full.hla][0022/0007][00] 0x20      :  
+[...oop_full.hla][0022/0008][00] 0x20      :  
+[...oop_full.hla][0022/0009][00] 0x61      : a
+[...oop_full.hla][0022/0010][00] 0x73      : s
+[...oop_full.hla][0022/0011][00] 0x6D      : m
+[...oop_full.hla][0022/0012][00] 0x20      :  
+[...oop_full.hla][0022/0013][00] 0x7B      : {
+[...oop_full.hla][0022/0014][00] 0xA       : \n
+[...oop_full.hla][0023/0001][00] 0x20      :  
+[...oop_full.hla][0023/0002][00] 0x20      :  
+[...oop_full.hla][0023/0003][00] 0x20      :  
+[...oop_full.hla][0023/0004][00] 0x20      :  
+[...oop_full.hla][0023/0005][00] 0x20      :  
+[...oop_full.hla][0023/0006][00] 0x20      :  
+[...oop_full.hla][0023/0007][00] 0x20      :  
+[...oop_full.hla][0023/0008][00] 0x20      :  
+[...oop_full.hla][0023/0009][00] 0x20      :  
+[...oop_full.hla][0023/0010][00] 0x20      :  
+[...oop_full.hla][0023/0011][00] 0x20      :  
+[...oop_full.hla][0023/0012][00] 0x20      :  
+[...oop_full.hla][0023/0013][00] 0x6C      : l
+[...oop_full.hla][0023/0014][00] 0x64      : d
+[...oop_full.hla][0023/0015][00] 0x61      : a
+[...oop_full.hla][0023/0016][00] 0x20      :  
+[...oop_full.hla][0023/0017][00] 0x23      : #
+[...oop_full.hla][0023/0018][00] 0x27      : '
+[...oop_full.hla][0023/0019][00] 0x2E      : .
+[...oop_full.hla][0023/0020][00] 0x27      : '
+[...oop_full.hla][0023/0021][00] 0xA       : \n
+[...oop_full.hla][0024/0001][00] 0x20      :  
+[...oop_full.hla][0024/0002][00] 0x20      :  
+[...oop_full.hla][0024/0003][00] 0x20      :  
+[...oop_full.hla][0024/0004][00] 0x20      :  
+[...oop_full.hla][0024/0005][00] 0x20      :  
+[...oop_full.hla][0024/0006][00] 0x20      :  
+[...oop_full.hla][0024/0007][00] 0x20      :  
+[...oop_full.hla][0024/0008][00] 0x20      :  
+[...oop_full.hla][0024/0009][00] 0x20      :  
+[...oop_full.hla][0024/0010][00] 0x20      :  
+[...oop_full.hla][0024/0011][00] 0x20      :  
+[...oop_full.hla][0024/0012][00] 0x20      :  
+[...oop_full.hla][0024/0013][00] 0x6A      : j
+[...oop_full.hla][0024/0014][00] 0x73      : s
+[...oop_full.hla][0024/0015][00] 0x72      : r
+[...oop_full.hla][0024/0016][00] 0x20      :  
+[...oop_full.hla][0024/0017][00] 0x24      : $
+[...oop_full.hla][0024/0018][00] 0x66      : f
+[...oop_full.hla][0024/0019][00] 0x66      : f
+[...oop_full.hla][0024/0020][00] 0x64      : d
+[...oop_full.hla][0024/0021][00] 0x32      : 2
+[...oop_full.hla][0024/0022][00] 0xA       : \n
+[...oop_full.hla][0025/0001][00] 0x20      :  
+[...oop_full.hla][0025/0002][00] 0x20      :  
+[...oop_full.hla][0025/0003][00] 0x20      :  
+[...oop_full.hla][0025/0004][00] 0x20      :  
+[...oop_full.hla][0025/0005][00] 0x20      :  
+[...oop_full.hla][0025/0006][00] 0x20      :  
+[...oop_full.hla][0025/0007][00] 0x20      :  
+[...oop_full.hla][0025/0008][00] 0x20      :  
+[...oop_full.hla][0025/0009][00] 0x7D      : }
+[...oop_full.hla][0025/0010][00] 0x3B      : ;
+[...oop_full.hla][0025/0011][00] 0xA       : \n
+[...oop_full.hla][0026/0001][00] 0x20      :  
+[...oop_full.hla][0026/0002][00] 0x20      :  
+[...oop_full.hla][0026/0003][00] 0x20      :  
+[...oop_full.hla][0026/0004][00] 0x20      :  
+[...oop_full.hla][0026/0005][00] 0x7D      : }
+[...oop_full.hla][0026/0006][00] 0x3B      : ;
+[...oop_full.hla][0026/0007][00] 0xA       : \n
+[...oop_full.hla][0027/0001][00] 0xA       : \n
+[...oop_full.hla][0028/0001][00] 0x20      :  
+[...oop_full.hla][0028/0002][00] 0x20      :  
+[...oop_full.hla][0028/0003][00] 0x20      :  
+[...oop_full.hla][0028/0004][00] 0x20      :  
+[...oop_full.hla][0028/0005][00] 0x72      : r
+[...oop_full.hla][0028/0006][00] 0x65      : e
+[...oop_full.hla][0028/0007][00] 0x74      : t
+[...oop_full.hla][0028/0008][00] 0x20      :  
+[...oop_full.hla][0028/0009][00] 0x30      : 0
+[...oop_full.hla][0028/0010][00] 0x3B      : ;
+[...oop_full.hla][0028/0011][00] 0xA       : \n
+[...oop_full.hla][0029/0001][00] 0x7D      : }
+[...oop_full.hla][0029/0002][00] 0x3B      : ;
+[...oop_full.hla][0029/0003][00] 0xA       : \n
+--- End Debug Stream ---

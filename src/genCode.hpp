@@ -36,6 +36,9 @@ private:
 	void generate_var_decl(Node* node, std::ofstream& out);
 	void generate_inc_dec(Node* node, std::ofstream& out);
 	void generate_if_statement(Node* node, std::ofstream& out);
+	void generate_loop_statement(Node* node, std::ofstream& out);
+	void generate_break_statement(Node* node, std::ofstream& out);
+	void generate_continue_statement(Node* node, std::ofstream& out);
 
 	// Funzioni helper per la generazione di funzioni
 	void generate_function(Node* node, std::ofstream& out);
@@ -83,6 +86,15 @@ private:
 
 	// Contatore per generare etichette univoche per gli statement if
 	int m_if_label_counter = 0;
+
+	// Struttura per gestire le etichette dei loop (nested loops support)
+	struct LoopLabels {
+		std::string start_label;
+		std::string step_label;
+		std::string end_label;
+	};
+	std::vector<LoopLabels> m_loop_stack;
+	int m_loop_label_counter = 0;
 
 	// Puntatore al nodo della funzione corrente durante la generazione del codice
 	Node* m_current_function = nullptr;

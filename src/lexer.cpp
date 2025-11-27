@@ -674,7 +674,10 @@ static const std::map<std::string, eToken> keywords = {
 	{"fn",    eToken::T_KEYWORD},
 	{"sys",   eToken::T_KEYWORD},
 	{"ns",    eToken::T_KEYWORD},
-	{"jmp",   eToken::T_KEYWORD}
+	{"jmp",   eToken::T_KEYWORD},
+	{"loop",  eToken::T_KEYWORD},
+	{"break", eToken::T_KEYWORD},
+	{"continue", eToken::T_KEYWORD}
 	
 	// "asm" è gestito come caso speciale, non più qui
 };
@@ -820,6 +823,19 @@ void Lexer::tokenize(const std::vector<CharInfo>& char_stream, bool mcpp_compati
 				}
 				continue;
 			}
+		}
+
+		// Gestione direttive preprocessore (es. #line generate da mcpp)
+		if (ci.value == U'#') 
+		{
+			while (i < char_stream.size() && char_stream[i].value != U'\n') 
+			{
+				i++;
+			}
+			// Se siamo su \n, il loop principale lo gestirà (incrementando i) 
+			// oppure iswspace lo salterà alla prossima iterazione
+			if (i < char_stream.size()) i--; 
+			continue;
 		}
 
 		char32_t next_char = (i + 1 < char_stream.size()) ? char_stream[i + 1].value : 0;
