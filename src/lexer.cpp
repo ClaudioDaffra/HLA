@@ -485,15 +485,15 @@ void Lexer::parse_string(const std::vector<CharInfo>& char_stream, size_t& i)
 			const auto& escaped_ci = char_stream[current_pos];
 			switch (escaped_ci.value)
 			{
-				case U'n': string_content += U'\n'; break;
-				case U't': string_content += U'\t'; break;
-				case U'r': string_content += U'\r'; break;
-				case U'\\': string_content += U'\\'; break;
-				case U'\'': string_content += U'\''; break;
-				case U'"': string_content += U'"'; break;
-				case U'v': string_content += U'\v'; break;     // Vertical Tab
-				case U'f': string_content += U'\f'; break;     // Form Feed
-				case U'e': string_content += U'\x1b'; break;   // Escape character (non-standard)
+				case U'n'	: string_content += U'\n'	; break;
+				case U't'	: string_content += U'\t'	; break;
+				case U'r'	: string_content += U'\r'	; break;
+				case U'\\'	: string_content += U'\\'	; break;
+				case U'\''	: string_content += U'\''	; break;
+				case U'"'	: string_content += U'"'	; break;
+				case U'v'	: string_content += U'\v'	; break;     // Vertical Tab
+				case U'f'	: string_content += U'\f'	; break;     // Form Feed
+				case U'e'	: string_content += U'\x1b'	; break;   // Escape character (non-standard)
 				default:
 					// Per ora, aggiunge il carattere così com'è. Un compilatore reale potrebbe emettere un warning.
 					string_content += escaped_ci.value;
@@ -558,30 +558,46 @@ static const std::map<std::u32string, eToken> ops3 = {
 };
 
 static const std::map<std::u32string, eToken> ops2 = {
-	{U">>", eToken::T_SHIFT_RIGHT}, {U"<<", eToken::T_SHIFT_LEFT},
-	{U":=", eToken::T_ASSIGN},      {U"?=", eToken::T_COMPARE}, {U"!=", eToken::T_NOT_EQUAL},
-	{U"%%", eToken::T_MOD},         {U"<=", eToken::T_LESS_EQUAL_THAN},
-	{U">=", eToken::T_GREATER_EQUAL_THAN}, {U"->", eToken::T_RETURN},
+	{U">>", eToken::T_SHIFT_RIGHT}, 
+	{U"<<", eToken::T_SHIFT_LEFT},
+	{U":=", eToken::T_ASSIGN},      
+	{U"?=", eToken::T_COMPARE}, 
+	{U"!=", eToken::T_NOT_EQUAL},
+	{U"%%", eToken::T_MOD},         
+	{U"<=", eToken::T_LESS_EQUAL_THAN},
+	{U">=", eToken::T_GREATER_EQUAL_THAN}, 
+	{U"->", eToken::T_RETURN},
 	{U"::", eToken::T_SCOPE_RES},
-	{U"&&", eToken::T_AND},         {U"||", eToken::T_OR},
+	{U"&&", eToken::T_AND},         
+	{U"||", eToken::T_OR},
 	{U"++", eToken::T_INCREMENT},
-	{U"--", eToken::T_DECREMENT},
-	{U"%&", eToken::T_BIT_AND},     {U"%|", eToken::T_BIT_OR},
-	{U"%^", eToken::T_BIT_XOR},     {U"%~", eToken::T_BIT_NOT},
-	{U"%-", eToken::T_BIT_NOT}
+	{U"--", eToken::T_DECREMENT}
 };
 
 // Per gli operatori a 1 carattere, una mappa da char32_t è più efficiente.
 static const std::map<char32_t, eToken> ops1 = {
-	{U'<', eToken::T_LESS_THAN},   {U'>', eToken::T_GREATER_THAN},
-	{U'+', eToken::T_PLUS},       {U'-', eToken::T_MINUS},
-	{U'*', eToken::T_MUL},        {U'/', eToken::T_DIV},
-	{U'!', eToken::T_NOT},        {U'@', eToken::T_ADDRESS},
-	{U'^', eToken::T_POINTER},    {U'(', eToken::T_P0},
-	{U')', eToken::T_P1},        {U'[', eToken::T_Q0},
-	{U']', eToken::T_Q1},        {U'{', eToken::T_G0},
-	{U'}', eToken::T_G1},        {U';', eToken::T_SEMICOLON},
-	{U':', eToken::T_COLON},      {U',', eToken::T_COMMA}
+	{U'<', eToken::T_LESS_THAN},   
+	{U'>', eToken::T_GREATER_THAN},
+	{U'+', eToken::T_PLUS},       
+	{U'-', eToken::T_MINUS},
+	{U'*', eToken::T_MUL},        
+	{U'/', eToken::T_DIV},
+	{U'!', eToken::T_NOT},        
+	{U'@', eToken::T_ADDRESS},
+	{U'^', eToken::T_POINTER},    
+	{U'(', eToken::T_P0},
+	{U')', eToken::T_P1},        
+	{U'[', eToken::T_Q0},
+	{U']', eToken::T_Q1},        
+	{U'{', eToken::T_G0},
+	{U'}', eToken::T_G1},        
+	{U';', eToken::T_SEMICOLON},
+	{U':', eToken::T_COLON},      
+	{U',', eToken::T_COMMA},
+	{U'|', eToken::T_BIT_OR},     
+	{U'&', eToken::T_BIT_AND},
+	{U'~', eToken::T_BIT_NOT},    
+	{U'°', eToken::T_BIT_NOT}
 };
 
 // --- Nuove Routine per la Gestione degli Operatori ---
@@ -666,18 +682,18 @@ bool Lexer::try_parse_operator1(const std::vector<CharInfo>& char_stream, size_t
 
 // Mappa statica per le keyword
 static const std::map<std::string, eToken> keywords = {
-	{"for",   eToken::T_KEYWORD},
-	{"while", eToken::T_KEYWORD},
-	{"if",    eToken::T_KEYWORD},
-	{"else",  eToken::T_KEYWORD},
-	{"ret",   eToken::T_KEYWORD},
-	{"fn",    eToken::T_KEYWORD},
-	{"sys",   eToken::T_KEYWORD},
-	{"ns",    eToken::T_KEYWORD},
-	{"jmp",   eToken::T_KEYWORD},
-	{"loop",  eToken::T_KEYWORD},
-	{"break", eToken::T_KEYWORD},
-	{"continue", eToken::T_KEYWORD}
+	{"for"		,	eToken::T_KEYWORD},
+	{"while"	, 	eToken::T_KEYWORD},
+	{"if"		,	eToken::T_KEYWORD},
+	{"else"		,  	eToken::T_KEYWORD},
+	{"ret"		,   eToken::T_KEYWORD},
+	{"fn"		,	eToken::T_KEYWORD},
+	{"sys"		,   eToken::T_KEYWORD},
+	{"ns"		,	eToken::T_KEYWORD},
+	{"jmp"		,   eToken::T_KEYWORD},
+	{"loop"		,	eToken::T_KEYWORD},
+	{"break"	,	eToken::T_KEYWORD},
+	{"continue"	,	eToken::T_KEYWORD}
 	
 	// "asm" è gestito come caso speciale, non più qui
 };

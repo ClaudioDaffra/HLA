@@ -385,6 +385,13 @@ std::unique_ptr<Node> Parser::parse_function()
 	}
 
 	func_node->stack_size = current_offset;
+	func_symbol->stack_size = current_offset; // Aggiorna la size nel simbolo per il debug
+
+	if (current_offset > 255) {
+		ErrorHandler::get().push_error(Sender::Parser, ErrorType::Error, Action::Parsing, ErrorMessage::StackOverflow, name_tok.row, name_tok.col, "Function '" + final_func_name + "' uses " + std::to_string(current_offset) + " bytes of stack.");
+		// Non lanciamo eccezione per permettere di trovare altri errori
+	}
+
 	func_node->locals_and_params = std::move(locals_and_params_vec);
 	m_dump_log.push_back(std::format("Total stack size for '{}': {}", final_func_name, func_node->stack_size));
 
@@ -1228,10 +1235,10 @@ std::unique_ptr<Node> Parser::parse_logical_or_and()
 
 //
 // Analizza l'operatore bitwise OR.
-// BNF: <bitwise_or> ::= <bitwise_xor> ("%|" <bitwise_xor>)*
+// BNF: <bitwise_or> ::= <bitwise_xor> ("|" <bitwise_xor>)*
 //
 std::unique_ptr<Node> Parser::parse_bitwise_or() {
-    m_dump_log.push_back("Entering parse_bitwise_or(). Rule: <bitwise_or> ::= <bitwise_xor> ('%|' <bitwise_xor>)*");
+    m_dump_log.push_back("Entering parse_bitwise_or(). Rule: <bitwise_or> ::= <bitwise_xor> ('|' <bitwise_xor>)*");
     auto node = parse_bitwise_xor();
 
     while (match(eToken::T_BIT_OR)) {
@@ -1239,7 +1246,7 @@ std::unique_ptr<Node> Parser::parse_bitwise_or() {
         auto rhs = parse_bitwise_xor();
 
         if (!is_integer_type(node->type) || !is_integer_type(rhs->type)) {
-            ErrorHandler::get().push_error(Sender::Parser, ErrorType::Error, Action::Parsing, ErrorMessage::BitwiseOperationOnFloat, op_tok.row, op_tok.col, "Operator '%|' can only be applied to integer types.");
+            ErrorHandler::get().push_error(Sender::Parser, ErrorType::Error, Action::Parsing, ErrorMessage::BitwiseOperationOnFloat, op_tok.row, op_tok.col, "Operator '|' can only be applied to integer types.");
             throw ParseError{};
         }
 
@@ -1263,18 +1270,19 @@ std::unique_ptr<Node> Parser::parse_bitwise_or() {
 
 //
 // Analizza l'operatore bitwise XOR.
-// BNF: <bitwise_xor> ::= <bitwise_and> ("%^" <bitwise_and>)*
+// BNF: <bitwise_xor> ::= <bitwise_and> ("^" <bitwise_and>)*
 //
 std::unique_ptr<Node> Parser::parse_bitwise_xor() {
-    m_dump_log.push_back("Entering parse_bitwise_xor(). Rule: <bitwise_xor> ::= <bitwise_and> ('%^' <bitwise_and>)*");
+    m_dump_log.push_back("Entering parse_bitwise_xor(). Rule: <bitwise_xor> ::= <bitwise_and> ('^' <bitwise_and>)*");
     auto node = parse_bitwise_and();
 
-    while (match(eToken::T_BIT_XOR)) {
+    // NOTA: '^' è tokenizzato come T_POINTER
+    while (match(eToken::T_POINTER)) {
         const Token& op_tok = (*m_tokens)[m_current_pos - 1];
         auto rhs = parse_bitwise_and();
 
         if (!is_integer_type(node->type) || !is_integer_type(rhs->type)) {
-            ErrorHandler::get().push_error(Sender::Parser, ErrorType::Error, Action::Parsing, ErrorMessage::BitwiseOperationOnFloat, op_tok.row, op_tok.col, "Operator '%^' can only be applied to integer types.");
+            ErrorHandler::get().push_error(Sender::Parser, ErrorType::Error, Action::Parsing, ErrorMessage::BitwiseOperationOnFloat, op_tok.row, op_tok.col, "Operator '^' can only be applied to integer types.");
             throw ParseError{};
         }
 
@@ -1298,10 +1306,10 @@ std::unique_ptr<Node> Parser::parse_bitwise_xor() {
 
 //
 // Analizza l'operatore bitwise AND.
-// BNF: <bitwise_and> ::= <equality> ("%&" <equality>)*
+// BNF: <bitwise_and> ::= <equality> ("&" <equality>)*
 //
 std::unique_ptr<Node> Parser::parse_bitwise_and() {
-    m_dump_log.push_back("Entering parse_bitwise_and(). Rule: <bitwise_and> ::= <equality> ('%&' <equality>)*");
+    m_dump_log.push_back("Entering parse_bitwise_and(). Rule: <bitwise_and> ::= <equality> ('&' <equality>)*");
     auto node = parse_equality();
 
     while (match(eToken::T_BIT_AND)) {
@@ -1309,7 +1317,7 @@ std::unique_ptr<Node> Parser::parse_bitwise_and() {
         auto rhs = parse_equality();
 
         if (!is_integer_type(node->type) || !is_integer_type(rhs->type)) {
-            ErrorHandler::get().push_error(Sender::Parser, ErrorType::Error, Action::Parsing, ErrorMessage::BitwiseOperationOnFloat, op_tok.row, op_tok.col, "Operator '%&' can only be applied to integer types.");
+            ErrorHandler::get().push_error(Sender::Parser, ErrorType::Error, Action::Parsing, ErrorMessage::BitwiseOperationOnFloat, op_tok.row, op_tok.col, "Operator '&' can only be applied to integer types.");
             throw ParseError{};
         }
 
@@ -1659,11 +1667,11 @@ std::unique_ptr<Node> Parser::parse_mul_div_mod()
 
 //
 // Analizza gli operatori unari.
-// BNF: <unary> ::= ("++" | "--" | "+" | "-" | "!" | "@" | "^" | "%~" | "%-") <unary> | <postfix>
+// BNF: <unary> ::= ("++" | "--" | "+" | "-" | "!" | "@" | "^" | "~" | "°") <unary> | <postfix>
 //
 std::unique_ptr<Node> Parser::parse_unary()
 {
-	m_dump_log.push_back("Entering parse_unary(). Rule: <unary> ::= ('++' | '--' | '+' | '-' | '!' | '@' | '^' | '%~' | '%-') <unary> | <postfix>");
+	m_dump_log.push_back("Entering parse_unary(). Rule: <unary> ::= ('++' | '--' | '+' | '-' | '!' | '@' | '^' | '~' | '°') <unary> | <postfix>");
 
 	// Gestione operatori prefissi
 	if (match(eToken::T_INCREMENT) || match(eToken::T_DECREMENT)) {
@@ -1784,7 +1792,7 @@ std::unique_ptr<Node> Parser::parse_unary()
 
 	if (match(eToken::T_BIT_NOT)) {
         const Token& op_tok = (*m_tokens)[m_current_pos - 1];
-        m_dump_log.push_back("Matched unary bitwise NOT ('%~' or '%-').");
+        m_dump_log.push_back("Matched unary bitwise NOT ('~' or '°').");
         auto operand = parse_unary();
 
         if (!is_integer_type(operand->type)) {
@@ -2255,15 +2263,15 @@ void Parser::dump_ast_to_file(const std::string& input_filepath) const
 	out_file << "  <jump_statement>      ::= 'jmp' T_IDENTIFIER ';'\n";
 	out_file << "  <assign>              ::= <logical_or_and> (':=' <assign>)?\n";
 	out_file << "  <logical_or_and>      ::= <bitwise_or> (('&&' | '||') <bitwise_or>)*\n";
-	out_file << "  <bitwise_or>          ::= <bitwise_xor> ('%|' <bitwise_xor>)*\n";
-	out_file << "  <bitwise_xor>         ::= <bitwise_and> ('%^' <bitwise_and>)*\n";
-	out_file << "  <bitwise_and>         ::= <equality> ('%&' <equality>)*\n";
+	out_file << "  <bitwise_or>          ::= <bitwise_xor> ('|' <bitwise_xor>)*\n";
+	out_file << "  <bitwise_xor>         ::= <bitwise_and> ('^' <bitwise_and>)*\n";
+	out_file << "  <bitwise_and>         ::= <equality> ('&' <equality>)*\n";
 	out_file << "  <equality>            ::= <relational> (('?=' | '!=') <relational>)*\n";
 	out_file << "  <relational>          ::= <shift> (('<' | '<=' | '>' | '>=') <shift>)*\n";
 	out_file << "  <shift>               ::= <add_sub> (('<<' | '>>') <add_sub>)*\n";
 	out_file << "  <add_sub>             ::= <mul_div_mod> (('+' | '-') <mul_div_mod>)*\n";
 	out_file << "  <mul_div_mod>         ::= <unary> (('*' | '/' | '%%') <unary>)*\n";
-	out_file << "  <unary>               ::= ('++' | '--' | '+' | '-' | '!' | '@' | '^' | '%~' | '%-') <unary> | <postfix>\n";
+	out_file << "  <unary>               ::= ('++' | '--' | '+' | '-' | '!' | '@' | '^' | '~' | '°') <unary> | <postfix>\n";
 	out_file << "  <postfix>             ::= <term> ('++' | '--')*\n";
 	out_file << "  <term>                ::= T_INTEGER | T_REAL | T_STRING | <func_call> | T_IDENTIFIER | '(' <expr> ')'\n";
 	out_file << "  <func_call>           ::= (T_IDENTIFIER '::')? T_IDENTIFIER '(' <arg_list> ')'\n";

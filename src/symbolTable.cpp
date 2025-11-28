@@ -185,11 +185,18 @@ void SymbolTable::dump_symbol(std::ofstream& out, const Symbol& sym, const Strea
 	}
 
 	std::string type_str = sym.type ? type_to_string(*sym.type) : "N/A";
-	std::string offset_str = (sym.kind == SymbolKind::SYMBOL_VAR && !sym.is_global) ? std::to_string(sym.offset) : "-";
+	std::string offset_str;
+	if (sym.kind == SymbolKind::SYMBOL_VAR && !sym.is_global) {
+		offset_str = std::to_string(sym.offset);
+	} else if (sym.kind == SymbolKind::SYMBOL_FUNC) {
+		offset_str = std::to_string(sym.stack_size);
+	} else {
+		offset_str = "-";
+	}
 
 	// Stampa la riga di riepilogo principale per il simbolo
 	out << std::format(
-		"| {:<20} | {:<10} | {:<16} | {:<5} | {:<6} | {:<6} | {:<41} |\n",
+		"| {:<20} | {:<10} | {:<16} | {:<5} | {:<6} | {:<6} | {:<42} |\n",
 		sym.name,
 		symbol_kind_to_string(sym),
 		type_str,
@@ -238,7 +245,7 @@ void SymbolTable::dump_to_file(const std::string& input_filepath, const Streamer
 	out_file << line_separator << "\n";
 	out_file << std::format(
 		"| {:<20} | {:<10} | {:<16} | {:<5} | {:<6} | {:<6} | {:<42} |\n",
-		"Identifier", "Kind", "Type", "Scope", "Status", "Offset", "Location"
+		"Identifier", "Kind", "Type", "Scope", "Status", "Off/Sz", "Location"
 	);
 	out_file << line_separator << "\n";
 

@@ -91,32 +91,28 @@ main .proc
 
 	; -------------------------- BEGIN
 
+	; get address Local au8 @
+    lda #au8
+    jsr fstack.lea_bp
+
+    .fstack_word_set ps
+
+    lda #123
+
+	; Dereference pointer (set value)
+    pha
+
+    .fstack_word_get ps
+
+    sta zpWord0+0
+    sty zpWord0+1
+
+    pla
+    .mem_store_byte_pointer
+
     lda #0
 
     .fstack_byte_set au8
-
-	; if {000}
-    .fstack_byte_get au8
-
-    pha
-
-    lda #5
-
-    sta zpWord0+0
-    pla
-
-    jsr math.u8_cmp_le
-
-	; relational condition
-    cmp #0 
-    beq  endif000
-
-	; then {000}
-    lda #'#'
-    jsr $ffd2
-
- endif000:
-	; end if {000}
 
 	; return
     lda #0

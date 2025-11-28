@@ -49,12 +49,14 @@ p.s. although the Windows executable compiles correctly without issues, it gener
      * `@`     equivalent to `&`      ->    address
      * `%%`    equivalent to `%`      ->    modulo
      * `->`    equivalent to `fn ret` ->    function return parameter
-       bitwise:
-     * `%|`    equivalent to `|`      ->    bitwise or
-     * `%&`    equivalent to `&`      ->    bitwise and
-     * `%^`    equivalent to `^`      ->    bitwise xor
-     * `%~`    equivalent to `~`      ->    bitwise neg
-     * `%-`    equivalent to `~`      ->    bitwise neg
+	 
+	* bitwise:
+	   
+     * `|`    equivalent to	->    bitwise or
+     * `&`    equivalent to	->    bitwise and
+     * `^`    equivalent to	->    bitwise xor
+     * `~`    equivalent to	->    bitwise neg
+     * `°`    equivalent to	->    bitwise neg
 
 ## Identifiers
 
@@ -69,10 +71,18 @@ This symbol is reserved for hexadecimal numbers.
     sys    proc1( byte:x,word:ay ) { }       ->    sys calls differ from fn
     ret                                      ->    value return
     if ( ) { } else { } ;                    ->    if then else construct
+	label: ;								 ->	   label;
     jmp label ;                              ->    jumps internally within the function
     label:    ;                              ->    label
     types                                    ->    u8,s8,u16,s16,f40
+											 ->	   ^ pointer
     ns namespace { } ;                       ->    stdio::print , kernel::chrout
+	loop { ... } ;							 ->	   infinity loop
+	loop ( ) { ... } ;						 ->	   while() { } ;
+	loop { ... } ( ) ;						 ->	   do { } while();
+	loop ( ; ; ) { ... } ;					 ->	   for ( ; ; ) { } ;
+	break ;								 	 ->    break
+	continue ;								 ->    continue
 ```
 
 ## Mathematical operations implemented
@@ -85,7 +95,7 @@ This symbol is reserved for hexadecimal numbers.
    * `^`, `@`            Pointer(*) and Address(&)
    * `+`, `-`            and Pointer arithmetic
    * `++`,`--`           Pointer arithmetic PREFIX/POSTFIX (not applicable to f40)
-   * `%-`,`%~`           bitwise neg
+   * `~`,`°`           bitwise neg
 
 2. **Binary operators** (as in C, with a change):
 
@@ -94,7 +104,7 @@ This symbol is reserved for hexadecimal numbers.
    * `<`    ,     `<=`, `>`, `>=`
    * `?=`   ,     `!=`
    * `:=`   assign
-   * `%&`   ,     `%|`     ,  `&^`    not applicable to f40
+   * `&`   ,     `|`     ,  `^`    not applicable to f40
    * `>>`   ,     `<<`                not applicable to f40
    * `::`                             scope resolution
 

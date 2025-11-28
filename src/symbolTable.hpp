@@ -64,6 +64,7 @@ public:
 	int scope_level;
 	bool is_global;
 	int offset; // Per variabili locali/parametri in futuro
+	int stack_size = 0; // Totale stack utilizzato dalla funzione (solo per SYMBOL_FUNC)
 	const Token* token; // Per la posizione nel codice sorgente (error reporting)
 
 	// Usato se kind è SYMBOL_CONST

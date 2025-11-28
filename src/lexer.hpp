@@ -43,10 +43,10 @@ enum class eToken
 		T_OR			,	// ||
 		T_INCREMENT		,	// ++
 		T_DECREMENT		,	// --
-		T_BIT_AND		,	// %&
-		T_BIT_OR		,	// %|
-		T_BIT_XOR		,	// %^
-		T_BIT_NOT		,	// %~, %-
+		T_BIT_AND		,	// &
+		T_BIT_OR		,	// |
+		T_BIT_XOR		,	// (unused, ^ is T_POINTER)
+		T_BIT_NOT		,	// ~, °
 
 		// Operatori a 1 carattere
 		T_LESS_THAN		,	// <

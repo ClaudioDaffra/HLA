@@ -74,7 +74,8 @@ const std::map<ErrorMessage, std::string> ErrorHandler::message_map =
 	{ErrorMessage::AssignmentToConstant, "Cannot assign a value to a constant"},
     {ErrorMessage::ConstantNotInitializedWithLiteral, "Constant must be initialized with a literal value"},
     {ErrorMessage::TypeMismatchInConstantDecl, "Type mismatch in constant declaration"},
-	{ErrorMessage::BitwiseOperationOnFloat, "Bitwise operators cannot be applied to floating-point numbers"}
+	{ErrorMessage::BitwiseOperationOnFloat, "Bitwise operators cannot be applied to floating-point numbers"},
+	{ErrorMessage::StackOverflow, "Stack overflow: function locals exceed 255 bytes"}
 };
 
 const std::map<Action, std::string> ErrorHandler::action_map = 

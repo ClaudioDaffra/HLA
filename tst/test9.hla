@@ -26,6 +26,10 @@ fn main ( )
 
 	// loop
 
+	ps := @au8 ;
+	
+	^ps := 123 ;
+	
 	au8 := 0 ;
 /*		
 	loop (au8<10) {
@@ -62,6 +66,7 @@ fn main ( )
 		break ;
 	} ;
 */
+/*
 	if ( au8 <= 5 ) // 0 <= 5
 	{
 		asm {
@@ -69,7 +74,7 @@ fn main ( )
 			jsr $ffd2
 		};
 	} ;
-	
+*/
 	ret 0 ;
 } ;
 

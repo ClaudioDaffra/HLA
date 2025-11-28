@@ -817,6 +817,7 @@ void CodeGenerator::generate_loop_statement(Node* node, std::ofstream& out)
 
 void CodeGenerator::generate_break_statement(Node* node, std::ofstream& out)
 {
+	(void)node; // Suppress unused parameter warning
 	if (m_loop_stack.empty()) {
 		ErrorHandler::get().push_error(Sender::Emitter, ErrorType::Error, Action::Coding, ErrorMessage::UnexpectedToken, 0, 0, "'break' statement not inside a loop.");
 		return;
@@ -830,6 +831,7 @@ void CodeGenerator::generate_break_statement(Node* node, std::ofstream& out)
 
 void CodeGenerator::generate_continue_statement(Node* node, std::ofstream& out)
 {
+	(void)node; // Suppress unused parameter warning
 	if (m_loop_stack.empty()) {
 		ErrorHandler::get().push_error(Sender::Emitter, ErrorType::Error, Action::Coding, ErrorMessage::UnexpectedToken, 0, 0, "'continue' statement not inside a loop.");
 		return;

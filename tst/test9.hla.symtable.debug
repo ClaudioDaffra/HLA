@@ -1,0 +1,32 @@
+--- Begin Symbol Table Dump ---
+
+-------------------------------------------------------------------------------------------------------------------------------
+| Identifier           | Kind       | Type             | Scope | Status | Off/Sz | Location                                   |
+-------------------------------------------------------------------------------------------------------------------------------
+| CG0                  | CONST      | f40              | 0     | Global | -      | tst/test9.hla:004:001                      |
+| --------------------------------------------------------------------------------------------------------------------------- |
+| main                 | FUNC (fn)  | u8               | 0     | Global | 17     | tst/test9.hla:013:004                      |
+| CL34                 | CONST      | u8               | 1     | Local  | -      | tst/test9.hla:021:005                      |
+| DFF                  | CONST      | ^u8              | 1     | Local  | -      | tst/test9.hla:022:005                      |
+                                       puntatore ^ a 
+                                         u8
+| LF40                 | CONST      | f40              | 1     | Local  | -      | tst/test9.hla:024:005                      |
+| argc                 | VAR        | u8               | 1     | Local  | 0      | tst/test9.hla:013:004                      |
+| argv                 | VAR        | ^^u16            | 1     | Local  | 1      | tst/test9.hla:013:004                      |
+                                       puntatore ^ a 
+                                         puntatore ^ a 
+                                           u16
+| au16                 | VAR        | u16              | 1     | Local  | 5      | tst/test9.hla:017:005                      |
+| au8                  | VAR        | u8               | 1     | Local  | 3      | tst/test9.hla:015:005                      |
+| bs16                 | VAR        | s16              | 1     | Local  | 7      | tst/test9.hla:018:005                      |
+| bs8                  | VAR        | s8               | 1     | Local  | 4      | tst/test9.hla:016:005                      |
+| f                    | VAR        | u8               | 1     | Local  | 9      | tst/test9.hla:019:005                      |
+| fx                   | VAR        | f40              | 1     | Local  | 10     | tst/test9.hla:020:005                      |
+| ps                   | VAR        | ^u8              | 1     | Local  | 15     | tst/test9.hla:023:005                      |
+                                       puntatore ^ a 
+                                         u8
+| --------------------------------------------------------------------------------------------------------------------------- |
+| prova                | FUNC (sys) | u8               | 0     | Global | 0      | tst/test9.hla:006:005                      |
+-------------------------------------------------------------------------------------------------------------------------------
+
+--- End Symbol Table Dump ---

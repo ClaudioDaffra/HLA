@@ -79,7 +79,8 @@ enum class ErrorMessage {
 	AssignmentToConstant,
 	ConstantNotInitializedWithLiteral,
 	TypeMismatchInConstantDecl,
-	BitwiseOperationOnFloat 	// per operatori bitwise su float
+	BitwiseOperationOnFloat, 	// per operatori bitwise su float
+	StackOverflow				// Local stack exceeds 255 bytes
 };
 
 // --- Struttura per un Singolo Errore ---

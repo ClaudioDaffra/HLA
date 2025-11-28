@@ -1,0 +1,693 @@
+--- Begin Debug Stream ---
+[File           ][Row/Col  ][Lvl][Hex Val  ] : Char
+------------------------------------------------------
+[tst/test9.hla  ][0001/0001][00] 0xA       : \n
+[tst/test9.hla  ][0002/0001][00] 0xA       : \n
+[tst/test9.hla  ][0003/0001][00] 0xA       : \n
+[tst/test9.hla  ][0004/0001][00] 0x43      : C
+[tst/test9.hla  ][0004/0002][00] 0x47      : G
+[tst/test9.hla  ][0004/0003][00] 0x30      : 0
+[tst/test9.hla  ][0004/0004][00] 0x20      :  
+[tst/test9.hla  ][0004/0005][00] 0x3A      : :
+[tst/test9.hla  ][0004/0006][00] 0x20      :  
+[tst/test9.hla  ][0004/0007][00] 0x30      : 0
+[tst/test9.hla  ][0004/0008][00] 0x2E      : .
+[tst/test9.hla  ][0004/0009][00] 0x30      : 0
+[tst/test9.hla  ][0004/0010][00] 0x2B      : +
+[tst/test9.hla  ][0004/0011][00] 0x30      : 0
+[tst/test9.hla  ][0004/0012][00] 0x2E      : .
+[tst/test9.hla  ][0004/0013][00] 0x30      : 0
+[tst/test9.hla  ][0004/0014][00] 0x20      :  
+[tst/test9.hla  ][0004/0015][00] 0x3B      : ;
+[tst/test9.hla  ][0004/0016][00] 0xA       : \n
+[tst/test9.hla  ][0005/0001][00] 0xA       : \n
+[tst/test9.hla  ][0006/0001][00] 0x73      : s
+[tst/test9.hla  ][0006/0002][00] 0x79      : y
+[tst/test9.hla  ][0006/0003][00] 0x73      : s
+[tst/test9.hla  ][0006/0004][00] 0x20      :  
+[tst/test9.hla  ][0006/0005][00] 0x70      : p
+[tst/test9.hla  ][0006/0006][00] 0x72      : r
+[tst/test9.hla  ][0006/0007][00] 0x6F      : o
+[tst/test9.hla  ][0006/0008][00] 0x76      : v
+[tst/test9.hla  ][0006/0009][00] 0x61      : a
+[tst/test9.hla  ][0006/0010][00] 0x20      :  
+[tst/test9.hla  ][0006/0011][00] 0x28      : (
+[tst/test9.hla  ][0006/0012][00] 0x72      : r
+[tst/test9.hla  ][0006/0013][00] 0x65      : e
+[tst/test9.hla  ][0006/0014][00] 0x61      : a
+[tst/test9.hla  ][0006/0015][00] 0x6C      : l
+[tst/test9.hla  ][0006/0016][00] 0x3A      : :
+[tst/test9.hla  ][0006/0017][00] 0x66      : f
+[tst/test9.hla  ][0006/0018][00] 0x61      : a
+[tst/test9.hla  ][0006/0019][00] 0x63      : c
+[tst/test9.hla  ][0006/0020][00] 0x32      : 2
+[tst/test9.hla  ][0006/0021][00] 0x2C      : ,
+[tst/test9.hla  ][0006/0022][00] 0x72      : r
+[tst/test9.hla  ][0006/0023][00] 0x65      : e
+[tst/test9.hla  ][0006/0024][00] 0x61      : a
+[tst/test9.hla  ][0006/0025][00] 0x6C      : l
+[tst/test9.hla  ][0006/0026][00] 0x3A      : :
+[tst/test9.hla  ][0006/0027][00] 0x72      : r
+[tst/test9.hla  ][0006/0028][00] 0x31      : 1
+[tst/test9.hla  ][0006/0029][00] 0x30      : 0
+[tst/test9.hla  ][0006/0030][00] 0x2C      : ,
+[tst/test9.hla  ][0006/0031][00] 0x62      : b
+[tst/test9.hla  ][0006/0032][00] 0x79      : y
+[tst/test9.hla  ][0006/0033][00] 0x74      : t
+[tst/test9.hla  ][0006/0034][00] 0x65      : e
+[tst/test9.hla  ][0006/0035][00] 0x3A      : :
+[tst/test9.hla  ][0006/0036][00] 0x68      : h
+[tst/test9.hla  ][0006/0037][00] 0x6C      : l
+[tst/test9.hla  ][0006/0038][00] 0x61      : a
+[tst/test9.hla  ][0006/0039][00] 0x5F      : _
+[tst/test9.hla  ][0006/0040][00] 0x72      : r
+[tst/test9.hla  ][0006/0041][00] 0x65      : e
+[tst/test9.hla  ][0006/0042][00] 0x67      : g
+[tst/test9.hla  ][0006/0043][00] 0x39      : 9
+[tst/test9.hla  ][0006/0044][00] 0x2C      : ,
+[tst/test9.hla  ][0006/0045][00] 0x62      : b
+[tst/test9.hla  ][0006/0046][00] 0x79      : y
+[tst/test9.hla  ][0006/0047][00] 0x74      : t
+[tst/test9.hla  ][0006/0048][00] 0x65      : e
+[tst/test9.hla  ][0006/0049][00] 0x3A      : :
+[tst/test9.hla  ][0006/0050][00] 0x78      : x
+[tst/test9.hla  ][0006/0051][00] 0x2C      : ,
+[tst/test9.hla  ][0006/0052][00] 0x77      : w
+[tst/test9.hla  ][0006/0053][00] 0x6F      : o
+[tst/test9.hla  ][0006/0054][00] 0x72      : r
+[tst/test9.hla  ][0006/0055][00] 0x64      : d
+[tst/test9.hla  ][0006/0056][00] 0x3A      : :
+[tst/test9.hla  ][0006/0057][00] 0x61      : a
+[tst/test9.hla  ][0006/0058][00] 0x79      : y
+[tst/test9.hla  ][0006/0059][00] 0x20      :  
+[tst/test9.hla  ][0006/0060][00] 0x29      : )
+[tst/test9.hla  ][0006/0061][00] 0x20      :  
+[tst/test9.hla  ][0006/0062][00] 0x20      :  
+[tst/test9.hla  ][0006/0063][00] 0xA       : \n
+[tst/test9.hla  ][0007/0001][00] 0x7B      : {
+[tst/test9.hla  ][0007/0002][00] 0xA       : \n
+[tst/test9.hla  ][0008/0001][00] 0x9       : \t
+[tst/test9.hla  ][0008/0005][00] 0x2F      : /
+[tst/test9.hla  ][0008/0006][00] 0x2F      : /
+[tst/test9.hla  ][0008/0007][00] 0x20      :  
+[tst/test9.hla  ][0008/0008][00] 0x61      : a
+[tst/test9.hla  ][0008/0009][00] 0x73      : s
+[tst/test9.hla  ][0008/0010][00] 0x6D      : m
+[tst/test9.hla  ][0008/0011][00] 0x20      :  
+[tst/test9.hla  ][0008/0012][00] 0x7B      : {
+[tst/test9.hla  ][0008/0013][00] 0x20      :  
+[tst/test9.hla  ][0008/0014][00] 0x2E      : .
+[tst/test9.hla  ][0008/0015][00] 0x2E      : .
+[tst/test9.hla  ][0008/0016][00] 0x2E      : .
+[tst/test9.hla  ][0008/0017][00] 0x20      :  
+[tst/test9.hla  ][0008/0018][00] 0x7D      : }
+[tst/test9.hla  ][0008/0019][00] 0x20      :  
+[tst/test9.hla  ][0008/0020][00] 0x20      :  
+[tst/test9.hla  ][0008/0021][00] 0x3B      : ;
+[tst/test9.hla  ][0008/0022][00] 0xA       : \n
+[tst/test9.hla  ][0009/0001][00] 0x7D      : }
+[tst/test9.hla  ][0009/0002][00] 0x20      :  
+[tst/test9.hla  ][0009/0003][00] 0x3B      : ;
+[tst/test9.hla  ][0009/0004][00] 0xA       : \n
+[tst/test9.hla  ][0010/0001][00] 0xA       : \n
+[tst/test9.hla  ][0011/0001][00] 0xA       : \n
+[tst/test9.hla  ][0012/0001][00] 0xA       : \n
+[tst/test9.hla  ][0013/0001][00] 0x66      : f
+[tst/test9.hla  ][0013/0002][00] 0x6E      : n
+[tst/test9.hla  ][0013/0003][00] 0x20      :  
+[tst/test9.hla  ][0013/0004][00] 0x6D      : m
+[tst/test9.hla  ][0013/0005][00] 0x61      : a
+[tst/test9.hla  ][0013/0006][00] 0x69      : i
+[tst/test9.hla  ][0013/0007][00] 0x6E      : n
+[tst/test9.hla  ][0013/0008][00] 0x20      :  
+[tst/test9.hla  ][0013/0009][00] 0x28      : (
+[tst/test9.hla  ][0013/0010][00] 0x20      :  
+[tst/test9.hla  ][0013/0011][00] 0x29      : )
+[tst/test9.hla  ][0013/0012][00] 0x20      :  
+[tst/test9.hla  ][0013/0013][00] 0x20      :  
+[tst/test9.hla  ][0013/0014][00] 0xA       : \n
+[tst/test9.hla  ][0014/0001][00] 0x7B      : {
+[tst/test9.hla  ][0014/0002][00] 0xA       : \n
+[tst/test9.hla  ][0015/0001][00] 0x20      :  
+[tst/test9.hla  ][0015/0002][00] 0x20      :  
+[tst/test9.hla  ][0015/0003][00] 0x20      :  
+[tst/test9.hla  ][0015/0004][00] 0x20      :  
+[tst/test9.hla  ][0015/0005][00] 0x61      : a
+[tst/test9.hla  ][0015/0006][00] 0x75      : u
+[tst/test9.hla  ][0015/0007][00] 0x38      : 8
+[tst/test9.hla  ][0015/0008][00] 0x9       : \t
+[tst/test9.hla  ][0015/0009][00] 0x9       : \t
+[tst/test9.hla  ][0015/0013][00] 0x3A      : :
+[tst/test9.hla  ][0015/0014][00] 0x9       : \t
+[tst/test9.hla  ][0015/0017][00] 0x75      : u
+[tst/test9.hla  ][0015/0018][00] 0x38      : 8
+[tst/test9.hla  ][0015/0019][00] 0x20      :  
+[tst/test9.hla  ][0015/0020][00] 0x3B      : ;
+[tst/test9.hla  ][0015/0021][00] 0xA       : \n
+[tst/test9.hla  ][0016/0001][00] 0x9       : \t
+[tst/test9.hla  ][0016/0005][00] 0x62      : b
+[tst/test9.hla  ][0016/0006][00] 0x73      : s
+[tst/test9.hla  ][0016/0007][00] 0x38      : 8
+[tst/test9.hla  ][0016/0008][00] 0x20      :  
+[tst/test9.hla  ][0016/0009][00] 0x20      :  
+[tst/test9.hla  ][0016/0010][00] 0x9       : \t
+[tst/test9.hla  ][0016/0013][00] 0x3A      : :
+[tst/test9.hla  ][0016/0014][00] 0x9       : \t
+[tst/test9.hla  ][0016/0017][00] 0x73      : s
+[tst/test9.hla  ][0016/0018][00] 0x38      : 8
+[tst/test9.hla  ][0016/0019][00] 0x20      :  
+[tst/test9.hla  ][0016/0020][00] 0x3B      : ;
+[tst/test9.hla  ][0016/0021][00] 0xA       : \n
+[tst/test9.hla  ][0017/0001][00] 0x20      :  
+[tst/test9.hla  ][0017/0002][00] 0x20      :  
+[tst/test9.hla  ][0017/0003][00] 0x20      :  
+[tst/test9.hla  ][0017/0004][00] 0x20      :  
+[tst/test9.hla  ][0017/0005][00] 0x61      : a
+[tst/test9.hla  ][0017/0006][00] 0x75      : u
+[tst/test9.hla  ][0017/0007][00] 0x31      : 1
+[tst/test9.hla  ][0017/0008][00] 0x36      : 6
+[tst/test9.hla  ][0017/0009][00] 0x9       : \t
+[tst/test9.hla  ][0017/0013][00] 0x3A      : :
+[tst/test9.hla  ][0017/0014][00] 0x9       : \t
+[tst/test9.hla  ][0017/0017][00] 0x75      : u
+[tst/test9.hla  ][0017/0018][00] 0x31      : 1
+[tst/test9.hla  ][0017/0019][00] 0x36      : 6
+[tst/test9.hla  ][0017/0020][00] 0x20      :  
+[tst/test9.hla  ][0017/0021][00] 0x3B      : ;
+[tst/test9.hla  ][0017/0022][00] 0xA       : \n
+[tst/test9.hla  ][0018/0001][00] 0x9       : \t
+[tst/test9.hla  ][0018/0005][00] 0x62      : b
+[tst/test9.hla  ][0018/0006][00] 0x73      : s
+[tst/test9.hla  ][0018/0007][00] 0x31      : 1
+[tst/test9.hla  ][0018/0008][00] 0x36      : 6
+[tst/test9.hla  ][0018/0009][00] 0x20      :  
+[tst/test9.hla  ][0018/0010][00] 0x20      :  
+[tst/test9.hla  ][0018/0011][00] 0x9       : \t
+[tst/test9.hla  ][0018/0013][00] 0x3A      : :
+[tst/test9.hla  ][0018/0014][00] 0x9       : \t
+[tst/test9.hla  ][0018/0017][00] 0x73      : s
+[tst/test9.hla  ][0018/0018][00] 0x31      : 1
+[tst/test9.hla  ][0018/0019][00] 0x36      : 6
+[tst/test9.hla  ][0018/0020][00] 0x20      :  
+[tst/test9.hla  ][0018/0021][00] 0x3B      : ;
+[tst/test9.hla  ][0018/0022][00] 0xA       : \n
+[tst/test9.hla  ][0019/0001][00] 0x9       : \t
+[tst/test9.hla  ][0019/0005][00] 0x66      : f
+[tst/test9.hla  ][0019/0006][00] 0x9       : \t
+[tst/test9.hla  ][0019/0009][00] 0x9       : \t
+[tst/test9.hla  ][0019/0013][00] 0x3A      : :
+[tst/test9.hla  ][0019/0014][00] 0x9       : \t
+[tst/test9.hla  ][0019/0017][00] 0x75      : u
+[tst/test9.hla  ][0019/0018][00] 0x38      : 8
+[tst/test9.hla  ][0019/0019][00] 0x20      :  
+[tst/test9.hla  ][0019/0020][00] 0x3B      : ;
+[tst/test9.hla  ][0019/0021][00] 0xA       : \n
+[tst/test9.hla  ][0020/0001][00] 0x9       : \t
+[tst/test9.hla  ][0020/0005][00] 0x66      : f
+[tst/test9.hla  ][0020/0006][00] 0x78      : x
+[tst/test9.hla  ][0020/0007][00] 0x9       : \t
+[tst/test9.hla  ][0020/0009][00] 0x9       : \t
+[tst/test9.hla  ][0020/0013][00] 0x3A      : :
+[tst/test9.hla  ][0020/0014][00] 0x9       : \t
+[tst/test9.hla  ][0020/0017][00] 0x66      : f
+[tst/test9.hla  ][0020/0018][00] 0x34      : 4
+[tst/test9.hla  ][0020/0019][00] 0x30      : 0
+[tst/test9.hla  ][0020/0020][00] 0x3B      : ;
+[tst/test9.hla  ][0020/0021][00] 0xA       : \n
+[tst/test9.hla  ][0021/0001][00] 0x9       : \t
+[tst/test9.hla  ][0021/0005][00] 0x43      : C
+[tst/test9.hla  ][0021/0006][00] 0x4C      : L
+[tst/test9.hla  ][0021/0007][00] 0x33      : 3
+[tst/test9.hla  ][0021/0008][00] 0x34      : 4
+[tst/test9.hla  ][0021/0009][00] 0x9       : \t
+[tst/test9.hla  ][0021/0013][00] 0x3A      : :
+[tst/test9.hla  ][0021/0014][00] 0x9       : \t
+[tst/test9.hla  ][0021/0017][00] 0x33      : 3
+[tst/test9.hla  ][0021/0018][00] 0x34      : 4
+[tst/test9.hla  ][0021/0019][00] 0x20      :  
+[tst/test9.hla  ][0021/0020][00] 0x3B      : ;
+[tst/test9.hla  ][0021/0021][00] 0xA       : \n
+[tst/test9.hla  ][0022/0001][00] 0x9       : \t
+[tst/test9.hla  ][0022/0005][00] 0x44      : D
+[tst/test9.hla  ][0022/0006][00] 0x46      : F
+[tst/test9.hla  ][0022/0007][00] 0x46      : F
+[tst/test9.hla  ][0022/0008][00] 0x9       : \t
+[tst/test9.hla  ][0022/0009][00] 0x9       : \t
+[tst/test9.hla  ][0022/0013][00] 0x3A      : :
+[tst/test9.hla  ][0022/0014][00] 0x9       : \t
+[tst/test9.hla  ][0022/0017][00] 0x22      : "
+[tst/test9.hla  ][0022/0018][00] 0x64      : d
+[tst/test9.hla  ][0022/0019][00] 0x61      : a
+[tst/test9.hla  ][0022/0020][00] 0x66      : f
+[tst/test9.hla  ][0022/0021][00] 0x66      : f
+[tst/test9.hla  ][0022/0022][00] 0x72      : r
+[tst/test9.hla  ][0022/0023][00] 0x61      : a
+[tst/test9.hla  ][0022/0024][00] 0x22      : "
+[tst/test9.hla  ][0022/0025][00] 0x3B      : ;
+[tst/test9.hla  ][0022/0026][00] 0xA       : \n
+[tst/test9.hla  ][0023/0001][00] 0x9       : \t
+[tst/test9.hla  ][0023/0005][00] 0x70      : p
+[tst/test9.hla  ][0023/0006][00] 0x73      : s
+[tst/test9.hla  ][0023/0007][00] 0x9       : \t
+[tst/test9.hla  ][0023/0009][00] 0x9       : \t
+[tst/test9.hla  ][0023/0013][00] 0x3A      : :
+[tst/test9.hla  ][0023/0014][00] 0x9       : \t
+[tst/test9.hla  ][0023/0017][00] 0x5E      : ^
+[tst/test9.hla  ][0023/0018][00] 0x75      : u
+[tst/test9.hla  ][0023/0019][00] 0x38      : 8
+[tst/test9.hla  ][0023/0020][00] 0x20      :  
+[tst/test9.hla  ][0023/0021][00] 0x3B      : ;
+[tst/test9.hla  ][0023/0022][00] 0xA       : \n
+[tst/test9.hla  ][0024/0001][00] 0x9       : \t
+[tst/test9.hla  ][0024/0005][00] 0x4C      : L
+[tst/test9.hla  ][0024/0006][00] 0x46      : F
+[tst/test9.hla  ][0024/0007][00] 0x34      : 4
+[tst/test9.hla  ][0024/0008][00] 0x30      : 0
+[tst/test9.hla  ][0024/0009][00] 0x9       : \t
+[tst/test9.hla  ][0024/0013][00] 0x3A      : :
+[tst/test9.hla  ][0024/0014][00] 0x9       : \t
+[tst/test9.hla  ][0024/0017][00] 0x30      : 0
+[tst/test9.hla  ][0024/0018][00] 0x2E      : .
+[tst/test9.hla  ][0024/0019][00] 0x30      : 0
+[tst/test9.hla  ][0024/0020][00] 0x20      :  
+[tst/test9.hla  ][0024/0021][00] 0x3B      : ;
+[tst/test9.hla  ][0024/0022][00] 0xA       : \n
+[tst/test9.hla  ][0025/0001][00] 0x9       : \t
+[tst/test9.hla  ][0025/0005][00] 0xA       : \n
+[tst/test9.hla  ][0026/0001][00] 0xA       : \n
+[tst/test9.hla  ][0027/0001][00] 0x9       : \t
+[tst/test9.hla  ][0027/0005][00] 0x2F      : /
+[tst/test9.hla  ][0027/0006][00] 0x2F      : /
+[tst/test9.hla  ][0027/0007][00] 0x20      :  
+[tst/test9.hla  ][0027/0008][00] 0x6C      : l
+[tst/test9.hla  ][0027/0009][00] 0x6F      : o
+[tst/test9.hla  ][0027/0010][00] 0x6F      : o
+[tst/test9.hla  ][0027/0011][00] 0x70      : p
+[tst/test9.hla  ][0027/0012][00] 0xA       : \n
+[tst/test9.hla  ][0028/0001][00] 0xA       : \n
+[tst/test9.hla  ][0029/0001][00] 0x9       : \t
+[tst/test9.hla  ][0029/0005][00] 0x70      : p
+[tst/test9.hla  ][0029/0006][00] 0x73      : s
+[tst/test9.hla  ][0029/0007][00] 0x20      :  
+[tst/test9.hla  ][0029/0008][00] 0x3A      : :
+[tst/test9.hla  ][0029/0009][00] 0x3D      : =
+[tst/test9.hla  ][0029/0010][00] 0x20      :  
+[tst/test9.hla  ][0029/0011][00] 0x40      : @
+[tst/test9.hla  ][0029/0012][00] 0x61      : a
+[tst/test9.hla  ][0029/0013][00] 0x75      : u
+[tst/test9.hla  ][0029/0014][00] 0x38      : 8
+[tst/test9.hla  ][0029/0015][00] 0x20      :  
+[tst/test9.hla  ][0029/0016][00] 0x3B      : ;
+[tst/test9.hla  ][0029/0017][00] 0xA       : \n
+[tst/test9.hla  ][0030/0001][00] 0x9       : \t
+[tst/test9.hla  ][0030/0005][00] 0xA       : \n
+[tst/test9.hla  ][0031/0001][00] 0x9       : \t
+[tst/test9.hla  ][0031/0005][00] 0x5E      : ^
+[tst/test9.hla  ][0031/0006][00] 0x70      : p
+[tst/test9.hla  ][0031/0007][00] 0x73      : s
+[tst/test9.hla  ][0031/0008][00] 0x20      :  
+[tst/test9.hla  ][0031/0009][00] 0x3A      : :
+[tst/test9.hla  ][0031/0010][00] 0x3D      : =
+[tst/test9.hla  ][0031/0011][00] 0x20      :  
+[tst/test9.hla  ][0031/0012][00] 0x31      : 1
+[tst/test9.hla  ][0031/0013][00] 0x32      : 2
+[tst/test9.hla  ][0031/0014][00] 0x33      : 3
+[tst/test9.hla  ][0031/0015][00] 0x20      :  
+[tst/test9.hla  ][0031/0016][00] 0x3B      : ;
+[tst/test9.hla  ][0031/0017][00] 0xA       : \n
+[tst/test9.hla  ][0032/0001][00] 0x9       : \t
+[tst/test9.hla  ][0032/0005][00] 0xA       : \n
+[tst/test9.hla  ][0033/0001][00] 0x9       : \t
+[tst/test9.hla  ][0033/0005][00] 0x61      : a
+[tst/test9.hla  ][0033/0006][00] 0x75      : u
+[tst/test9.hla  ][0033/0007][00] 0x38      : 8
+[tst/test9.hla  ][0033/0008][00] 0x20      :  
+[tst/test9.hla  ][0033/0009][00] 0x3A      : :
+[tst/test9.hla  ][0033/0010][00] 0x3D      : =
+[tst/test9.hla  ][0033/0011][00] 0x20      :  
+[tst/test9.hla  ][0033/0012][00] 0x30      : 0
+[tst/test9.hla  ][0033/0013][00] 0x20      :  
+[tst/test9.hla  ][0033/0014][00] 0x3B      : ;
+[tst/test9.hla  ][0033/0015][00] 0xA       : \n
+[tst/test9.hla  ][0034/0001][00] 0x2F      : /
+[tst/test9.hla  ][0034/0002][00] 0x2A      : *
+[tst/test9.hla  ][0034/0003][00] 0x9       : \t
+[tst/test9.hla  ][0034/0005][00] 0x9       : \t
+[tst/test9.hla  ][0034/0009][00] 0xA       : \n
+[tst/test9.hla  ][0035/0001][00] 0x9       : \t
+[tst/test9.hla  ][0035/0005][00] 0x6C      : l
+[tst/test9.hla  ][0035/0006][00] 0x6F      : o
+[tst/test9.hla  ][0035/0007][00] 0x6F      : o
+[tst/test9.hla  ][0035/0008][00] 0x70      : p
+[tst/test9.hla  ][0035/0009][00] 0x20      :  
+[tst/test9.hla  ][0035/0010][00] 0x28      : (
+[tst/test9.hla  ][0035/0011][00] 0x61      : a
+[tst/test9.hla  ][0035/0012][00] 0x75      : u
+[tst/test9.hla  ][0035/0013][00] 0x38      : 8
+[tst/test9.hla  ][0035/0014][00] 0x3C      : <
+[tst/test9.hla  ][0035/0015][00] 0x31      : 1
+[tst/test9.hla  ][0035/0016][00] 0x30      : 0
+[tst/test9.hla  ][0035/0017][00] 0x29      : )
+[tst/test9.hla  ][0035/0018][00] 0x20      :  
+[tst/test9.hla  ][0035/0019][00] 0x7B      : {
+[tst/test9.hla  ][0035/0020][00] 0xA       : \n
+[tst/test9.hla  ][0036/0001][00] 0x9       : \t
+[tst/test9.hla  ][0036/0005][00] 0xA       : \n
+[tst/test9.hla  ][0037/0001][00] 0x9       : \t
+[tst/test9.hla  ][0037/0005][00] 0x9       : \t
+[tst/test9.hla  ][0037/0009][00] 0x61      : a
+[tst/test9.hla  ][0037/0010][00] 0x73      : s
+[tst/test9.hla  ][0037/0011][00] 0x6D      : m
+[tst/test9.hla  ][0037/0012][00] 0x20      :  
+[tst/test9.hla  ][0037/0013][00] 0x7B      : {
+[tst/test9.hla  ][0037/0014][00] 0xA       : \n
+[tst/test9.hla  ][0038/0001][00] 0x9       : \t
+[tst/test9.hla  ][0038/0005][00] 0x9       : \t
+[tst/test9.hla  ][0038/0009][00] 0x9       : \t
+[tst/test9.hla  ][0038/0013][00] 0x6C      : l
+[tst/test9.hla  ][0038/0014][00] 0x64      : d
+[tst/test9.hla  ][0038/0015][00] 0x61      : a
+[tst/test9.hla  ][0038/0016][00] 0x20      :  
+[tst/test9.hla  ][0038/0017][00] 0x23      : #
+[tst/test9.hla  ][0038/0018][00] 0x27      : '
+[tst/test9.hla  ][0038/0019][00] 0x2A      : *
+[tst/test9.hla  ][0038/0020][00] 0x27      : '
+[tst/test9.hla  ][0038/0021][00] 0xA       : \n
+[tst/test9.hla  ][0039/0001][00] 0x9       : \t
+[tst/test9.hla  ][0039/0005][00] 0x9       : \t
+[tst/test9.hla  ][0039/0009][00] 0x9       : \t
+[tst/test9.hla  ][0039/0013][00] 0x6A      : j
+[tst/test9.hla  ][0039/0014][00] 0x73      : s
+[tst/test9.hla  ][0039/0015][00] 0x72      : r
+[tst/test9.hla  ][0039/0016][00] 0x20      :  
+[tst/test9.hla  ][0039/0017][00] 0x24      : $
+[tst/test9.hla  ][0039/0018][00] 0x66      : f
+[tst/test9.hla  ][0039/0019][00] 0x66      : f
+[tst/test9.hla  ][0039/0020][00] 0x64      : d
+[tst/test9.hla  ][0039/0021][00] 0x32      : 2
+[tst/test9.hla  ][0039/0022][00] 0xA       : \n
+[tst/test9.hla  ][0040/0001][00] 0x9       : \t
+[tst/test9.hla  ][0040/0005][00] 0x9       : \t
+[tst/test9.hla  ][0040/0009][00] 0x7D      : }
+[tst/test9.hla  ][0040/0010][00] 0x3B      : ;
+[tst/test9.hla  ][0040/0011][00] 0xA       : \n
+[tst/test9.hla  ][0041/0001][00] 0x9       : \t
+[tst/test9.hla  ][0041/0005][00] 0xA       : \n
+[tst/test9.hla  ][0042/0001][00] 0x9       : \t
+[tst/test9.hla  ][0042/0005][00] 0x9       : \t
+[tst/test9.hla  ][0042/0009][00] 0x2B      : +
+[tst/test9.hla  ][0042/0010][00] 0x2B      : +
+[tst/test9.hla  ][0042/0011][00] 0x61      : a
+[tst/test9.hla  ][0042/0012][00] 0x75      : u
+[tst/test9.hla  ][0042/0013][00] 0x38      : 8
+[tst/test9.hla  ][0042/0014][00] 0x3B      : ;
+[tst/test9.hla  ][0042/0015][00] 0xA       : \n
+[tst/test9.hla  ][0043/0001][00] 0x9       : \t
+[tst/test9.hla  ][0043/0005][00] 0x7D      : }
+[tst/test9.hla  ][0043/0006][00] 0x20      :  
+[tst/test9.hla  ][0043/0007][00] 0x3B      : ;
+[tst/test9.hla  ][0043/0008][00] 0xA       : \n
+[tst/test9.hla  ][0044/0001][00] 0x2A      : *
+[tst/test9.hla  ][0044/0002][00] 0x2F      : /
+[tst/test9.hla  ][0044/0003][00] 0xA       : \n
+[tst/test9.hla  ][0045/0001][00] 0x2F      : /
+[tst/test9.hla  ][0045/0002][00] 0x2A      : *
+[tst/test9.hla  ][0045/0003][00] 0xA       : \n
+[tst/test9.hla  ][0046/0001][00] 0x9       : \t
+[tst/test9.hla  ][0046/0005][00] 0x6C      : l
+[tst/test9.hla  ][0046/0006][00] 0x6F      : o
+[tst/test9.hla  ][0046/0007][00] 0x6F      : o
+[tst/test9.hla  ][0046/0008][00] 0x70      : p
+[tst/test9.hla  ][0046/0009][00] 0x20      :  
+[tst/test9.hla  ][0046/0010][00] 0x20      :  
+[tst/test9.hla  ][0046/0011][00] 0x7B      : {
+[tst/test9.hla  ][0046/0012][00] 0xA       : \n
+[tst/test9.hla  ][0047/0001][00] 0x9       : \t
+[tst/test9.hla  ][0047/0005][00] 0xA       : \n
+[tst/test9.hla  ][0048/0001][00] 0x9       : \t
+[tst/test9.hla  ][0048/0005][00] 0x9       : \t
+[tst/test9.hla  ][0048/0009][00] 0x61      : a
+[tst/test9.hla  ][0048/0010][00] 0x73      : s
+[tst/test9.hla  ][0048/0011][00] 0x6D      : m
+[tst/test9.hla  ][0048/0012][00] 0x20      :  
+[tst/test9.hla  ][0048/0013][00] 0x7B      : {
+[tst/test9.hla  ][0048/0014][00] 0xA       : \n
+[tst/test9.hla  ][0049/0001][00] 0x9       : \t
+[tst/test9.hla  ][0049/0005][00] 0x9       : \t
+[tst/test9.hla  ][0049/0009][00] 0x9       : \t
+[tst/test9.hla  ][0049/0013][00] 0x6C      : l
+[tst/test9.hla  ][0049/0014][00] 0x64      : d
+[tst/test9.hla  ][0049/0015][00] 0x61      : a
+[tst/test9.hla  ][0049/0016][00] 0x20      :  
+[tst/test9.hla  ][0049/0017][00] 0x23      : #
+[tst/test9.hla  ][0049/0018][00] 0x27      : '
+[tst/test9.hla  ][0049/0019][00] 0x2A      : *
+[tst/test9.hla  ][0049/0020][00] 0x27      : '
+[tst/test9.hla  ][0049/0021][00] 0xA       : \n
+[tst/test9.hla  ][0050/0001][00] 0x9       : \t
+[tst/test9.hla  ][0050/0005][00] 0x9       : \t
+[tst/test9.hla  ][0050/0009][00] 0x9       : \t
+[tst/test9.hla  ][0050/0013][00] 0x6A      : j
+[tst/test9.hla  ][0050/0014][00] 0x73      : s
+[tst/test9.hla  ][0050/0015][00] 0x72      : r
+[tst/test9.hla  ][0050/0016][00] 0x20      :  
+[tst/test9.hla  ][0050/0017][00] 0x24      : $
+[tst/test9.hla  ][0050/0018][00] 0x66      : f
+[tst/test9.hla  ][0050/0019][00] 0x66      : f
+[tst/test9.hla  ][0050/0020][00] 0x64      : d
+[tst/test9.hla  ][0050/0021][00] 0x32      : 2
+[tst/test9.hla  ][0050/0022][00] 0xA       : \n
+[tst/test9.hla  ][0051/0001][00] 0x9       : \t
+[tst/test9.hla  ][0051/0005][00] 0x9       : \t
+[tst/test9.hla  ][0051/0009][00] 0x7D      : }
+[tst/test9.hla  ][0051/0010][00] 0x3B      : ;
+[tst/test9.hla  ][0051/0011][00] 0xA       : \n
+[tst/test9.hla  ][0052/0001][00] 0x9       : \t
+[tst/test9.hla  ][0052/0005][00] 0xA       : \n
+[tst/test9.hla  ][0053/0001][00] 0x9       : \t
+[tst/test9.hla  ][0053/0005][00] 0x9       : \t
+[tst/test9.hla  ][0053/0009][00] 0x2B      : +
+[tst/test9.hla  ][0053/0010][00] 0x2B      : +
+[tst/test9.hla  ][0053/0011][00] 0x61      : a
+[tst/test9.hla  ][0053/0012][00] 0x75      : u
+[tst/test9.hla  ][0053/0013][00] 0x38      : 8
+[tst/test9.hla  ][0053/0014][00] 0x3B      : ;
+[tst/test9.hla  ][0053/0015][00] 0xA       : \n
+[tst/test9.hla  ][0054/0001][00] 0x9       : \t
+[tst/test9.hla  ][0054/0005][00] 0x7D      : }
+[tst/test9.hla  ][0054/0006][00] 0x20      :  
+[tst/test9.hla  ][0054/0007][00] 0x28      : (
+[tst/test9.hla  ][0054/0008][00] 0x61      : a
+[tst/test9.hla  ][0054/0009][00] 0x75      : u
+[tst/test9.hla  ][0054/0010][00] 0x38      : 8
+[tst/test9.hla  ][0054/0011][00] 0x3C      : <
+[tst/test9.hla  ][0054/0012][00] 0x31      : 1
+[tst/test9.hla  ][0054/0013][00] 0x30      : 0
+[tst/test9.hla  ][0054/0014][00] 0x29      : )
+[tst/test9.hla  ][0054/0015][00] 0x20      :  
+[tst/test9.hla  ][0054/0016][00] 0x3B      : ;
+[tst/test9.hla  ][0054/0017][00] 0xA       : \n
+[tst/test9.hla  ][0055/0001][00] 0x2A      : *
+[tst/test9.hla  ][0055/0002][00] 0x2F      : /
+[tst/test9.hla  ][0055/0003][00] 0xA       : \n
+[tst/test9.hla  ][0056/0001][00] 0xA       : \n
+[tst/test9.hla  ][0057/0001][00] 0x2F      : /
+[tst/test9.hla  ][0057/0002][00] 0x2A      : *
+[tst/test9.hla  ][0057/0003][00] 0xA       : \n
+[tst/test9.hla  ][0058/0001][00] 0x9       : \t
+[tst/test9.hla  ][0058/0005][00] 0x6C      : l
+[tst/test9.hla  ][0058/0006][00] 0x6F      : o
+[tst/test9.hla  ][0058/0007][00] 0x6F      : o
+[tst/test9.hla  ][0058/0008][00] 0x70      : p
+[tst/test9.hla  ][0058/0009][00] 0x20      :  
+[tst/test9.hla  ][0058/0010][00] 0x28      : (
+[tst/test9.hla  ][0058/0011][00] 0x61      : a
+[tst/test9.hla  ][0058/0012][00] 0x75      : u
+[tst/test9.hla  ][0058/0013][00] 0x38      : 8
+[tst/test9.hla  ][0058/0014][00] 0x3A      : :
+[tst/test9.hla  ][0058/0015][00] 0x3D      : =
+[tst/test9.hla  ][0058/0016][00] 0x30      : 0
+[tst/test9.hla  ][0058/0017][00] 0x3B      : ;
+[tst/test9.hla  ][0058/0018][00] 0x61      : a
+[tst/test9.hla  ][0058/0019][00] 0x75      : u
+[tst/test9.hla  ][0058/0020][00] 0x38      : 8
+[tst/test9.hla  ][0058/0021][00] 0x3C      : <
+[tst/test9.hla  ][0058/0022][00] 0x31      : 1
+[tst/test9.hla  ][0058/0023][00] 0x30      : 0
+[tst/test9.hla  ][0058/0024][00] 0x3B      : ;
+[tst/test9.hla  ][0058/0025][00] 0x61      : a
+[tst/test9.hla  ][0058/0026][00] 0x75      : u
+[tst/test9.hla  ][0058/0027][00] 0x38      : 8
+[tst/test9.hla  ][0058/0028][00] 0x2B      : +
+[tst/test9.hla  ][0058/0029][00] 0x2B      : +
+[tst/test9.hla  ][0058/0030][00] 0x29      : )
+[tst/test9.hla  ][0058/0031][00] 0x20      :  
+[tst/test9.hla  ][0058/0032][00] 0x7B      : {
+[tst/test9.hla  ][0058/0033][00] 0xA       : \n
+[tst/test9.hla  ][0059/0001][00] 0x9       : \t
+[tst/test9.hla  ][0059/0005][00] 0x9       : \t
+[tst/test9.hla  ][0059/0009][00] 0x61      : a
+[tst/test9.hla  ][0059/0010][00] 0x73      : s
+[tst/test9.hla  ][0059/0011][00] 0x6D      : m
+[tst/test9.hla  ][0059/0012][00] 0x20      :  
+[tst/test9.hla  ][0059/0013][00] 0x7B      : {
+[tst/test9.hla  ][0059/0014][00] 0xA       : \n
+[tst/test9.hla  ][0060/0001][00] 0x9       : \t
+[tst/test9.hla  ][0060/0005][00] 0x9       : \t
+[tst/test9.hla  ][0060/0009][00] 0x9       : \t
+[tst/test9.hla  ][0060/0013][00] 0x6C      : l
+[tst/test9.hla  ][0060/0014][00] 0x64      : d
+[tst/test9.hla  ][0060/0015][00] 0x61      : a
+[tst/test9.hla  ][0060/0016][00] 0x20      :  
+[tst/test9.hla  ][0060/0017][00] 0x23      : #
+[tst/test9.hla  ][0060/0018][00] 0x27      : '
+[tst/test9.hla  ][0060/0019][00] 0x2A      : *
+[tst/test9.hla  ][0060/0020][00] 0x27      : '
+[tst/test9.hla  ][0060/0021][00] 0xA       : \n
+[tst/test9.hla  ][0061/0001][00] 0x9       : \t
+[tst/test9.hla  ][0061/0005][00] 0x9       : \t
+[tst/test9.hla  ][0061/0009][00] 0x9       : \t
+[tst/test9.hla  ][0061/0013][00] 0x6A      : j
+[tst/test9.hla  ][0061/0014][00] 0x73      : s
+[tst/test9.hla  ][0061/0015][00] 0x72      : r
+[tst/test9.hla  ][0061/0016][00] 0x20      :  
+[tst/test9.hla  ][0061/0017][00] 0x24      : $
+[tst/test9.hla  ][0061/0018][00] 0x66      : f
+[tst/test9.hla  ][0061/0019][00] 0x66      : f
+[tst/test9.hla  ][0061/0020][00] 0x64      : d
+[tst/test9.hla  ][0061/0021][00] 0x32      : 2
+[tst/test9.hla  ][0061/0022][00] 0xA       : \n
+[tst/test9.hla  ][0062/0001][00] 0x9       : \t
+[tst/test9.hla  ][0062/0005][00] 0x9       : \t
+[tst/test9.hla  ][0062/0009][00] 0x7D      : }
+[tst/test9.hla  ][0062/0010][00] 0x3B      : ;
+[tst/test9.hla  ][0062/0011][00] 0xA       : \n
+[tst/test9.hla  ][0063/0001][00] 0x9       : \t
+[tst/test9.hla  ][0063/0005][00] 0x7D      : }
+[tst/test9.hla  ][0063/0006][00] 0x20      :  
+[tst/test9.hla  ][0063/0007][00] 0x3B      : ;
+[tst/test9.hla  ][0063/0008][00] 0xA       : \n
+[tst/test9.hla  ][0064/0001][00] 0xA       : \n
+[tst/test9.hla  ][0065/0001][00] 0x9       : \t
+[tst/test9.hla  ][0065/0005][00] 0x6C      : l
+[tst/test9.hla  ][0065/0006][00] 0x6F      : o
+[tst/test9.hla  ][0065/0007][00] 0x6F      : o
+[tst/test9.hla  ][0065/0008][00] 0x70      : p
+[tst/test9.hla  ][0065/0009][00] 0x20      :  
+[tst/test9.hla  ][0065/0010][00] 0x7B      : {
+[tst/test9.hla  ][0065/0011][00] 0xA       : \n
+[tst/test9.hla  ][0066/0001][00] 0x9       : \t
+[tst/test9.hla  ][0066/0005][00] 0x9       : \t
+[tst/test9.hla  ][0066/0009][00] 0x62      : b
+[tst/test9.hla  ][0066/0010][00] 0x72      : r
+[tst/test9.hla  ][0066/0011][00] 0x65      : e
+[tst/test9.hla  ][0066/0012][00] 0x61      : a
+[tst/test9.hla  ][0066/0013][00] 0x6B      : k
+[tst/test9.hla  ][0066/0014][00] 0x20      :  
+[tst/test9.hla  ][0066/0015][00] 0x3B      : ;
+[tst/test9.hla  ][0066/0016][00] 0xA       : \n
+[tst/test9.hla  ][0067/0001][00] 0x9       : \t
+[tst/test9.hla  ][0067/0005][00] 0x7D      : }
+[tst/test9.hla  ][0067/0006][00] 0x20      :  
+[tst/test9.hla  ][0067/0007][00] 0x3B      : ;
+[tst/test9.hla  ][0067/0008][00] 0xA       : \n
+[tst/test9.hla  ][0068/0001][00] 0x2A      : *
+[tst/test9.hla  ][0068/0002][00] 0x2F      : /
+[tst/test9.hla  ][0068/0003][00] 0xA       : \n
+[tst/test9.hla  ][0069/0001][00] 0x2F      : /
+[tst/test9.hla  ][0069/0002][00] 0x2A      : *
+[tst/test9.hla  ][0069/0003][00] 0xA       : \n
+[tst/test9.hla  ][0070/0001][00] 0x9       : \t
+[tst/test9.hla  ][0070/0005][00] 0x69      : i
+[tst/test9.hla  ][0070/0006][00] 0x66      : f
+[tst/test9.hla  ][0070/0007][00] 0x20      :  
+[tst/test9.hla  ][0070/0008][00] 0x28      : (
+[tst/test9.hla  ][0070/0009][00] 0x20      :  
+[tst/test9.hla  ][0070/0010][00] 0x61      : a
+[tst/test9.hla  ][0070/0011][00] 0x75      : u
+[tst/test9.hla  ][0070/0012][00] 0x38      : 8
+[tst/test9.hla  ][0070/0013][00] 0x20      :  
+[tst/test9.hla  ][0070/0014][00] 0x3C      : <
+[tst/test9.hla  ][0070/0015][00] 0x3D      : =
+[tst/test9.hla  ][0070/0016][00] 0x20      :  
+[tst/test9.hla  ][0070/0017][00] 0x35      : 5
+[tst/test9.hla  ][0070/0018][00] 0x20      :  
+[tst/test9.hla  ][0070/0019][00] 0x29      : )
+[tst/test9.hla  ][0070/0020][00] 0x20      :  
+[tst/test9.hla  ][0070/0021][00] 0x2F      : /
+[tst/test9.hla  ][0070/0022][00] 0x2F      : /
+[tst/test9.hla  ][0070/0023][00] 0x20      :  
+[tst/test9.hla  ][0070/0024][00] 0x30      : 0
+[tst/test9.hla  ][0070/0025][00] 0x20      :  
+[tst/test9.hla  ][0070/0026][00] 0x3C      : <
+[tst/test9.hla  ][0070/0027][00] 0x3D      : =
+[tst/test9.hla  ][0070/0028][00] 0x20      :  
+[tst/test9.hla  ][0070/0029][00] 0x35      : 5
+[tst/test9.hla  ][0070/0030][00] 0xA       : \n
+[tst/test9.hla  ][0071/0001][00] 0x9       : \t
+[tst/test9.hla  ][0071/0005][00] 0x7B      : {
+[tst/test9.hla  ][0071/0006][00] 0xA       : \n
+[tst/test9.hla  ][0072/0001][00] 0x9       : \t
+[tst/test9.hla  ][0072/0005][00] 0x9       : \t
+[tst/test9.hla  ][0072/0009][00] 0x61      : a
+[tst/test9.hla  ][0072/0010][00] 0x73      : s
+[tst/test9.hla  ][0072/0011][00] 0x6D      : m
+[tst/test9.hla  ][0072/0012][00] 0x20      :  
+[tst/test9.hla  ][0072/0013][00] 0x7B      : {
+[tst/test9.hla  ][0072/0014][00] 0xA       : \n
+[tst/test9.hla  ][0073/0001][00] 0x9       : \t
+[tst/test9.hla  ][0073/0005][00] 0x9       : \t
+[tst/test9.hla  ][0073/0009][00] 0x9       : \t
+[tst/test9.hla  ][0073/0013][00] 0x6C      : l
+[tst/test9.hla  ][0073/0014][00] 0x64      : d
+[tst/test9.hla  ][0073/0015][00] 0x61      : a
+[tst/test9.hla  ][0073/0016][00] 0x20      :  
+[tst/test9.hla  ][0073/0017][00] 0x23      : #
+[tst/test9.hla  ][0073/0018][00] 0x27      : '
+[tst/test9.hla  ][0073/0019][00] 0x23      : #
+[tst/test9.hla  ][0073/0020][00] 0x27      : '
+[tst/test9.hla  ][0073/0021][00] 0xA       : \n
+[tst/test9.hla  ][0074/0001][00] 0x9       : \t
+[tst/test9.hla  ][0074/0005][00] 0x9       : \t
+[tst/test9.hla  ][0074/0009][00] 0x9       : \t
+[tst/test9.hla  ][0074/0013][00] 0x6A      : j
+[tst/test9.hla  ][0074/0014][00] 0x73      : s
+[tst/test9.hla  ][0074/0015][00] 0x72      : r
+[tst/test9.hla  ][0074/0016][00] 0x20      :  
+[tst/test9.hla  ][0074/0017][00] 0x24      : $
+[tst/test9.hla  ][0074/0018][00] 0x66      : f
+[tst/test9.hla  ][0074/0019][00] 0x66      : f
+[tst/test9.hla  ][0074/0020][00] 0x64      : d
+[tst/test9.hla  ][0074/0021][00] 0x32      : 2
+[tst/test9.hla  ][0074/0022][00] 0xA       : \n
+[tst/test9.hla  ][0075/0001][00] 0x9       : \t
+[tst/test9.hla  ][0075/0005][00] 0x9       : \t
+[tst/test9.hla  ][0075/0009][00] 0x7D      : }
+[tst/test9.hla  ][0075/0010][00] 0x3B      : ;
+[tst/test9.hla  ][0075/0011][00] 0xA       : \n
+[tst/test9.hla  ][0076/0001][00] 0x9       : \t
+[tst/test9.hla  ][0076/0005][00] 0x7D      : }
+[tst/test9.hla  ][0076/0006][00] 0x20      :  
+[tst/test9.hla  ][0076/0007][00] 0x3B      : ;
+[tst/test9.hla  ][0076/0008][00] 0xA       : \n
+[tst/test9.hla  ][0077/0001][00] 0x2A      : *
+[tst/test9.hla  ][0077/0002][00] 0x2F      : /
+[tst/test9.hla  ][0077/0003][00] 0xA       : \n
+[tst/test9.hla  ][0078/0001][00] 0x9       : \t
+[tst/test9.hla  ][0078/0005][00] 0x72      : r
+[tst/test9.hla  ][0078/0006][00] 0x65      : e
+[tst/test9.hla  ][0078/0007][00] 0x74      : t
+[tst/test9.hla  ][0078/0008][00] 0x20      :  
+[tst/test9.hla  ][0078/0009][00] 0x30      : 0
+[tst/test9.hla  ][0078/0010][00] 0x20      :  
+[tst/test9.hla  ][0078/0011][00] 0x3B      : ;
+[tst/test9.hla  ][0078/0012][00] 0xA       : \n
+[tst/test9.hla  ][0079/0001][00] 0x7D      : }
+[tst/test9.hla  ][0079/0002][00] 0x20      :  
+[tst/test9.hla  ][0079/0003][00] 0x3B      : ;
+[tst/test9.hla  ][0079/0004][00] 0xA       : \n
+[tst/test9.hla  ][0080/0001][00] 0xA       : \n
+[tst/test9.hla  ][0081/0001][00] 0x9       : \t
+[tst/test9.hla  ][0081/0005][00] 0x20      :  
+[tst/test9.hla  ][0081/0006][00] 0xA       : \n
+--- End Debug Stream ---
