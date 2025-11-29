@@ -80,7 +80,8 @@ enum class ErrorMessage {
 	ConstantNotInitializedWithLiteral,
 	TypeMismatchInConstantDecl,
 	BitwiseOperationOnFloat, 	// per operatori bitwise su float
-	StackOverflow				// Local stack exceeds 255 bytes
+	StackOverflow,				// Local stack exceeds 255 bytes
+	InvalidArrayDimension		// Dimensioni array non valide
 };
 
 // --- Struttura per un Singolo Errore ---

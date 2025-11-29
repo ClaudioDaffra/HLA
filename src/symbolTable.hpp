@@ -74,6 +74,10 @@ public:
 	std::vector<std::shared_ptr<Type>> param_types;
 	bool is_syscall = false; // Flag per distinguere 'fn' da 'sys'
 
+	// Gestione Array
+	std::vector<int> array_dims; // Dimensioni dell'array (es. [10][20])
+	bool is_array() const { return !array_dims.empty(); }
+
 	Symbol(const std::string& n, SymbolKind k, std::shared_ptr<Type> t, int level, bool global, const Token* tok = nullptr)
 		: name(n), kind(k), type(t), scope_level(level), is_global(global), offset(0), token(tok) {}
 };

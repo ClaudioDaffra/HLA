@@ -111,7 +111,7 @@ std::unique_ptr<Node> Parser::parse_top_level_statement() {
 		if (peek().type == eToken::T_IDENTIFIER && peek_next().type == eToken::T_COLON) {
 			const auto& third_token = (*m_tokens)[m_current_pos + 2];
 
-			if (third_token.type == eToken::T_POINTER) {
+			if (third_token.type == eToken::T_POINTER || third_token.type == eToken::T_Q0 || third_token.type == eToken::T_MUL) {
 				return parse_declaration();
 			}
 
@@ -380,8 +380,18 @@ std::unique_ptr<Node> Parser::parse_function()
 	int current_offset = 0;
 	for (const auto& sym : locals_and_params_vec) {
 		sym->offset = current_offset;
-		current_offset += sym->type->size;
-		m_dump_log.push_back(std::format("  - Symbol '{}', size {}, offset {}", sym->name, sym->type->size, sym->offset));
+		
+		int total_size = sym->type->size;
+		if (sym->is_array()) {
+			int elements = 1;
+			for (int d : sym->array_dims) {
+				elements *= d;
+			}
+			total_size *= elements;
+		}
+		
+		current_offset += total_size;
+		m_dump_log.push_back(std::format("  - Symbol '{}', size {}, offset {}", sym->name, total_size, sym->offset));
 	}
 
 	func_node->stack_size = current_offset;
@@ -608,7 +618,7 @@ std::unique_ptr<Node> Parser::parse_statement()
 	if (peek().type == eToken::T_IDENTIFIER && peek_next().type == eToken::T_COLON) {
 		const auto& third_token = (*m_tokens)[m_current_pos + 2];
 
-		if (third_token.type == eToken::T_POINTER) {
+		if (third_token.type == eToken::T_POINTER || third_token.type == eToken::T_Q0 || third_token.type == eToken::T_MUL) {
 			return parse_declaration();
 		}
 
@@ -1017,8 +1027,80 @@ std::unique_ptr<Node> Parser::parse_declaration()
 	m_dump_log.push_back(std::format("Matched identifier '{}'. Expecting ':'.", var_name));
 	expect(eToken::T_COLON);
 
+	// --- Gestione Array e Puntatori ---
+	// Sintassi supportata:
+	// var : [10] u8;
+	// var : * [10] u8; (Array di 10 puntatori a u8)
+	// var : [2][3] f40;
+	
+	int pointer_count = 0;
+	while (match(eToken::T_POINTER) || match(eToken::T_MUL)) {
+		pointer_count++;
+		m_dump_log.push_back("Matched pointer prefix.");
+	}
+
+	std::vector<int> dimensions;
+	while (peek().type == eToken::T_Q0) { // '['
+		consume(); // Consuma '['
+		
+		const Token& dim_tok = expect(eToken::T_INTEGER);
+		uint64_t dim_val = std::get<uint64_t>(dim_tok.value);
+		
+		if (dim_val == 0) {
+			ErrorHandler::get().push_error(Sender::Parser, ErrorType::Error, Action::Parsing, ErrorMessage::InvalidArrayDimension, dim_tok.row, dim_tok.col, "Array dimension must be greater than 0.");
+			throw ParseError{};
+		}
+		
+		// Controllo dimensione massima (usiamo int, limitiamo per sicurezza)
+		if (dim_val > 65535) { // Un limite ragionevole per 16-bit systems
+             ErrorHandler::get().push_error(Sender::Parser, ErrorType::Error, Action::Parsing, ErrorMessage::InvalidArrayDimension, dim_tok.row, dim_tok.col, "Array dimension too large.");
+             throw ParseError{};
+        }
+
+		dimensions.push_back(static_cast<int>(dim_val));
+		
+		expect(eToken::T_Q1); // Consuma ']'
+		m_dump_log.push_back(std::format("Parsed array dimension [{}].", dim_val));
+		
+		if (dimensions.size() > 3) {
+			ErrorHandler::get().push_error(Sender::Parser, ErrorType::Error, Action::Parsing, ErrorMessage::InvalidArrayDimension, dim_tok.row, dim_tok.col, "Maximum array dimensions (3) exceeded.");
+			throw ParseError{};
+		}
+	}
+
 	m_dump_log.push_back("Parsing type specifier for declaration.");
+	// Qui usiamo una versione semplificata di parse_type_specifier perché abbiamo già gestito i puntatori iniziali
+	// parse_type_specifier() gestirebbe ALTRI puntatori dopo l'array, il che potrebbe non essere desiderato o supportato dalla sintassi attuale.
+	// Tuttavia, parse_type_specifier() inizia con un loop sui puntatori. Se ne trova altri, li aggiunge.
+	// Esempio: var : [10] * u8 -> "Array di 10 puntatori a u8" ?
+	// Se abbiamo già parsato puntatori PRIMA dell'array (caso arr3: * [10] point), e ora chiamiamo parse_type_specifier...
+	// parse_type_specifier() parserebbe ulteriori puntatori attaccati al tipo base.
+	
 	std::shared_ptr<Type> final_type = parse_type_specifier();
+
+	// Applichiamo i puntatori trovati PRIMA dell'array (es. * [10] point)
+	// Nota: Se final_type è già un puntatore (da parse_type_specifier), questi si aggiungono "sopra".
+	for (int i = 0; i < pointer_count; ++i) {
+		final_type = m_symbol_table.get_pointer_type(final_type);
+	}
+
+	// Calcolo dimensione totale per controlli
+	if (!dimensions.empty()) {
+		int total_elements = 1;
+		for (int d : dimensions) total_elements *= d;
+		
+		int element_size = final_type->size;
+		int total_size = total_elements * element_size;
+		
+		// Controllo limiti array locali (stack)
+		if (m_symbol_table.get_current_scope()->level > 0) { // Locale
+			if (total_size > 255) {
+				const Token& err_tok = peek(); // Approssimazione posizione
+				ErrorHandler::get().push_error(Sender::Parser, ErrorType::Error, Action::Parsing, ErrorMessage::StackOverflow, err_tok.row, err_tok.col, std::format("Local array size ({} bytes) exceeds stack limit (255 bytes).", total_size));
+				throw ParseError{};
+			}
+		}
+	}
 
 	m_dump_log.push_back(std::format("Parsed type for '{}'. Expecting ';'.", var_name));
 	expect(eToken::T_SEMICOLON);
@@ -1029,6 +1111,7 @@ std::unique_ptr<Node> Parser::parse_declaration()
 	}
 
 	auto new_symbol = std::make_shared<Symbol>(var_name, SymbolKind::SYMBOL_VAR, final_type, m_symbol_table.get_current_scope()->level, m_symbol_table.get_current_scope()->level == 0, &id_token);
+	new_symbol->array_dims = dimensions;
 
 	m_symbol_table.add_symbol(new_symbol);
 

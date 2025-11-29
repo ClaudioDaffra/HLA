@@ -185,6 +185,14 @@ void SymbolTable::dump_symbol(std::ofstream& out, const Symbol& sym, const Strea
 	}
 
 	std::string type_str = sym.type ? type_to_string(*sym.type) : "N/A";
+	
+	// Aggiunge le dimensioni dell'array alla stringa del tipo per il debug
+	if (sym.is_array()) {
+		for (int dim : sym.array_dims) {
+			type_str += std::format("[{}]", dim);
+		}
+	}
+
 	std::string offset_str;
 	if (sym.kind == SymbolKind::SYMBOL_VAR && !sym.is_global) {
 		offset_str = std::to_string(sym.offset);

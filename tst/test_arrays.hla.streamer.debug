@@ -1,0 +1,123 @@
+--- Begin Debug Stream ---
+[File           ][Row/Col  ][Lvl][Hex Val  ] : Char
+------------------------------------------------------
+[...t_arrays.hla][0001/0001][00] 0xA       : \n
+[...t_arrays.hla][0002/0001][00] 0x67      : g
+[...t_arrays.hla][0002/0002][00] 0x61      : a
+[...t_arrays.hla][0002/0003][00] 0x72      : r
+[...t_arrays.hla][0002/0004][00] 0x72      : r
+[...t_arrays.hla][0002/0005][00] 0x31      : 1
+[...t_arrays.hla][0002/0006][00] 0x20      :  
+[...t_arrays.hla][0002/0007][00] 0x3A      : :
+[...t_arrays.hla][0002/0008][00] 0x20      :  
+[...t_arrays.hla][0002/0009][00] 0x5B      : [
+[...t_arrays.hla][0002/0010][00] 0x31      : 1
+[...t_arrays.hla][0002/0011][00] 0x30      : 0
+[...t_arrays.hla][0002/0012][00] 0x5D      : ]
+[...t_arrays.hla][0002/0013][00] 0x20      :  
+[...t_arrays.hla][0002/0014][00] 0x75      : u
+[...t_arrays.hla][0002/0015][00] 0x38      : 8
+[...t_arrays.hla][0002/0016][00] 0x3B      : ;
+[...t_arrays.hla][0002/0017][00] 0xA       : \n
+[...t_arrays.hla][0003/0001][00] 0x67      : g
+[...t_arrays.hla][0003/0002][00] 0x61      : a
+[...t_arrays.hla][0003/0003][00] 0x72      : r
+[...t_arrays.hla][0003/0004][00] 0x72      : r
+[...t_arrays.hla][0003/0005][00] 0x32      : 2
+[...t_arrays.hla][0003/0006][00] 0x20      :  
+[...t_arrays.hla][0003/0007][00] 0x3A      : :
+[...t_arrays.hla][0003/0008][00] 0x20      :  
+[...t_arrays.hla][0003/0009][00] 0x5B      : [
+[...t_arrays.hla][0003/0010][00] 0x38      : 8
+[...t_arrays.hla][0003/0011][00] 0x5D      : ]
+[...t_arrays.hla][0003/0012][00] 0x5B      : [
+[...t_arrays.hla][0003/0013][00] 0x38      : 8
+[...t_arrays.hla][0003/0014][00] 0x5D      : ]
+[...t_arrays.hla][0003/0015][00] 0x20      :  
+[...t_arrays.hla][0003/0016][00] 0x66      : f
+[...t_arrays.hla][0003/0017][00] 0x34      : 4
+[...t_arrays.hla][0003/0018][00] 0x30      : 0
+[...t_arrays.hla][0003/0019][00] 0x3B      : ;
+[...t_arrays.hla][0003/0020][00] 0xA       : \n
+[...t_arrays.hla][0004/0001][00] 0x67      : g
+[...t_arrays.hla][0004/0002][00] 0x61      : a
+[...t_arrays.hla][0004/0003][00] 0x72      : r
+[...t_arrays.hla][0004/0004][00] 0x72      : r
+[...t_arrays.hla][0004/0005][00] 0x33      : 3
+[...t_arrays.hla][0004/0006][00] 0x20      :  
+[...t_arrays.hla][0004/0007][00] 0x3A      : :
+[...t_arrays.hla][0004/0008][00] 0x20      :  
+[...t_arrays.hla][0004/0009][00] 0x2A      : *
+[...t_arrays.hla][0004/0010][00] 0x20      :  
+[...t_arrays.hla][0004/0011][00] 0x5B      : [
+[...t_arrays.hla][0004/0012][00] 0x31      : 1
+[...t_arrays.hla][0004/0013][00] 0x30      : 0
+[...t_arrays.hla][0004/0014][00] 0x5D      : ]
+[...t_arrays.hla][0004/0015][00] 0x20      :  
+[...t_arrays.hla][0004/0016][00] 0x75      : u
+[...t_arrays.hla][0004/0017][00] 0x38      : 8
+[...t_arrays.hla][0004/0018][00] 0x3B      : ;
+[...t_arrays.hla][0004/0019][00] 0xA       : \n
+[...t_arrays.hla][0005/0001][00] 0xA       : \n
+[...t_arrays.hla][0006/0001][00] 0x66      : f
+[...t_arrays.hla][0006/0002][00] 0x6E      : n
+[...t_arrays.hla][0006/0003][00] 0x20      :  
+[...t_arrays.hla][0006/0004][00] 0x6D      : m
+[...t_arrays.hla][0006/0005][00] 0x61      : a
+[...t_arrays.hla][0006/0006][00] 0x69      : i
+[...t_arrays.hla][0006/0007][00] 0x6E      : n
+[...t_arrays.hla][0006/0008][00] 0x28      : (
+[...t_arrays.hla][0006/0009][00] 0x29      : )
+[...t_arrays.hla][0006/0010][00] 0x20      :  
+[...t_arrays.hla][0006/0011][00] 0x7B      : {
+[...t_arrays.hla][0006/0012][00] 0xA       : \n
+[...t_arrays.hla][0007/0001][00] 0x20      :  
+[...t_arrays.hla][0007/0002][00] 0x20      :  
+[...t_arrays.hla][0007/0003][00] 0x20      :  
+[...t_arrays.hla][0007/0004][00] 0x20      :  
+[...t_arrays.hla][0007/0005][00] 0x6C      : l
+[...t_arrays.hla][0007/0006][00] 0x61      : a
+[...t_arrays.hla][0007/0007][00] 0x72      : r
+[...t_arrays.hla][0007/0008][00] 0x72      : r
+[...t_arrays.hla][0007/0009][00] 0x31      : 1
+[...t_arrays.hla][0007/0010][00] 0x20      :  
+[...t_arrays.hla][0007/0011][00] 0x3A      : :
+[...t_arrays.hla][0007/0012][00] 0x20      :  
+[...t_arrays.hla][0007/0013][00] 0x5B      : [
+[...t_arrays.hla][0007/0014][00] 0x31      : 1
+[...t_arrays.hla][0007/0015][00] 0x30      : 0
+[...t_arrays.hla][0007/0016][00] 0x5D      : ]
+[...t_arrays.hla][0007/0017][00] 0x20      :  
+[...t_arrays.hla][0007/0018][00] 0x75      : u
+[...t_arrays.hla][0007/0019][00] 0x38      : 8
+[...t_arrays.hla][0007/0020][00] 0x3B      : ;
+[...t_arrays.hla][0007/0021][00] 0xA       : \n
+[...t_arrays.hla][0008/0001][00] 0x20      :  
+[...t_arrays.hla][0008/0002][00] 0x20      :  
+[...t_arrays.hla][0008/0003][00] 0x20      :  
+[...t_arrays.hla][0008/0004][00] 0x20      :  
+[...t_arrays.hla][0008/0005][00] 0x6C      : l
+[...t_arrays.hla][0008/0006][00] 0x61      : a
+[...t_arrays.hla][0008/0007][00] 0x72      : r
+[...t_arrays.hla][0008/0008][00] 0x72      : r
+[...t_arrays.hla][0008/0009][00] 0x32      : 2
+[...t_arrays.hla][0008/0010][00] 0x20      :  
+[...t_arrays.hla][0008/0011][00] 0x3A      : :
+[...t_arrays.hla][0008/0012][00] 0x20      :  
+[...t_arrays.hla][0008/0013][00] 0x5B      : [
+[...t_arrays.hla][0008/0014][00] 0x31      : 1
+[...t_arrays.hla][0008/0015][00] 0x30      : 0
+[...t_arrays.hla][0008/0016][00] 0x5D      : ]
+[...t_arrays.hla][0008/0017][00] 0x5B      : [
+[...t_arrays.hla][0008/0018][00] 0x32      : 2
+[...t_arrays.hla][0008/0019][00] 0x5D      : ]
+[...t_arrays.hla][0008/0020][00] 0x20      :  
+[...t_arrays.hla][0008/0021][00] 0x75      : u
+[...t_arrays.hla][0008/0022][00] 0x38      : 8
+[...t_arrays.hla][0008/0023][00] 0x3B      : ;
+[...t_arrays.hla][0008/0024][00] 0xA       : \n
+[...t_arrays.hla][0009/0001][00] 0x7D      : }
+[...t_arrays.hla][0009/0002][00] 0x20      :  
+[...t_arrays.hla][0009/0003][00] 0x3B      : ;
+[...t_arrays.hla][0009/0004][00] 0xA       : \n
+--- End Debug Stream ---

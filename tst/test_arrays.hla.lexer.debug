@@ -1,0 +1,54 @@
+--- Begin Lexer Debug ---
+File            | Row/Col    | Stream Pos   | Token Type           | Converted Value      | Suffix     | F40 Repr                  | Original Lexeme
+--------------------------------------------------------------------------------------------------------------------------------------------
+...t_arrays.hla | 002/001    | 0001-0005    | T_IDENTIFIER         | garr1                | -          | -                         | garr1
+...t_arrays.hla | 002/007    | 0007-0007    | T_COLON              | :                    | -          | -                         | :
+...t_arrays.hla | 002/009    | 0009-0009    | T_Q0                 | [                    | -          | -                         | [
+...t_arrays.hla | 002/010    | 0010-0011    | T_INTEGER            | 10                   | -          | -                         | 10
+...t_arrays.hla | 002/012    | 0012-0012    | T_Q1                 | ]                    | -          | -                         | ]
+...t_arrays.hla | 002/014    | 0014-0015    | T_IDENTIFIER         | u8                   | -          | -                         | u8
+...t_arrays.hla | 002/016    | 0016-0016    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...t_arrays.hla | 003/001    | 0018-0022    | T_IDENTIFIER         | garr2                | -          | -                         | garr2
+...t_arrays.hla | 003/007    | 0024-0024    | T_COLON              | :                    | -          | -                         | :
+...t_arrays.hla | 003/009    | 0026-0026    | T_Q0                 | [                    | -          | -                         | [
+...t_arrays.hla | 003/010    | 0027-0027    | T_INTEGER            | 8                    | -          | -                         | 8
+...t_arrays.hla | 003/011    | 0028-0028    | T_Q1                 | ]                    | -          | -                         | ]
+...t_arrays.hla | 003/012    | 0029-0029    | T_Q0                 | [                    | -          | -                         | [
+...t_arrays.hla | 003/013    | 0030-0030    | T_INTEGER            | 8                    | -          | -                         | 8
+...t_arrays.hla | 003/014    | 0031-0031    | T_Q1                 | ]                    | -          | -                         | ]
+...t_arrays.hla | 003/016    | 0033-0035    | T_IDENTIFIER         | f40                  | -          | -                         | f40
+...t_arrays.hla | 003/019    | 0036-0036    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...t_arrays.hla | 004/001    | 0038-0042    | T_IDENTIFIER         | garr3                | -          | -                         | garr3
+...t_arrays.hla | 004/007    | 0044-0044    | T_COLON              | :                    | -          | -                         | :
+...t_arrays.hla | 004/009    | 0046-0046    | T_MUL                | *                    | -          | -                         | *
+...t_arrays.hla | 004/011    | 0048-0048    | T_Q0                 | [                    | -          | -                         | [
+...t_arrays.hla | 004/012    | 0049-0050    | T_INTEGER            | 10                   | -          | -                         | 10
+...t_arrays.hla | 004/014    | 0051-0051    | T_Q1                 | ]                    | -          | -                         | ]
+...t_arrays.hla | 004/016    | 0053-0054    | T_IDENTIFIER         | u8                   | -          | -                         | u8
+...t_arrays.hla | 004/018    | 0055-0055    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...t_arrays.hla | 006/001    | 0058-0059    | T_KEYWORD            | fn                   | -          | -                         | fn
+...t_arrays.hla | 006/004    | 0061-0064    | T_IDENTIFIER         | main                 | -          | -                         | main
+...t_arrays.hla | 006/008    | 0065-0065    | T_P0                 | (                    | -          | -                         | (
+...t_arrays.hla | 006/009    | 0066-0066    | T_P1                 | )                    | -          | -                         | )
+...t_arrays.hla | 006/011    | 0068-0068    | T_G0                 | {                    | -          | -                         | {
+...t_arrays.hla | 007/005    | 0074-0078    | T_IDENTIFIER         | larr1                | -          | -                         | larr1
+...t_arrays.hla | 007/011    | 0080-0080    | T_COLON              | :                    | -          | -                         | :
+...t_arrays.hla | 007/013    | 0082-0082    | T_Q0                 | [                    | -          | -                         | [
+...t_arrays.hla | 007/014    | 0083-0084    | T_INTEGER            | 10                   | -          | -                         | 10
+...t_arrays.hla | 007/016    | 0085-0085    | T_Q1                 | ]                    | -          | -                         | ]
+...t_arrays.hla | 007/018    | 0087-0088    | T_IDENTIFIER         | u8                   | -          | -                         | u8
+...t_arrays.hla | 007/020    | 0089-0089    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...t_arrays.hla | 008/005    | 0095-0099    | T_IDENTIFIER         | larr2                | -          | -                         | larr2
+...t_arrays.hla | 008/011    | 0101-0101    | T_COLON              | :                    | -          | -                         | :
+...t_arrays.hla | 008/013    | 0103-0103    | T_Q0                 | [                    | -          | -                         | [
+...t_arrays.hla | 008/014    | 0104-0105    | T_INTEGER            | 10                   | -          | -                         | 10
+...t_arrays.hla | 008/016    | 0106-0106    | T_Q1                 | ]                    | -          | -                         | ]
+...t_arrays.hla | 008/017    | 0107-0107    | T_Q0                 | [                    | -          | -                         | [
+...t_arrays.hla | 008/018    | 0108-0108    | T_INTEGER            | 2                    | -          | -                         | 2
+...t_arrays.hla | 008/019    | 0109-0109    | T_Q1                 | ]                    | -          | -                         | ]
+...t_arrays.hla | 008/021    | 0111-0112    | T_IDENTIFIER         | u8                   | -          | -                         | u8
+...t_arrays.hla | 008/023    | 0113-0113    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...t_arrays.hla | 009/001    | 0115-0115    | T_G1                 | }                    | -          | -                         | }
+...t_arrays.hla | 009/003    | 0117-0117    | T_SEMICOLON          | ;                    | -          | -                         | ;
+...t_arrays.hla | 009/005    | 0119-0119    | T_EOF                | -                    | -          | -                         | -
+--- End Lexer Debug ---

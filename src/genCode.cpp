@@ -65,6 +65,22 @@ static bool is_relational_op(NodeKind kind) {
 	}
 }
 
+// Helper per ottenere la rappresentazione in stringa del tipo per i commenti assembly
+static std::string type_to_string_comment(const std::shared_ptr<Type>& type) {
+	if (!type) return "unknown";
+	switch (type->kind) {
+		case TypeKind::TYPE_U8:      return "u8";
+		case TypeKind::TYPE_S8:      return "s8";
+		case TypeKind::TYPE_U16:     return "u16";
+		case TypeKind::TYPE_S16:     return "s16";
+		case TypeKind::TYPE_F40:     return "f40";
+		case TypeKind::TYPE_POINTER: 
+			if (type->base) return "*" + type_to_string_comment(type->base);
+			return "*void";
+		default:                     return "unknown";
+	}
+}
+
 // --- Metodi della classe CodeGenerator ---
 
 // Gestisce l'ottenimento del valore di una variabile (globale o locale).
@@ -266,19 +282,42 @@ void CodeGenerator::generate_var_decl(Node* node, std::ofstream& out)
 
 	int size = (symbol->type->kind == TypeKind::TYPE_POINTER) ? SIZEOF_WORD : symbol->type->size;
 
-	switch (size) {
-		case SIZEOF_BYTE:
-			out << "\t.byte 0\n";
-			break;
-		case SIZEOF_WORD:
-			out << "\t.word 0\n";
-			break;
-		case SIZEOF_REAL:
-			out << "\t.byte 0,0,0,0,0\n";
-			break;
-		default:
-			out << "\t; Errore: dimensione tipo non supportata: " << size << "\n";
-			break;
+	if (symbol->is_array()) {
+		// Calcola la dimensione totale dell'array
+		int total_size = size;
+		std::string calc_str = "";
+		
+		for (int dim : symbol->array_dims) {
+			total_size *= dim;
+			calc_str += std::to_string(dim) + "*";
+		}
+		calc_str += std::to_string(size);
+		
+		std::string type_str = type_to_string_comment(symbol->type);
+		for (int dim : symbol->array_dims) {
+			type_str += "[" + std::to_string(dim) + "]";
+		}
+
+		out << "\t.fill " << total_size << " \t; " << type_str;
+		if (symbol->array_dims.size() > 0) {
+			 out << " (" << calc_str << " = " << total_size << ")";
+		}
+		out << "\n";
+	} else {
+		switch (size) {
+			case SIZEOF_BYTE:
+				out << "\t.byte 0\n";
+				break;
+			case SIZEOF_WORD:
+				out << "\t.word 0\n";
+				break;
+			case SIZEOF_REAL:
+				out << "\t.byte 0,0,0,0,0\n";
+				break;
+			default:
+				out << "\t; Errore: dimensione tipo non supportata: " << size << "\n";
+				break;
+		}
 	}
 }
 
@@ -1319,11 +1358,34 @@ void CodeGenerator::generate_function_frame(Node* node, std::ofstream& out)
 
 		out << "\t\t" << sym->name << padding;
 
-		switch (sym->type->size) {
-			case SIZEOF_BYTE: out << ".byte 0\n"; break;
-			case SIZEOF_WORD: out << ".word 0\n"; break;
-			case SIZEOF_REAL: out << ".byte 0,0,0,0,0\n"; break;
-			default: out << "; unsupported size " << sym->type->size << "\n"; break;
+		if (sym->is_array()) {
+			int size = (sym->type->kind == TypeKind::TYPE_POINTER) ? SIZEOF_WORD : sym->type->size;
+			int total_size = size;
+			std::string calc_str = "";
+
+			for (int dim : sym->array_dims) {
+				total_size *= dim;
+				calc_str += std::to_string(dim) + "*";
+			}
+			calc_str += std::to_string(size);
+
+			std::string type_str = type_to_string_comment(sym->type);
+			for (int dim : sym->array_dims) {
+				type_str += "[" + std::to_string(dim) + "]";
+			}
+
+			out << ".fill " << total_size << " ; " << type_str;
+			if (sym->array_dims.size() > 0) {
+				out << " (" << calc_str << " = " << total_size << ")";
+			}
+			out << "\n";
+		} else {
+			switch (sym->type->size) {
+				case SIZEOF_BYTE: out << ".byte 0\n"; break;
+				case SIZEOF_WORD: out << ".word 0\n"; break;
+				case SIZEOF_REAL: out << ".byte 0,0,0,0,0\n"; break;
+				default: out << "; unsupported size " << sym->type->size << "\n"; break;
+			}
 		}
 	}
 	out << "\t.endstruct\n\n";
