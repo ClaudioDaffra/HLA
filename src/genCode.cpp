@@ -103,43 +103,55 @@ void CodeGenerator::generate_variable_get(Node* node, std::ofstream& out)
 
 	if (symbol->is_global) 
 	{
-		switch (symbol->type->size) {
-			case SIZEOF_BYTE:
-				out << "    lda " << var_name << "\n";
-				break;
-			case SIZEOF_WORD:
-				out << "    lda " << var_name << "+0\n";
-				out << "    ldy " << var_name << "+1\n";
-				break;
-			case SIZEOF_REAL:
-				out << "\t; Get global real '" << var_name << "' into fac1\n";
-				out << "    lda #<" << var_name << "\n";
-				out << "    ldy #>" << var_name << "\n";
-				out << "    jsr basic.load5_fac1 " << "\n";
-				break;
-			default:
-				out << "\t; TODO get global var '" << var_name << "' with unsupported size.\n";
-				break;
+		if (symbol->is_array()) {
+			out << "    lda #<" << var_name << "\n";
+			out << "    ldy #>" << var_name << "\n";
+		}
+		else {
+			switch (symbol->type->size) {
+				case SIZEOF_BYTE:
+					out << "    lda " << var_name << "\n";
+					break;
+				case SIZEOF_WORD:
+					out << "    lda " << var_name << "+0\n";
+					out << "    ldy " << var_name << "+1\n";
+					break;
+				case SIZEOF_REAL:
+					out << "\t; Get global real '" << var_name << "' into fac1\n";
+					out << "    lda #<" << var_name << "\n";
+					out << "    ldy #>" << var_name << "\n";
+					out << "    jsr basic.load5_fac1 " << "\n";
+					break;
+				default:
+					out << "\t; TODO get global var '" << var_name << "' with unsupported size.\n";
+					break;
+			}
 		}
 	} 
 	else 
 	{ // Variabile locale
-		switch (symbol->type->kind) {
-			case TypeKind::TYPE_U8:
-			case TypeKind::TYPE_S8:
-				out << "    .fstack_byte_get " << var_name << "\n";
-				break;
-			case TypeKind::TYPE_U16:
-			case TypeKind::TYPE_S16:
-			case TypeKind::TYPE_POINTER:
-				out << "    .fstack_word_get " << var_name << "\n";
-				break;
-			case TypeKind::TYPE_F40:
-				out << "    .fstack_fac1_get " << var_name << "\n";
-				break;
-			default:
-				out << "\t; TODO get local var '" << var_name << "' with unsupported type.\n";
-				break;
+		if (symbol->is_array()) {
+			out << "    lda #" << symbol->offset << "\n";
+			out << "    jsr fstack.lea_bp\n";
+		}
+		else {
+			switch (symbol->type->kind) {
+				case TypeKind::TYPE_U8:
+				case TypeKind::TYPE_S8:
+					out << "    .fstack_byte_get " << var_name << "\n";
+					break;
+				case TypeKind::TYPE_U16:
+				case TypeKind::TYPE_S16:
+				case TypeKind::TYPE_POINTER:
+					out << "    .fstack_word_get " << var_name << "\n";
+					break;
+				case TypeKind::TYPE_F40:
+					out << "    .fstack_fac1_get " << var_name << "\n";
+					break;
+				default:
+					out << "\t; TODO get local var '" << var_name << "' with unsupported type.\n";
+					break;
+			}
 		}
 	}
 	out << "\n";
@@ -341,6 +353,32 @@ void CodeGenerator::generate_binary_op(Node* node, std::ofstream& out)
 		out << "    tay\n";
 		out << "    pla\n\n";
 		out << "    jsr math.sub_u16\n\n";
+		return;
+	}
+
+	// --- Caso speciale per l'accesso agli array locali (ND_ADD) ---
+	// Se stiamo sommando un array locale (indirizzo base) con un indice,
+	// possiamo ottimizzare calcolando l'indirizzo effettivo direttamente:
+	// EA = BP + (OffsetArray + Index)
+	if (node->kind == NodeKind::ND_ADD &&
+		node->lhs->kind == NodeKind::ND_VAR &&
+		node->lhs->symbol &&
+		!node->lhs->symbol->is_global &&
+		node->lhs->symbol->is_array())
+	{
+		out << "\t; Optimized Local Array Access [ " << node->lhs->symbol->name << " ]\n";
+		
+		// 1. Genera il codice per l'indice (RHS). Il risultato (offset) sarà in A (o AY).
+		generate_node(node->rhs.get(), out);
+		
+		// 2. Aggiunge l'offset di base dell'array (nel frame) all'indice.
+		// Dato che l'array è locale e < 256 byte, l'offset totale dovrebbe stare in un byte
+		// se l'indice è ragionevole, ma usiamo ADC per sicurezza.
+		out << "    clc\n";
+		out << "    adc #" << node->lhs->symbol->offset << "\n";
+		
+		// 3. Calcola l'indirizzo finale sommando il tutto al Base Pointer (BP).
+		out << "    jsr fstack.lea_bp\n\n";
 		return;
 	}
 

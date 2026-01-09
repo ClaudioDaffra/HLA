@@ -268,12 +268,14 @@ zload_real	.macro		;	fac1 	:= (a)
 
 ;	# STORE
 
-store_byte	.macro			;		(ay) := (x)	 
+store_byte	.macro			;		(ay) := (x)
+    .block
 		sta putay+1
 		sty putay+2
 		txa
 	putay	
 		sta $ffff
+	.endblock
 .endmacro
 
 store_word	.macro			;		(zpWord0) := ay

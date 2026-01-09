@@ -1,0 +1,76 @@
+
+garr1 : [10] f40;
+garr2 : [8][8] f40;
+garr3 : * [10] f40;
+
+fn main() {
+	xf40 : f40 ;
+    larr1 : [10] f40;
+    larr2 : [10][3] f40;
+	
+	// ################################################################ []
+		
+		//	------------------------------- global unsigned f40 
+		
+		garr1[3] := 4.1 ;
+		
+		xf40 := garr1[3] ;
+		
+		asm {
+			.fstack_fac1_get xf40
+			jsr std.print_fac1
+		} ;
+		
+		//	------------------------------- 
+		
+		asm {
+			.std_print_nl
+		} ;
+		
+		//	------------------------------- local unsigned f40 
+		
+		larr1[4] := 5.2 ;
+		
+		xf40 := larr1[4] ;
+		
+		asm {
+			.fstack_fac1_get xf40
+			jsr std.print_fac1
+		} ;
+		
+		
+	// ################################################################ [][]
+	
+		asm {
+			.std_print_nl
+		} ;
+		
+		//	------------------------------- global unsigned f40 
+		
+		garr2[3][2] := 40 ;
+		
+		xf40 := garr2[3][2] ;
+		
+		asm {
+			.fstack_fac1_get xf40
+			jsr std.print_fac1
+		} ;
+		
+		//	------------------------------- 
+		
+		asm {
+			.std_print_nl
+		} ;
+		
+		//	------------------------------- local unsigned f40 
+		
+		larr2[4][2] := 50 ;
+		
+		xf40 := larr2[4][2] ;
+		
+		asm {
+			.fstack_fac1_get xf40
+			jsr std.print_fac1
+		} ;
+
+} ;

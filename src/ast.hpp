@@ -134,4 +134,7 @@ public:
 
   // Usato se kind è ND_FUNCALL
   std::vector<std::unique_ptr<Node>> args;
+
+  // Usato per propagare le dimensioni degli array nelle espressioni (es. array multidimensionali)
+  std::vector<int> array_dims;
 };

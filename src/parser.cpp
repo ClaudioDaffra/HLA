@@ -1129,12 +1129,12 @@ std::unique_ptr<Node> Parser::parse_declaration()
 //
 std::shared_ptr<Type> Parser::parse_type_specifier()
 {
-	m_dump_log.push_back("Entering parse_type_specifier(). Rule: <type_specifier> ::= T_POINTER* T_IDENTIFIER");
+	m_dump_log.push_back("Entering parse_type_specifier(). Rule: <type_specifier> ::= (T_POINTER | T_MUL)* T_IDENTIFIER");
 
 	int pointer_count = 0;
-	while (match(eToken::T_POINTER)) {
+	while (match(eToken::T_POINTER) || match(eToken::T_MUL)) {
 		pointer_count++;
-		m_dump_log.push_back("Matched pointer type specifier '^'.");
+		m_dump_log.push_back("Matched pointer type specifier.");
 	}
 
 	m_dump_log.push_back("Expecting type identifier.");
@@ -1966,32 +1966,156 @@ std::unique_ptr<Node> Parser::parse_unary()
 //
 std::unique_ptr<Node> Parser::parse_postfix()
 {
-	m_dump_log.push_back("Entering parse_postfix(). Rule: <postfix> ::= <term> ('++' | '--')*");
+	m_dump_log.push_back("Entering parse_postfix(). Rule: <postfix> ::= <term> ('++' | '--' | '[' <expr> ']')*");
 	auto node = parse_term();
 
-	while (match(eToken::T_INCREMENT) || match(eToken::T_DECREMENT)) {
-		const Token& op_tok = (*m_tokens)[m_current_pos - 1];
-		NodeKind kind = (op_tok.type == eToken::T_INCREMENT) ? NodeKind::ND_POST_INC : NodeKind::ND_POST_DEC;
-		std::string op_str = (kind == NodeKind::ND_POST_INC) ? "++" : "--";
-		m_dump_log.push_back("Matched postfix '" + op_str + "'.");
+	while (true) {
+		if (match(eToken::T_INCREMENT) || match(eToken::T_DECREMENT)) {
+			const Token& op_tok = (*m_tokens)[m_current_pos - 1];
+			NodeKind kind = (op_tok.type == eToken::T_INCREMENT) ? NodeKind::ND_POST_INC : NodeKind::ND_POST_DEC;
+			std::string op_str = (kind == NodeKind::ND_POST_INC) ? "++" : "--";
+			m_dump_log.push_back("Matched postfix '" + op_str + "'.");
 
-		// Validazione: l'operando deve essere un l-value
-		if (node->kind != NodeKind::ND_VAR && node->kind != NodeKind::ND_DEREF) {
-			ErrorHandler::get().push_error(Sender::Parser, ErrorType::Error, Action::Parsing, ErrorMessage::UnexpectedToken, op_tok.row, op_tok.col, "Operand for postfix '" + op_str + "' must be a variable or a pointer dereference (l-value).");
-			throw ParseError{};
+			if (node->kind != NodeKind::ND_VAR && node->kind != NodeKind::ND_DEREF) {
+				ErrorHandler::get().push_error(Sender::Parser, ErrorType::Error, Action::Parsing, ErrorMessage::UnexpectedToken, op_tok.row, op_tok.col, "Operand for postfix '" + op_str + "' must be a variable or a pointer dereference (l-value).");
+				throw ParseError{};
+			}
+
+			if (node->type && node->type->kind == TypeKind::TYPE_F40) {
+				ErrorHandler::get().push_error(Sender::Parser, ErrorType::Error, Action::Parsing, ErrorMessage::UnexpectedToken, op_tok.row, op_tok.col, "Postfix '" + op_str + "' cannot be applied to a real number.");
+				throw ParseError{};
+			}
+
+			auto op_node = std::make_unique<Node>();
+			op_node->kind = kind;
+			op_node->lhs = std::move(node);
+			op_node->type = op_node->lhs->type;
+			node = std::move(op_node);
 		}
+		else if (match(eToken::T_Q0)) { // '['
+			m_dump_log.push_back("Matched '['. Parsing array index.");
+			const Token& op_tok = (*m_tokens)[m_current_pos - 1];
+			auto index = parse_expr();
+			expect(eToken::T_Q1); // ']'
 
-		// Validazione: l'operando non può essere un numero reale
-		if (node->type && node->type->kind == TypeKind::TYPE_F40) {
-			ErrorHandler::get().push_error(Sender::Parser, ErrorType::Error, Action::Parsing, ErrorMessage::UnexpectedToken, op_tok.row, op_tok.col, "Postfix '" + op_str + "' cannot be applied to a real number.");
-			throw ParseError{};
+			if (!node->type || node->type->kind != TypeKind::TYPE_POINTER) {
+				ErrorHandler::get().push_error(Sender::Parser, ErrorType::Error, Action::Parsing, ErrorMessage::UnexpectedToken, op_tok.row, op_tok.col, "Subscripted value is not a pointer or array.");
+				throw ParseError{};
+			}
+
+			// --- Multidimensional Array Logic ---
+			if (!node->array_dims.empty()) {
+				// We are indexing a multidimensional array (or a partially indexed one)
+				// Current dimension size is node->array_dims[0]
+				// But stride is determined by the PRODUCT of the REMAINING dimensions.
+				
+				// Example: [8][8] u8. array_dims = {8, 8}.
+				// Indexing first dim. Stride = 8 * sizeof(u8).
+				// Remaining dims for next step = {8}.
+
+				int element_size = node->type->base->size; // Size of the base scalar type
+				
+				// Calculate stride
+				int stride_elements = 1;
+				for (size_t i = 1; i < node->array_dims.size(); ++i) {
+					stride_elements *= node->array_dims[i];
+				}
+				int stride_bytes = stride_elements * element_size;
+
+				// Optimization for local arrays (< 256 bytes total size? Not necessarily)
+				// For multidimensional, let's keep it safe with u16 unless strict conditions met.
+				// Actually, if we are just adding an offset to a pointer, u16 is safer.
+				
+				auto u16_type = m_symbol_table.find_type("u16");
+				if (index->type != u16_type) {
+					index = create_cast_node(std::move(index), u16_type, m_dump_log);
+				}
+
+				if (stride_bytes > 1) {
+					auto size_node = std::make_unique<Node>();
+					size_node->kind = NodeKind::ND_INTEGER_CONSTANT;
+					size_node->val = stride_bytes;
+					size_node->type = u16_type;
+
+					auto mul_node = std::make_unique<Node>();
+					mul_node->kind = NodeKind::ND_MUL;
+					mul_node->lhs = std::move(index);
+					mul_node->rhs = std::move(size_node);
+					mul_node->type = u16_type;
+					index = std::move(mul_node);
+				}
+
+				auto add_node = std::make_unique<Node>();
+				add_node->kind = NodeKind::ND_ADD;
+				add_node->lhs = std::move(node);
+				add_node->rhs = std::move(index);
+				add_node->type = add_node->lhs->type; // Still pointer to base
+				
+				// Propagate remaining dimensions from the LHS (which was 'node')
+				std::vector<int> new_dims(add_node->lhs->array_dims.begin() + 1, add_node->lhs->array_dims.end());
+				add_node->array_dims = new_dims;
+
+				node = std::move(add_node);
+
+				// If we have consumed all dimensions, we are at the element level -> Dereference
+				if (node->array_dims.empty()) {
+					auto deref_node = std::make_unique<Node>();
+					deref_node->kind = NodeKind::ND_DEREF;
+					deref_node->lhs = std::move(node);
+					deref_node->type = deref_node->lhs->type->base;
+					node = std::move(deref_node);
+				}
+			}
+			else {
+				// --- Standard Pointer Indexing (ptr[i]) ---
+				
+				// Scaling Logic: index * sizeof(base)
+				// Optimize for local arrays (< 256 bytes): use u8 arithmetic
+				bool is_local_array = (node->kind == NodeKind::ND_VAR && node->symbol && !node->symbol->is_global && node->symbol->is_array());
+				
+				std::shared_ptr<Type> math_type;
+				if (is_local_array) {
+					math_type = m_symbol_table.find_type("u8");
+				} else {
+					math_type = m_symbol_table.find_type("u16");
+				}
+
+				if (index->type != math_type) {
+					index = create_cast_node(std::move(index), math_type, m_dump_log);
+				}
+
+				int size = node->type->base->size;
+				if (size > 1) {
+					auto size_node = std::make_unique<Node>();
+					size_node->kind = NodeKind::ND_INTEGER_CONSTANT;
+					size_node->val = size;
+					size_node->type = math_type;
+
+					auto mul_node = std::make_unique<Node>();
+					mul_node->kind = NodeKind::ND_MUL;
+					mul_node->lhs = std::move(index);
+					mul_node->rhs = std::move(size_node);
+					mul_node->type = math_type;
+					index = std::move(mul_node);
+				}
+
+				auto add_node = std::make_unique<Node>();
+				add_node->kind = NodeKind::ND_ADD;
+				add_node->lhs = std::move(node);
+				add_node->rhs = std::move(index);
+				add_node->type = add_node->lhs->type; // Result is still pointer (to element)
+
+				auto deref_node = std::make_unique<Node>();
+				deref_node->kind = NodeKind::ND_DEREF;
+				deref_node->lhs = std::move(add_node);
+				deref_node->type = deref_node->lhs->type->base; // Result is element type
+				
+				node = std::move(deref_node);
+			}
 		}
-
-		auto op_node = std::make_unique<Node>();
-		op_node->kind = kind;
-		op_node->lhs = std::move(node);
-		op_node->type = op_node->lhs->type; // Il tipo del risultato è lo stesso dell'operando
-		node = std::move(op_node);
+		else {
+			break;
+		}
 	}
 
 	return node;
@@ -2121,7 +2245,14 @@ std::unique_ptr<Node> Parser::parse_term()
 			auto node = std::make_unique<Node>();
 			node->kind = NodeKind::ND_VAR;
 			node->symbol = symbol;
-			node->type = symbol->type;
+			
+			// --- Array Decay ---
+			if (symbol->is_array()) {
+				node->type = m_symbol_table.get_pointer_type(symbol->type);
+				node->array_dims = symbol->array_dims; // Propagate dimensions
+			} else {
+				node->type = symbol->type;
+			}
 			return node;
 		}
 

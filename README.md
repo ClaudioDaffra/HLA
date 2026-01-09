@@ -46,6 +46,7 @@ p.s. although the Windows executable compiles correctly without issues, it gener
      * `:=`    equivalent to `=`      ->    assignment
      * `?=`    equivalent to `==`     ->    comparison
      * `^`     equivalent to `*`      ->    pointer
+     * `*`     equivalent to `*`      ->    pointer	 
      * `@`     equivalent to `&`      ->    address
      * `%%`    equivalent to `%`      ->    modulo
      * `->`    equivalent to `fn ret` ->    function return parameter
@@ -309,10 +310,9 @@ In the **prj/** folder you can place sources and compile them with batch files f
 ## TODO
 
 ```
-- statements: loop / break / continue / for ... next
 - structures, unions
 - Bit Field
-- arrays `[]`
+- arrays `[][][]...`
 - operators ` . ^+ ^-`
 - `memory.alloc` (malloc), `memory.dealloc` (free)
 - improve asm {}

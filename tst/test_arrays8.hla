@@ -1,0 +1,98 @@
+
+garr1 : [10] u8;
+garr2 : [8][8] u8;
+garr3 : * [10] u8;
+
+fn sub1 ( parr1 : * u8 ) -> u8
+{
+	x8 : u8 ;
+	x8 := parr1[3] ;
+
+	asm {
+		.std_print_nl
+	} ;
+	
+	asm {
+		.fstack_byte_get x8
+		jsr std.print_u8_dec
+	} ;
+	ret x8 ;	
+} ;
+
+fn main() {
+	x8 : u8 ;
+    larr1 : [10] u8;
+    larr2 : [10][3] u8;
+	
+	// ################################################################ []
+		
+		//	------------------------------- global unsigned u8 
+		
+		garr1[3] := 4 ;
+		
+		x8 := garr1[3] ;
+		
+		asm {
+			.fstack_byte_get x8
+			jsr std.print_u8_dec
+		} ;
+		
+		//	------------------------------- 
+		
+		asm {
+			.std_print_nl
+		} ;
+		
+		//	------------------------------- local unsigned u8 
+		
+		larr1[4] := 5 ;
+		
+		x8 := larr1[4] ;
+		
+		asm {
+			.fstack_byte_get x8
+			jsr std.print_u8_dec
+		} ;
+		
+		
+	// ################################################################ [][]
+	
+		asm {
+			.std_print_nl
+		} ;
+		
+		//	------------------------------- global unsigned u8 
+		
+		garr2[3][2] := 40 ;
+		
+		x8 := garr2[3][2] ;
+		
+		asm {
+			.fstack_byte_get x8
+			jsr std.print_u8_dec
+		} ;
+		
+		//	------------------------------- 
+		
+		asm {
+			.std_print_nl
+		} ;
+		
+		//	------------------------------- local unsigned u8 
+		
+		larr2[4][2] := 50 ;
+		
+		x8 := larr2[4][2] ;
+		
+		asm {
+			.fstack_byte_get x8
+			jsr std.print_u8_dec
+		} ;
+		
+		//	------------------------------- local unsigned u8 
+		
+		sub1 ( garr1 ) ; 
+		// sub1 ( @garr1 ) ; // OK ERR
+		// sub1 ( &garr1 ) ; // OK ERR
+
+} ;

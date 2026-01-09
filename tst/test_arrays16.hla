@@ -1,0 +1,76 @@
+
+garr1 : [10] u16;
+garr2 : [8][8] u16;
+garr3 : * [10] u16;
+
+fn main() {
+	x16 : u16 ;
+    larr1 : [10] u16;
+    larr2 : [10][3] u16;
+	
+	// ################################################################ []
+		
+		//	------------------------------- global unsigned u16 
+		
+		garr1[3] := 4 ;
+		
+		x16 := garr1[3] ;
+		
+		asm {
+			.fstack_word_get x16
+			jsr std.print_u16_dec
+		} ;
+		
+		//	------------------------------- 
+		
+		asm {
+			.std_print_nl
+		} ;
+		
+		//	------------------------------- local unsigned u16 
+		
+		larr1[4] := 5 ;
+		
+		x16 := larr1[4] ;
+		
+		asm {
+			.fstack_word_get x16
+			jsr std.print_u16_dec
+		} ;
+		
+		
+	// ################################################################ [][]
+	
+		asm {
+			.std_print_nl
+		} ;
+		
+		//	------------------------------- global unsigned u16 
+		
+		garr2[3][2] := 40 ;
+		
+		x16 := garr2[3][2] ;
+		
+		asm {
+			.fstack_word_get x16
+			jsr std.print_u16_dec
+		} ;
+		
+		//	------------------------------- 
+		
+		asm {
+			.std_print_nl
+		} ;
+		
+		//	------------------------------- local unsigned u16 
+		
+		larr2[4][2] := 50 ;
+		
+		x16 := larr2[4][2] ;
+		
+		asm {
+			.fstack_word_get x16
+			jsr std.print_u16_dec
+		} ;
+
+} ;
